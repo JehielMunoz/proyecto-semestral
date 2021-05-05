@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProyectoSemestralV2</string>
+
+    <string-array name="estados">
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
+
 </resources>
