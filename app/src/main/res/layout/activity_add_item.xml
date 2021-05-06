@@ -38,7 +38,7 @@
         tools:layout_editor_absoluteY="651dp" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/codigoItem"
         android:layout_width="163dp"
         android:layout_height="36dp"
         android:ems="10"
@@ -48,7 +48,7 @@
         tools:layout_editor_absoluteY="88dp" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/numFactura"
         android:layout_width="167dp"
         android:layout_height="38dp"
         android:ems="10"
@@ -85,7 +85,7 @@
         tools:layout_editor_absoluteY="244dp" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/rutProveedor"
         android:layout_width="272dp"
         android:layout_height="36dp"
         android:ems="10"
@@ -95,7 +95,7 @@
         tools:layout_editor_absoluteY="234dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/descripItem"
         android:layout_width="372dp"
         android:layout_height="34dp"
         android:ems="10"
@@ -116,7 +116,7 @@
         tools:layout_editor_absoluteY="150dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/observacionIngreso"
         android:layout_width="370dp"
         android:layout_height="130dp"
         android:ems="10"
@@ -137,7 +137,7 @@
         tools:layout_editor_absoluteY="480dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/ubicacionItem"
         android:layout_width="371dp"
         android:layout_height="33dp"
         android:ems="10"
@@ -157,11 +157,11 @@
         tools:layout_editor_absoluteY="396dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/fechaRecepcion"
         android:layout_width="129dp"
         android:layout_height="29dp"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="datetime"
         android:text=""
         tools:layout_editor_absoluteX="19dp"
         tools:layout_editor_absoluteY="333dp"
@@ -177,7 +177,7 @@
         tools:layout_editor_absoluteY="306dp" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/estado_spinner"
         android:layout_width="120dp"
         android:layout_height="30dp"
         tools:layout_editor_absoluteX="275dp"
@@ -203,7 +203,7 @@
         tools:layout_editor_absoluteY="306dp" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/precioItem"
         android:layout_width="91dp"
         android:layout_height="28dp"
         android:ems="10"
