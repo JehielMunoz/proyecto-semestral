@@ -144,7 +144,8 @@
         android:inputType="text"
         android:text=""
         tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="429dp" />
+        tools:layout_editor_absoluteY="429dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView12"
@@ -163,7 +164,8 @@
         android:inputType="date"
         android:text=""
         tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="333dp" />
+        tools:layout_editor_absoluteY="333dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView9"
@@ -179,7 +181,8 @@
         android:layout_width="120dp"
         android:layout_height="30dp"
         tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="333dp" />
+        tools:layout_editor_absoluteY="333dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView10"
