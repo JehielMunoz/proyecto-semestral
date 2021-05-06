@@ -45,9 +45,10 @@
         android:id="@+id/imageView"
         android:layout_width="141dp"
         android:layout_height="101dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
