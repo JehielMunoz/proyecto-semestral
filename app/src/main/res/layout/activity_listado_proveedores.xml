@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/teal_700">
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:padding="15dip"
+      android:text="Listado Proveedores"
+      android:textColor="@color/black"
+      android:textSize="25sp"
+      android:textStyle="bold"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15px">
+
+            <Button
+                android:id="@+id/buscarItems"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/black"
+                android:text="Buscar ítems"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:backgroundTint="#33C341" />
+
+            <Button
+                android:id="@+id/retorno"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:background="@color/black"
+                android:text="Volver a Inicio"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:backgroundTint="#B66B3A" />
+
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

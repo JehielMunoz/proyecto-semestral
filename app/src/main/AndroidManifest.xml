@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoSemestralV2">
+        <activity android:name=".listado_proveedores"></activity>
+        <activity android:name=".Registro_proveedores" />
+        <activity android:name=".registroUsuarios" />
+        <activity android:name=".menu_inicio" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

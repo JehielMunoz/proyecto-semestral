@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/teal_700">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="0"> <!-- collapse the first column of the table row-->
+        <!-- first row of the table layout-->
+        <TableRow
+            android:padding="2dip"
+            android:layout_marginTop="150px"
+            android:layout_marginBottom="150px">
+            <TextView
+                android:id="@+id/titulo_bienvenida"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="15dip"
+                android:text="Bienvenido + usuario"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_span="2"/>
+            <!-- Add elements/columns in the first row-->
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="15px">
+            <Button
+                android:id="@+id/ingresoItems"
+                android:layout_height="wrap_content"
+                android:text="Ingreso ítems"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="0"
+                />
+
+            <Button
+                android:id="@+id/buscarItems"
+                android:layout_height="wrap_content"
+                android:text="Buscar ítems"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="15px">
+
+            <Button
+                android:id="@+id/registroProvedor"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:background="@color/black"
+                android:onClick="sendMessage"
+                android:text="Registro proveedor"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buscarProvedor"
+                android:layout_height="wrap_content"
+                android:text="Buscar Proveedor"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="15px">
+            <Button
+                android:id="@+id/exportarDatos"
+                android:layout_height="wrap_content"
+                android:text="Exportar datos"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="0"
+                />
+
+            <Button
+                android:id="@+id/generarActas"
+                android:layout_height="wrap_content"
+                android:text="Generar actas"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="1"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/solicitudAdmin"
+                android:layout_height="wrap_content"
+                android:text="Solicitudes"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="0"
+                />
+
+            <Button
+                android:id="@+id/cerrarSesion"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:background="@color/red"
+                android:fontFamily="monospace"
+                android:text="Cerrar Sesion"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:backgroundTint="#B66B3A" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
