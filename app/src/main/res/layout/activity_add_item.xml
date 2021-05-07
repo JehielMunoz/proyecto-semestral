@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCancelar"
         android:layout_width="139dp"
         android:layout_height="53dp"
         android:text="Cancelar"
@@ -27,13 +27,13 @@
         tools:layout_editor_absoluteY="651dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGuardar"
         android:layout_width="140dp"
         android:layout_height="53dp"
         android:text="Guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.564"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="651dp" />
 

@@ -4,108 +4,136 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="160dp"
-        android:layout_height="37dp"
-        android:text="UserName"
+    <Button
+        android:id="@+id/Login_btn"
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="160dp"
-        android:layout_height="37dp"
-        android:text="Password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.741"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="247dp"
-        android:layout_height="70dp"
-        android:text="Login"
+        android:id="@+id/Register_btn"
+        android:layout_width="152dp"
+        android:layout_height="59dp"
+        android:text="Registrar"
         app:backgroundTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="483dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.738"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="141dp"
         android:layout_height="101dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061"
         app:srcCompat="@drawable/logo"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/contraseña_login"
         android:layout_width="341dp"
         android:layout_height="49dp"
+        android:background="#009688"
         android:ems="10"
-        android:hint="password"
+        android:hint="  Contraseña"
         android:inputType="textPassword"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="411dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="341dp"
-        android:layout_height="49dp"
-        android:text="username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="254dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/facebook_btn"
         android:layout_width="72dp"
         android:layout_height="66dp"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/google_btn"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_btn"
         app:srcCompat="@drawable/facebook"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="580dp" />
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/twitter_btn"
         android:layout_width="72dp"
         android:layout_height="66dp"
         android:scaleType="fitCenter"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/google_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Login_btn"
         app:srcCompat="@drawable/twitter"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="580dp" />
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/google_btn"
         android:layout_width="72dp"
         android:layout_height="66dp"
         android:scaleType="fitCenter"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_btn"
         app:srcCompat="@drawable/google"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="580dp" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login in "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña_login"
+        app:layout_constraintVertical_bias="0.515"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/usuario_login"
+        android:layout_width="335dp"
+        android:layout_height="44dp"
+        android:background="#009688"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Usuario"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/contraseña_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.644" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
