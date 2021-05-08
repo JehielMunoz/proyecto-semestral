@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/Login_btn"
+        android:id="@+id/login_btn"
         android:layout_width="150dp"
         android:layout_height="62dp"
         android:text="Login"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toStartOf="@+id/google_btn"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
         app:srcCompat="@drawable/facebook"
         tools:ignore="MissingConstraints" />
 
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/google_btn"
-        app:layout_constraintTop_toBottomOf="@+id/Login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
         app:srcCompat="@drawable/twitter"
         tools:ignore="MissingConstraints" />
 
@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
         app:srcCompat="@drawable/google"
         tools:ignore="MissingConstraints" />
 

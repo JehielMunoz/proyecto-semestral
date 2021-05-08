@@ -16,6 +16,7 @@
             android:padding="2dip"
             android:layout_marginTop="150px"
             android:layout_marginBottom="150px">
+
             <TextView
                 android:id="@+id/titulo_bienvenida"
                 android:layout_height="wrap_content"
@@ -31,7 +32,7 @@
 
         <TableRow android:layout_marginBottom="15px">
             <Button
-                android:id="@+id/ingresoItems"
+                android:id="@+id/ingresoItemsBtn"
                 android:layout_height="wrap_content"
                 android:text="Ingreso ítems"
                 android:background="@color/black"
@@ -42,7 +43,7 @@
                 />
 
             <Button
-                android:id="@+id/buscarItems"
+                android:id="@+id/buscarItemsBtn"
                 android:layout_height="wrap_content"
                 android:text="Buscar ítems"
                 android:background="@color/black"
@@ -56,7 +57,7 @@
         <TableRow android:layout_marginBottom="15px">
 
             <Button
-                android:id="@+id/registroProvedor"
+                android:id="@+id/registroProvedorBtn"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:background="@color/black"
@@ -67,7 +68,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/buscarProvedor"
+                android:id="@+id/buscarProvedorBtn"
                 android:layout_height="wrap_content"
                 android:text="Buscar Proveedor"
                 android:background="@color/black"
@@ -79,8 +80,34 @@
         </TableRow>
 
         <TableRow android:layout_marginBottom="15px">
+
             <Button
-                android:id="@+id/exportarDatos"
+                android:id="@+id/registroUsuariosBtn"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:background="@color/black"
+                android:onClick="sendMessage"
+                android:text="Crear usuario"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buscarUsuarioBtn"
+                android:layout_height="wrap_content"
+                android:text="Buscar usuario"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_column="1"
+                />
+        </TableRow>
+
+
+        <TableRow android:layout_marginBottom="15px">
+            <Button
+                android:id="@+id/exportarDatosBtn"
                 android:layout_height="wrap_content"
                 android:text="Exportar datos"
                 android:background="@color/black"
@@ -91,7 +118,7 @@
                 />
 
             <Button
-                android:id="@+id/generarActas"
+                android:id="@+id/generarActasBtn"
                 android:layout_height="wrap_content"
                 android:text="Generar actas"
                 android:background="@color/black"
@@ -103,7 +130,7 @@
         </TableRow>
         <TableRow>
             <Button
-                android:id="@+id/solicitudAdmin"
+                android:id="@+id/solicitudAdminBtn"
                 android:layout_height="wrap_content"
                 android:text="Solicitudes"
                 android:background="@color/black"
@@ -114,7 +141,7 @@
                 />
 
             <Button
-                android:id="@+id/cerrarSesion"
+                android:id="@+id/cerrarSesionBtn"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:background="@color/red"
