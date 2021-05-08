@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883347723310",
+    "project_id": "proyectoi-invedu",
+    "storage_bucket": "proyectoi-invedu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883347723310:android:0d70481e7f9fd0c844fbbf",
+        "android_client_info": {
+          "package_name": "com.example.proyectosemestralv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883347723310-e6hrm1r0q91ibp3nqr00mmrecagmhi3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5ocTbTMIsfDrQ6TUnDGJRMt_AiwbMCoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883347723310-e6hrm1r0q91ibp3nqr00mmrecagmhi3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
