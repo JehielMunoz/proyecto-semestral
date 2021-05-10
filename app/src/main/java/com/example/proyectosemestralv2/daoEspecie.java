@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
-public class daoEspecie {
+class daoUser {
     Context context;
     Especie especie; //Declaramos objeto de tipo especie
     ArrayList<Especie> list; //contiene n especies
@@ -14,7 +14,10 @@ public class daoEspecie {
     String bd = "ExampleApp"; //Nombre database
     String table = "create table if not exists users(id integer primary key autoincrement, name text, email text, pass text)"; //query creacion de tabla
 
-    public daoUser(){}
+    public daoUser(){
+
+    }
+ /*
     public daoUser(Context context){
         this.context = context; //asignacion de conexion con el s.o.
         conn = context.openOrCreateDatabase(bd, context.MODE_PRIVATE,null); //indica el contexto en el que se ejecuta la query
@@ -103,4 +106,7 @@ public class daoEspecie {
         }
         return null;
     }
+
+  */
 }
+
