@@ -71,6 +71,7 @@
         tools:ignore="MissingConstraints"/>
 
     <Button
+        android:id="@+id/buscarButton"
         android:layout_width="95dp"
         android:layout_height="24dp"
         android:width="9dp"
@@ -89,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/Barra_Separadora"
+        app:srcCompat="@drawable/barraSeparadora"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="133dp" />
 
@@ -231,6 +232,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:id="@+id/retornoButton"
         android:layout_width="95dp"
         android:layout_height="24dp"
         android:width="9dp"
@@ -245,11 +247,12 @@
         android:layout_marginTop="20dp"/>
 
     <Button
+        android:id="@+id/guardarCambiosButton"
         android:layout_width="190dp"
         android:layout_height="24dp"
         android:width="9dp"
         android:background="#3B7A20"
-        android:text="Guardar caambios"
+        android:text="Guardar cambios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
