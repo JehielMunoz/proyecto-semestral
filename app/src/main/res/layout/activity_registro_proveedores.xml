@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/teal_700">
+    android:background="@color/white">
 
 
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/teal_700"
         android:orientation="vertical"
         android:stretchColumns="1"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <TableRow android:padding="5dip">
 
@@ -25,9 +27,9 @@
                 android:layout_span="2"
                 android:gravity="center_horizontal"
                 android:text="Registro Proveedores"
-                android:textColor="#0ff"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#009688"/>
         </TableRow>
 
         <TableRow>
@@ -37,8 +39,9 @@
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
                 android:text="Razon Social"
-                android:textColor="#fff"
-                android:textSize="16sp" />
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#009688"/>
 
             <EditText
                 android:id="@+id/userName"
@@ -46,7 +49,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="#fff"
+                android:background="@color/btnColor"
                 android:padding="5dp"
                 android:textColor="#000" />
         </TableRow>
@@ -59,8 +62,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Rut"
-                android:textColor="#fff"
-                android:textSize="16sp" />
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#009688" />
 
             <EditText
                 android:id="@+id/correo"
@@ -69,7 +73,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="#fff"
+                android:background="@color/btnColor"
                 android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
@@ -83,8 +87,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Telefono"
-                android:textColor="#fff"
-                android:textSize="16sp" />
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#009688" />
 
             <EditText
                 android:id="@+id/nroTelefonico"
@@ -93,7 +98,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:background="#fff"
+                android:background="@color/btnColor"
                 android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
@@ -107,8 +112,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Email"
-                android:textColor="#fff"
-                android:textSize="16sp" />
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#009688"/>
 
             <EditText
                 android:id="@+id/password"
@@ -117,7 +123,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="#fff"
+                android:background="@color/btnColor"
                 android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
@@ -131,8 +137,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Estado"
-                android:textColor="#fff"
-                android:textSize="16sp" />
+                android:textColor="@color/btnColor"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
 
             <Spinner
                 android:id="@+id/estado_spinner"
