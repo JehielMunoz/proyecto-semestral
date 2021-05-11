@@ -13,10 +13,10 @@
         <activity android:name=".Especie"></activity>
         <!-->
         <activity android:name=".daoEspecies" />
-        <activity android:name=".add_item" />
-        <activity android:name=".Registro_proveedores" />
+        <activity android:name=".addItem" />
+        <activity android:name=".registroProveedores" />
         <activity android:name=".registroUsuarios" />
-        <activity android:name=".menu_inicio" />
+        <activity android:name=".menuInicio" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-public class add_item extends AppCompatActivity {
+public class addItem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,7 +13,7 @@ public class add_item extends AppCompatActivity {
         setContentView(R.layout.activity_add_item);
     }
 
-    public add_item(){
+    public addItem(){
     }
 
     @Override

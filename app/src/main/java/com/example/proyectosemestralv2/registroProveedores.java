@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 
-public class Registro_proveedores extends AppCompatActivity  {
+public class registroProveedores extends AppCompatActivity  {
 
     Button returnButton;
 
@@ -27,7 +25,7 @@ public class Registro_proveedores extends AppCompatActivity  {
     public void onCLick(View v){
         switch (v.getId()){
             case R.id.retorno:
-                Intent intent= new Intent (Registro_proveedores.this, menu_inicio.class);
+                Intent intent= new Intent (registroProveedores.this, menuInicio.class);
                 startActivity(intent);
         }
     }
