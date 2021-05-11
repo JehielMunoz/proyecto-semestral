@@ -19,6 +19,10 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         buscarBtn = (Button)findViewById(R.id.buscarButton);
         retornoBtn = (Button)findViewById(R.id.retornoButton);
         guardarCambiosBtn = (Button)findViewById(R.id.guardarCambiosButton);
+
+        buscarBtn.setOnClickListener(this);
+        retornoBtn.setOnClickListener(this);
+        guardarCambiosBtn.setOnClickListener(this);
     }
 
 

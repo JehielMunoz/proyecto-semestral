@@ -18,7 +18,7 @@ public class Registro_proveedores extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
-        returnButton = (Button)findViewById(R.id.returnButton);
+        returnButton = (Button)findViewById(R.id.retorno);
 
         returnButton.setOnClickListener((View.OnClickListener) this);
     }
