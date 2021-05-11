@@ -32,4 +32,9 @@ public class Registro_proveedores extends AppCompatActivity  {
         }
     }
 
+    @Override
+    public void onBackPressed(){
+
+    }
+
 }

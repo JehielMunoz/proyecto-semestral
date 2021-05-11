@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Archivo_ExporExcel">
+    tools:context=".Archivo_ExporExcel"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/button"
@@ -12,5 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Button"
         tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="601dp" />
+        tools:layout_editor_absoluteY="601dp"
+        tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

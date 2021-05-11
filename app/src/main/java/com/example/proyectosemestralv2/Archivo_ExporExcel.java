@@ -16,7 +16,10 @@ public class Archivo_ExporExcel extends AppCompatActivity {
         setContentView(R.layout.activity_archivo_expor_excel);
     }
 
+    @Override
+    public void onBackPressed(){
 
+    }
 
 
 }

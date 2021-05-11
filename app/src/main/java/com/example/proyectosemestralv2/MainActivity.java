@@ -32,10 +32,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
         switch (v.getId()) {
             //la actividad de los botones de login y register de la pantalla de inicio
-
             case R.id.login_btn: Intent intentII = new Intent(MainActivity.this, menu_inicio.class);
                     startActivity(intentII);
             case R.id.Register_btn: Intent intent = new Intent( MainActivity.this,registroUsuarios.class);
             }
         }
+    @Override
+    public void onBackPressed(){
+
+    }
     }

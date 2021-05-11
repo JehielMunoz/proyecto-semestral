@@ -55,4 +55,9 @@ public class menu_inicio extends AppCompatActivity implements View.OnClickListen
                 startActivity(intentBP);
         }
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

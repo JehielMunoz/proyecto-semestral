@@ -11,4 +11,9 @@ public class registroUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuarios);
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

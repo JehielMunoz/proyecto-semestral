@@ -7,16 +7,18 @@ import android.os.Bundle;
 
 public class add_item extends AppCompatActivity {
 
-    public add_item(){
-    }
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
     }
 
+    public add_item(){
+    }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 
 }
