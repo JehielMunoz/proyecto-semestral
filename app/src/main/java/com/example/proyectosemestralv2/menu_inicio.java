@@ -51,7 +51,7 @@ public class menu_inicio extends AppCompatActivity implements View.OnClickListen
                 Intent intentRU= new Intent (menu_inicio.this, registroUsuarios.class);
                 startActivity(intentRU);
             case R.id.buscarProvedorBtn:
-                Intent intentBP= new Intent (menu_inicio.this, listado_proveedores.class);
+                Intent intentBP= new Intent (menu_inicio.this, busquedaProveedor.class);
                 startActivity(intentBP);
         }
     }
