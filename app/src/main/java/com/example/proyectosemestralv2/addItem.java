@@ -4,19 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Archivo_ExporExcel extends AppCompatActivity {
 
-    public Archivo_ExporExcel(){
-
-    }
+public class addItem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_archivo_expor_excel);
+        setContentView(R.layout.activity_add_item);
     }
 
+    public addItem(){
+    }
 
+    @Override
+    public void onBackPressed(){
 
+    }
 
 }

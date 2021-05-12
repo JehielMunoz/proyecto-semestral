@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyectosemestralv2">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,16 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".Lista_items"></activity>
-        <activity android:name=".View_items" />
-        <activity android:name=".Archivo_ExporExcel" />
-        <activity android:name=".Especie" />
+        <!-->
+        <activity android:name=".Especie"></activity>
+        <!-->
         <activity android:name=".daoEspecies" />
-        <activity android:name=".add_item" />
-        <activity android:name=".listado_proveedores" />
-        <activity android:name=".Registro_proveedores" />
+        <activity android:name=".addItem" />
+        <activity android:name=".registroProveedores" />
         <activity android:name=".registroUsuarios" />
-        <activity android:name=".menu_inicio" />
+        <activity android:name=".menuInicio" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

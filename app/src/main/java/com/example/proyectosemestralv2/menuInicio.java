@@ -1,17 +1,13 @@
 package com.example.proyectosemestralv2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-import android.os.Bundle;
-import android.view.View;
-
-public class menu_inicio extends AppCompatActivity implements View.OnClickListener {
+public class menuInicio extends AppCompatActivity implements View.OnClickListener {
 
     Button ingresoItemsBtn, buscarItemsBtn, registroProvedorBtn, buscarProvedorBtn, exportarDatosBtn,generarActasBtn,
                     solicitudAdminBtn, cerrarSesionBtn, registroUsuariosBtn ;
@@ -42,17 +38,22 @@ public class menu_inicio extends AppCompatActivity implements View.OnClickListen
             //case R.id.buscarItemsBtn:
                 //Intent inentBI= new Intent (menu_inicio.this,)
             case R.id.ingresoItemsBtn:
-                Intent intentII= new Intent (menu_inicio.this, add_item.class);
+                Intent intentII= new Intent (menuInicio.this, addItem.class);
                 startActivity(intentII);
             case R.id.registroProvedorBtn:
-                Intent intentRP= new Intent (menu_inicio.this, Registro_proveedores.class);
+                Intent intentRP= new Intent (menuInicio.this, registroProveedores.class);
                 startActivity(intentRP);
             case R.id.registroUsuariosBtn:
-                Intent intentRU= new Intent (menu_inicio.this, registroUsuarios.class);
+                Intent intentRU= new Intent (menuInicio.this, registroUsuarios.class);
                 startActivity(intentRU);
             case R.id.buscarProvedorBtn:
-                Intent intentBP= new Intent (menu_inicio.this, busquedaProveedor.class);
+                Intent intentBP= new Intent (menuInicio.this, busquedaProveedor.class);
                 startActivity(intentBP);
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+
     }
 }

@@ -32,10 +32,15 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
             case R.id.buscarButton:
                 break;
             case R.id.retornoButton:
-                Intent intentRB = new Intent(busquedaProveedor.this, menu_inicio.class);
+                Intent intentRB = new Intent(busquedaProveedor.this, menuInicio.class);
                 startActivity(intentRB);
             case R.id.guardarCambiosButton:
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+
     }
 }
