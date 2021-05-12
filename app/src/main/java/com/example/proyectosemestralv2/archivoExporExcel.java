@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Archivo_ExporExcel extends AppCompatActivity {
+public class archivoExporExcel extends AppCompatActivity {
 
-    public Archivo_ExporExcel(){
+    public archivoExporExcel(){
 
     }
 
