@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 
-public class registroProveedores extends AppCompatActivity implements View.OnClickListener{
+public class registroProveedores extends AppCompatActivity implements View.OnClickListener {
 
     Button returnButton;
 
@@ -23,8 +21,8 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         returnButton.setOnClickListener((View.OnClickListener) this);
     }
 
-
-    public void onCLick(View v){
+    @Override
+    public void onClick(View v) {
         switch (v.getId()){
             case R.id.retorno:
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
@@ -34,11 +32,6 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed(){
-        finish();
-    }
-
-    @Override
-    public void onClick(View v) {
 
     }
 }

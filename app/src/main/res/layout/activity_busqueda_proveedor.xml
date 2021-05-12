@@ -224,6 +224,7 @@
         tools:layout_editor_absoluteY="207dp" />
 
     <RadioButton
+        android:id="@+id/activoProv"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -236,18 +237,19 @@
         app:layout_constraintTop_toBottomOf="@+id/emailProveedor"
         tools:ignore="MissingConstraints" />
 
- <RadioButton
-     android:layout_width="110dp"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="18dp"
-     android:background="#6ADD9E"
-     android:text="NO ACTIVO"
-     android:textColor="@color/black"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.9"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/emailProveedor"
-     tools:ignore="MissingConstraints" />
+     <RadioButton
+         android:id="@+id/noActivoProv"
+         android:layout_width="110dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="18dp"
+         android:background="#6ADD9E"
+         android:text="NO ACTIVO"
+         android:textColor="@color/black"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.9"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/emailProveedor"
+         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/retornoButton"
