@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Register_btn.setOnClickListener((View.OnClickListener) this);
 
     }
+
     @Override
     public void onClick(View v){
         switch (v.getId()) {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.login_btn: Intent intentII = new Intent(MainActivity.this, menuInicio.class);
                     startActivity(intentII);
             case R.id.Register_btn: Intent intent = new Intent( MainActivity.this,registroUsuarios.class);
+
             }
         }
     @Override

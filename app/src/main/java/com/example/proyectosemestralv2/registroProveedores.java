@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class registroProveedores extends AppCompatActivity  {
+public class registroProveedores extends AppCompatActivity implements View.OnClickListener {
 
     Button returnButton;
 
@@ -21,8 +21,8 @@ public class registroProveedores extends AppCompatActivity  {
         returnButton.setOnClickListener((View.OnClickListener) this);
     }
 
-
-    public void onCLick(View v){
+    @Override
+    public void onClick(View v) {
         switch (v.getId()){
             case R.id.retorno:
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
@@ -34,5 +34,4 @@ public class registroProveedores extends AppCompatActivity  {
     public void onBackPressed(){
 
     }
-
 }
