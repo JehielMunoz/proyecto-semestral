@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class Registro_proveedores extends AppCompatActivity  {
+public class Registro_proveedores extends AppCompatActivity implements View.OnClickListener{
 
     Button returnButton;
 
@@ -34,7 +34,11 @@ public class Registro_proveedores extends AppCompatActivity  {
 
     @Override
     public void onBackPressed(){
-
+        finish();
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }
