@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.EditText;
 
-public class menu_inicio extends AppCompatActivity implements View.OnClickListener {
+public class menuInicio extends AppCompatActivity implements View.OnClickListener {
 
     Button  ingresoItemsBtn,
             buscarItemsBtn,
@@ -45,16 +45,16 @@ public class menu_inicio extends AppCompatActivity implements View.OnClickListen
             //case R.id.BuscarItemsBtn:
                 //Intent inentBI= new Intent (menu_inicio.this, buscar)
             case R.id.IngresoItemsBtn:
-                startActivity(new Intent(menu_inicio.this, add_item.class));
+                startActivity(new Intent(menuInicio.this, addItem.class));
                 finish();
             case R.id.RegistroProvedorBtn:
-                startActivity(new Intent(menu_inicio.this, Registro_proveedores.class));
+                startActivity(new Intent(menuInicio.this, registroProveedores.class));
                 finish();
             case R.id.RegistroUsuariosBtn:
-                startActivity(new Intent(menu_inicio.this, registroUsuarios.class));
+                startActivity(new Intent(menuInicio.this, registroUsuarios.class));
                 finish();
             case R.id.BuscarProvedorBtn:
-                startActivity(new Intent(menu_inicio.this, busquedaProveedor.class));
+                startActivity(new Intent(menuInicio.this, busquedaProveedor.class));
                 finish();
         }
     }

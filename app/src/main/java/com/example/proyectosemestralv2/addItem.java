@@ -6,7 +6,7 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Toast;
 
-public class add_item extends AppCompatActivity implements View.OnClickListener{
+public class addItem extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class add_item extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_add_item);
     }
 
-    public add_item(){
+    public addItem(){
     }
 
     @Override
