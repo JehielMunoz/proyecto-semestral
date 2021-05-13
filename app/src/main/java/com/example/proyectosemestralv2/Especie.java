@@ -12,6 +12,7 @@ public class Especie {
     String Observaciones;
     String Fecha_recepcion;
 
+    public Especie(){}
     public Especie(
             int id, int codigo_correlativo, String especie,
             int cantidad, String estado, int precio_unitario,
@@ -37,7 +38,6 @@ public class Especie {
             Codigo_correlativo == 0 ||
             Especie.equals("") ||
             Cantidad == 0 ||
-            Estado.equals("") ||
             Precio_unitario == 0 ||
             Precio_total == 0 ||
             Fecha_recepcion.equals("") ||
@@ -155,4 +155,5 @@ public class Especie {
     public void setFecha_recepcion(String fecha_recepcion) {
         Fecha_recepcion = fecha_recepcion;
     }
+
 }

@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         register_btn = (Button) findViewById(R.id.Register_btn);
 
 //aqui lo hace un escucha al presionar el boton al llamado de onclick
-        login_btn.setOnClickListener((View.OnClickListener) this);
-        register_btn.setOnClickListener((View.OnClickListener) this);
+        login_btn.setOnClickListener(this);
+        register_btn.setOnClickListener(this);
 
     }
     @Override
@@ -33,9 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             //la actividad de los botones de login y register de la pantalla de inicio
             case R.id.Login_btn:
-                startActivity(new Intent(MainActivity.this, menu_inicio.class));
+                startActivity(new Intent(MainActivity.this, menuInicio.class));
+                finish();break;
             case R.id.Register_btn:
                 startActivity(new Intent(MainActivity.this, registroUsuarios.class));
+                finish();break;
             }
         }
     @Override

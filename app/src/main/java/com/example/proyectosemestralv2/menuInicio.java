@@ -46,16 +46,16 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 //Intent inentBI= new Intent (menu_inicio.this, buscar)
             case R.id.IngresoItemsBtn:
                 startActivity(new Intent(menuInicio.this, addItem.class));
-                finish();
+                finish(); break;
             case R.id.RegistroProvedorBtn:
                 startActivity(new Intent(menuInicio.this, registroProveedores.class));
-                finish();
+                finish(); break;
             case R.id.RegistroUsuariosBtn:
                 startActivity(new Intent(menuInicio.this, registroUsuarios.class));
-                finish();
+                finish(); break;
             case R.id.BuscarProvedorBtn:
                 startActivity(new Intent(menuInicio.this, busquedaProveedor.class));
-                finish();
+                finish(); break;
         }
     }
 
