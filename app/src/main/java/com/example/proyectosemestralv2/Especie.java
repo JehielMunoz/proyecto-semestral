@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 public class Especie {
+
     int Id, Codigo_correlativo, Cantidad, Precio_unitario, Precio_total;
     int Numero_factura;
     String Especie, Estado, Rut_proveedor, Centro_de_costo, Ubicacion_actual;
