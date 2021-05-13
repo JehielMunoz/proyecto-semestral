@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/teal_700">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:background="@color/white"
+        android:background="@color/teal_700"
         android:orientation="vertical"
-        android:stretchColumns="1">
+        android:stretchColumns="1"
+        android:layout_marginTop="50dp">
 
         <TableRow android:padding="5dip">
 
@@ -23,7 +23,7 @@
                 android:layout_span="2"
                 android:gravity="center_horizontal"
                 android:text="Registro Usuarios"
-                android:textColor="@color/btnColor"
+                android:textColor="#0ff"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -35,8 +35,7 @@
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
                 android:text="Nombre"
-                android:textColor="@color/btnColor"
-                android:textStyle="bold"
+                android:textColor="#fff"
                 android:textSize="16sp" />
 
             <EditText
@@ -45,7 +44,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+                android:background="#fff"
                 android:padding="5dp"
                 android:textColor="#000" />
         </TableRow>
@@ -58,8 +57,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Correo"
-                android:textStyle="bold"
-                android:textColor="@color/btnColor"
+                android:textColor="#fff"
                 android:textSize="16sp" />
 
             <EditText
@@ -69,7 +67,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+                android:background="#fff"
                 android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
@@ -83,8 +81,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Telefono"
-                android:textColor="@color/btnColor"
-                android:textStyle="bold"
+                android:textColor="#fff"
                 android:textSize="16sp" />
 
             <EditText
@@ -92,9 +89,9 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+                android:layout_marginTop="20dp"
+                android:background="#fff"
                 android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
@@ -108,8 +105,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Contraseña"
-                android:textColor="@color/btnColor"
-                android:textStyle="bold"
+                android:textColor="#fff"
                 android:textSize="16sp" />
 
             <EditText
@@ -119,7 +115,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+                android:background="#fff"
                 android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
@@ -132,24 +128,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15px">
 
-
-            <Button
-                android:id="@+id/retornoUsuarios"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:background="@color/black"
-                android:text="Volver"
-                android:layout_marginLeft="60dp"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:backgroundTint="#B66B3A" />
-
             <Button
                 android:id="@+id/registroUsuario"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
+                android:layout_column="0"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="35dp"
                 android:background="@color/black"
                 android:text="guardar"
                 android:textColor="@color/white"
@@ -157,7 +141,17 @@
                 android:textStyle="bold"
                 app:backgroundTint="#1DCF50" />
 
-
+            <Button
+                android:id="@+id/retornoUsuarios"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/black"
+                android:text="Volver"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:backgroundTint="#B66B3A" />
         </TableRow>
     </TableLayout>
 </LinearLayout>

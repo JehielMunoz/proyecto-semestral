@@ -33,7 +33,6 @@ public class registroUsuarios extends AppCompatActivity implements View.OnClickL
             case R.id.retornoUsuarios:
                 Intent intentRU = new Intent(registroUsuarios.this, menuInicio.class);
                 startActivity(intentRU);
-                break;
         }
     }
 }
