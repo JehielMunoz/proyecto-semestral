@@ -224,9 +224,10 @@ android:textSize="20dp"
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fechaRecepcion"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="17dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/fechaRecepcion"

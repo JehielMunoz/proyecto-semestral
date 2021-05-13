@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class menuInicio extends AppCompatActivity implements View.OnClickListener {
 
-    Button ingresoItemsBtn, buscarItemsBtn, registroProvedorBtn, buscarProvedorBtn, exportarDatosBtn,generarActasBtn,
-                    solicitudAdminBtn, cerrarSesionBtn, registroUsuariosBtn ;
+    Button ingresoItems, buscarItemsBtn, registroProvedorBtn, buscarProvedor, exportarDatos,generarActas,
+                    solicitudAdmin, cerrarSesion, registroUsuarios,atrasPrueba  ;
 
 
     @Override
@@ -18,31 +18,53 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicio);
 
-        ingresoItemsBtn = (Button)findViewById(R.id.ingresoItemsBtn);
-        registroProvedorBtn = (Button)findViewById(R.id.registroProvedorBtn);
-        registroUsuariosBtn = (Button)findViewById(R.id.registroUsuariosBtn);
-        buscarProvedorBtn = (Button)findViewById(R.id.buscarProvedorBtn);
-        buscarItemsBtn = (Button)findViewById(R.id.buscarItemsBtn);
+        ingresoItems =findViewById(R.id.ingresoItemsBtn);
+        registroProvedorBtn =findViewById(R.id.registroProvedorBtn);
+        registroUsuarios =findViewById(R.id.registroUsuariosBtn);
+        buscarProvedor =findViewById(R.id.buscarProvedorBtn);
+        buscarItemsBtn =findViewById(R.id.buscarItemsBtn);
+        atrasPrueba =findViewById(R.id.atrasPrueba);
 
-        ingresoItemsBtn.setOnClickListener(this);
-        registroProvedorBtn.setOnClickListener(this);
-        registroUsuariosBtn.setOnClickListener(this);
-        buscarProvedorBtn.setOnClickListener(this);
+
+        buscarProvedor.setOnClickListener(this);
         buscarItemsBtn.setOnClickListener(this);
+
+//responde bien
+        //esta es una clase anonima
+        ingresoItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent (menuInicio.this, addItem.class);
+                startActivity(intent);
+            }//OK
+        });
+
+
+
+        registroProvedorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent (menuInicio.this, registroProveedores.class);
+                startActivity(intent);
+            }
+        });
+        registroUsuarios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent (menuInicio.this, registroUsuarios.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
     @Override
     public void onClick(View v) {
+        /*
         switch (v.getId()){
             //case R.id.buscarItemsBtn:
                 //Intent inentBI= new Intent (menu_inicio.this,)
-            case R.id.ingresoItemsBtn:
-                Intent intentII= new Intent (menuInicio.this, addItem.class);
-                startActivity(intentII);
-            case R.id.registroProvedorBtn:
-                Intent intentRP= new Intent (menuInicio.this, registroProveedores.class);
-                startActivity(intentRP);
             case R.id.registroUsuariosBtn:
                 Intent intentRU= new Intent (menuInicio.this, registroUsuarios.class);
                 startActivity(intentRU);
@@ -50,10 +72,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 Intent intentBP= new Intent (menuInicio.this, busquedaProveedor.class);
                 startActivity(intentBP);
         }
+    }*/
     }
 
-    @Override
-    public void onBackPressed(){
-
-    }
 }

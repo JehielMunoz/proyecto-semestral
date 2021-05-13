@@ -16,9 +16,7 @@ public class registroProveedores extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
-        returnButton = (Button)findViewById(R.id.retorno);
-
-        returnButton.setOnClickListener((View.OnClickListener) this);
+        
     }
 
 
@@ -30,9 +28,8 @@ public class registroProveedores extends AppCompatActivity  {
         }
     }
 
-    @Override
+ /*   @Override
     public void onBackPressed(){
-
     }
-
+*/
 }

@@ -38,9 +38,4 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
-
-    @Override
-    public void onBackPressed(){
-
-    }
 }

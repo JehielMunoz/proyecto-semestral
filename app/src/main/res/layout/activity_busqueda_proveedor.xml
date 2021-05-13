@@ -8,7 +8,7 @@
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/tituloBienvenida"
+        android:id="@+id/titulo_bienvenida"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="BUSCADOR PROVEEDORES"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         tools:ignore="MissingConstraints"
         />
 
@@ -110,7 +110,6 @@
         tools:layout_editor_absoluteY="160dp" />
 
     <EditText
-        android:id="@+id/razonSocial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +130,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         android:layout_marginTop="72dp"
@@ -139,7 +138,6 @@
         tools:layout_editor_absoluteY="207dp" />
 
     <EditText
-        android:id="@+id/rutProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
@@ -167,7 +165,6 @@
         tools:layout_editor_absoluteY="207dp" />
 
     <EditText
-        android:id="@+id/telefonoProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
@@ -195,7 +192,6 @@
         tools:layout_editor_absoluteY="207dp" />
 
     <EditText
-        android:id="@+id/emailProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
@@ -208,7 +204,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/titEtadoProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estado"
@@ -223,31 +218,18 @@
         app:layout_constraintTop_toBottomOf="@+id/separador"
         tools:layout_editor_absoluteY="207dp" />
 
-    <RadioButton
-        android:layout_width="90dp"
+    <EditText
+        android:id="@+id/estadoProveedor"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="200dp"
+        android:background="@color/btnColor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginTop="18dp"
-        android:textColor="@color/black"
-        android:text="ACTIVO"
-        android:background="#6ADD9E"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailProveedor"
+        android:layout_marginTop="195dp"
+        app:layout_constraintTop_toBottomOf="@+id/separador"
         tools:ignore="MissingConstraints" />
-
- <RadioButton
-     android:layout_width="110dp"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="18dp"
-     android:background="#6ADD9E"
-     android:text="NO ACTIVO"
-     android:textColor="@color/black"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.9"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/emailProveedor"
-     tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/retornoButton"
@@ -259,10 +241,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titEtadoProveedor"
+        app:layout_constraintTop_toBottomOf="@+id/estadoProveedor"
         tools:ignore="MissingConstraints"
         android:textStyle="bold"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/guardarCambiosButton"
@@ -274,9 +256,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titEtadoProveedor"
+        app:layout_constraintTop_toBottomOf="@+id/estadoProveedor"
         tools:ignore="MissingConstraints"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

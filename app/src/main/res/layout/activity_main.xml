@@ -9,33 +9,33 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="150dp"
-        android:layout_height="62dp"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:background="@drawable/btnpress"
         android:text="Entrar"
         android:textColor="@color/white"
         app:backgroundTint="#009688"
-        android:background="@drawable/btnpress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741"
+        app:layout_constraintVertical_bias="0.71"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/Register_btn"
-        android:layout_width="152dp"
-        android:layout_height="59dp"
-        android:text="Registrar"
+        android:id="@+id/SignButton"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
         android:background="@drawable/btnpress"
+        android:text="Registrar"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738"
+        app:layout_constraintVertical_bias="0.706"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -52,7 +52,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/contraseña_login"
+        android:id="@+id/contrasena_login"
         android:layout_width="341dp"
         android:layout_height="49dp"
         android:background="@drawable/btnpress_bourder"
@@ -72,14 +72,16 @@
         android:id="@+id/facebook_btn"
         android:layout_width="72dp"
         android:layout_height="66dp"
+
         android:layout_marginBottom="20dp"
         android:background="@drawable/btnpress_bourder"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/google_btn"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="0.777"
         app:srcCompat="@drawable/facebook"
         tools:ignore="MissingConstraints" />
 
@@ -92,9 +94,10 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toEndOf="@+id/google_btn"
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="0.777"
         app:srcCompat="@drawable/twitter"
         tools:ignore="MissingConstraints" />
 
@@ -107,40 +110,58 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="0.777"
         app:srcCompat="@drawable/google"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="login in "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña_login"
-        app:layout_constraintVertical_bias="0.515"
-        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/usuario_login"
+        android:id="@+id/email_login"
         android:layout_width="335dp"
         android:layout_height="44dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/btnpress_bourder"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="   Usuario"
         android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:hint="   Email"
+        android:inputType="textPersonName"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/contraseña_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.042" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login in"
+        android:textColor="@color/teal_700"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/google_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasena_login"
+        app:layout_constraintVertical_bias="0.795"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INVENTARIO APP"
+        android:textColor="@color/teal_700"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/email_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
