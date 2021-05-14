@@ -16,17 +16,22 @@ public class registroProveedores extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
-        
-    }
 
+//*******************************
+        returnButton= findViewById(R.id.retorno);
 
-    public void onCLick(View v){
-        switch (v.getId()){
-            case R.id.retorno:
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
                 startActivity(intent);
-        }
+            }
+        });
+//*******************************
+
     }
+
+
 
  /*   @Override
     public void onBackPressed(){

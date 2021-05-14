@@ -9,5 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#E80000</color>
     <color name="exitColor">#B66B3A</color>
-    <color name="btnColor">#009688</color>
+    <color name="btnColor">@color/teal_700</color>
 </resources>

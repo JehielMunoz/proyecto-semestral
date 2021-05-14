@@ -4,22 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class View_items extends AppCompatActivity {
+public class BuscarUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_items);
+        setContentView(R.layout.activity_buscar_usuario);
     }
-    private View_items(){
-    }
-
-
-
-
-
-    @Override
-    public void onBackPressed(){
-    }
-
 }

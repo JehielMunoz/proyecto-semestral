@@ -26,8 +26,25 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         atrasPrueba =findViewById(R.id.atrasPrueba);
 
 
-        buscarProvedor.setOnClickListener(this);
-        buscarItemsBtn.setOnClickListener(this);
+        buscarProvedor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentBP= new Intent (menuInicio.this, busquedaProveedor.class);
+                startActivity(intentBP);
+            }
+        });
+
+
+
+        buscarItemsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
 
 //responde bien
         //esta es una clase anonima
@@ -39,8 +56,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
             }//OK
         });
 
-
-
+//responde bien
         registroProvedorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +64,8 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 startActivity(intent);
             }
         });
+
+//responde bien
         registroUsuarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +73,8 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 startActivity(intent);
             }
         });
+
+//**************************************************************************************************
 
 
     }
@@ -73,6 +93,11 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 startActivity(intentBP);
         }
     }*/
+
+
+    }
+    @Override
+    public void onBackPressed(){
     }
 
 }

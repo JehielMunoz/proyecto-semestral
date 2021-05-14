@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".Registro_Proveedores"></activity>
+        <activity android:name=".BuscarUsuario"></activity>
+        <activity android:name=".Registro_Proveedores" />
         <!--
         >
         <activity android:name=".Especie"></activity>
