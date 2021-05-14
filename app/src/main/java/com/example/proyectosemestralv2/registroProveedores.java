@@ -16,7 +16,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
-        returnButton = (Button)findViewById(R.id.retorno);
+        returnButton = (Button)findViewById(R.id.retornoBtn);
 
         returnButton.setOnClickListener((View.OnClickListener) this);
     }
@@ -24,7 +24,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.retorno:
+            case R.id.retornoBtn:
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
                 startActivity(intent);
         }
