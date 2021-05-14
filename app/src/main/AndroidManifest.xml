@@ -11,12 +11,14 @@
         android:theme="@style/Theme.Design.NoActionBar">
         <!-->
         <activity android:name=".Especie"></activity>
-        <!-->
-        <activity android:name=".daoEspecies" />
+
+        <activity android:name=".daoEspecie" />
+        -->
         <activity android:name=".addItem" />
         <activity android:name=".registroProveedores" />
         <activity android:name=".registroUsuarios" />
         <activity android:name=".menuInicio" />
+        <activity android:name=".busquedaProveedor"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

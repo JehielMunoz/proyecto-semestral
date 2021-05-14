@@ -3,20 +3,20 @@ package com.example.proyectosemestralv2;
 public class Proveedor {
 
     int id, telefono;
-    String razonSocial, rut, email;
+    String razon_social, rut_proveedor, email;
     boolean estado;
 
-    public Proveedor(int id, int telefono, String razonSocial, String rut, String email, boolean estado) {
+    public Proveedor(int id, int telefono, String razon_social, String rut_proveedor, String email, boolean estado) {
         this.id = id;
         this.telefono = telefono;
-        this.razonSocial = razonSocial;
-        this.rut = rut;
+        this.razon_social = razon_social;
+        this.rut_proveedor = rut_proveedor;
         this.email = email;
         this.estado = estado;
     }
 
     public boolean isNull(){
-        if (id == 0 || telefono == 0 || razonSocial.equals("") || rut.equals("") || email.equals("")){
+        if (id == 0 || telefono == 0 || rut_proveedor.equals("") || razon_social.equals("") || email.equals("")){
             return false;
         }
         return true;
@@ -39,19 +39,19 @@ public class Proveedor {
     }
 
     public String getRazonSocial() {
-        return razonSocial;
+        return razon_social;
     }
 
     public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
+        this.razon_social = razonSocial;
     }
 
     public String getRut() {
-        return rut;
+        return rut_proveedor;
     }
 
     public void setRut(String rut) {
-        this.rut = rut;
+        this.rut_proveedor = rut;
     }
 
     public String getEmail() {
