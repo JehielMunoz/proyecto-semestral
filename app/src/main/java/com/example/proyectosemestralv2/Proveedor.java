@@ -16,7 +16,7 @@ public class Proveedor {
     }
 
     public boolean isNull(){
-        if (id == 0 | telefono == 0 | razonSocial.equals("") | rut.equals("") | email.equals("")){
+        if (id == 0 || telefono == 0 || razonSocial.equals("") || rut.equals("") || email.equals("")){
             return false;
         }
         return true;

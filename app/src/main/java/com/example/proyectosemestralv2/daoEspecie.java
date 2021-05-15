@@ -4,40 +4,51 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-class daoUser {
+class daoEspecie {
     Context context;
     Especie especie; //Declaramos objeto de tipo especie
     ArrayList<Especie> list; //contiene n especies
-    SQLiteDatabase conn; //accedemos a metodos para trabajar sql
-    String bd = "ExampleApp"; //Nombre database
-    String table = "create table if not exists users(id integer primary key autoincrement, name text, email text, pass text)"; //query creacion de tabla
+    String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
+    private DatabaseReference mDatabase;
 
-    public daoUser(){
+    public daoEspecie() {}
 
+    public daoEspecie(Context context) {
+        this.context = context;
+        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
     }
- /*
-    public daoUser(Context context){
-        this.context = context; //asignacion de conexion con el s.o.
-        conn = context.openOrCreateDatabase(bd, context.MODE_PRIVATE,null); //indica el contexto en el que se ejecuta la query
-        conn.execSQL(table); //ejecuta la query
-    }
-    public boolean createUser(User user){ //recibe objeto user por parametro
-        if(search(user.getEmail()) == 0) {
-            ContentValues cv = new ContentValues(); //tipo de lista que contendrá varios valores de objetos
-            cv.put("name", user.getName());      //asignamos tag "name" con el valor que retorne el objeto
-            cv.put("email", user.getEmail());    //asignamos tag "email" con el valor que retorne el objeto
-            cv.put("pass", user.getPassword());  //asignamos tag "pass" con el valor que retorne el objeto
-            //realiza el insert, si se completa retorna true, si no retorna false.
-            return (conn.insert("users", null, cv) > 0);
-        }else{
-            return false;
+    public boolean creaEspecie(Especie especie, String codString) {
+        //if (search(especie.getCodigo_correlativo()) == 0) {
+        mDatabase.child("data").child(codString).setValue(especie);
+        return true;
+        //}
+        //return false;
+    }/*
+    public int search(int Codigo_correlativo ){
+        int count = 0;
+        DataSnapshot dataSnapshot.child("data/codigo_correlativo/").getValue(dataSnapshot.class);
+        for(DataSnapshot especieSnap : dataSnapshot.getChildren()){
+
+        for(Especie especie : list){ // : significa que recorre todos los usuarios en la lista
+            if(especie.getCodigo_correlativo() == Codigo_correlativo){
+                count++;
+            }
         }
-
+        return count;
     }
+}
 
-    public ArrayList<User> getUsers(){
+     public ArrayList<User> getUsers(){
         ArrayList<User> list = new ArrayList<User>();
         list.clear(); //limpiar en caso de caché
         Cursor cursor = conn.rawQuery("SELECT * FROM users",null);

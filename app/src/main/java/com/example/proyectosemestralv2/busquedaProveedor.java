@@ -38,4 +38,10 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+    @Override
+    public void onBackPressed(){
+        //startActivity(new Intent (busquedaProveedor.this, menu_inicio.class));
+        finish();
+    }
 }

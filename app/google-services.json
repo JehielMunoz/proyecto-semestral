@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "883347723310",
+    "firebase_url": "https://proyectoi-invedu-default-rtdb.firebaseio.com",
     "project_id": "proyectoi-invedu",
     "storage_bucket": "proyectoi-invedu.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "883347723310-207fqlrf0ndg5jhc9s9f6b4kaqqrm8t4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyectosemestralv2",
+            "certificate_hash": "b0e4732ecb9bac59da1545131abba5e47b0b9329"
+          }
+        },
         {
           "client_id": "883347723310-e6hrm1r0q91ibp3nqr00mmrecagmhi3l.apps.googleusercontent.com",
           "client_type": 3

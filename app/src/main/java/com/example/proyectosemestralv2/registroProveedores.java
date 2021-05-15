@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class registroProveedores extends AppCompatActivity  {
+public class registroProveedores extends AppCompatActivity implements View.OnClickListener {
 
     Button returnButton;
 
@@ -16,25 +16,22 @@ public class registroProveedores extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
+        returnButton = (Button)findViewById(R.id.retornoBtn);
 
-//*******************************
-        returnButton= findViewById(R.id.retorno);
+        returnButton.setOnClickListener((View.OnClickListener) this);
+    }
 
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.retornoBtn:
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
                 startActivity(intent);
-            }
-        });
-//*******************************
-
+        }
     }
 
-
-
- /*   @Override
+    @Override
     public void onBackPressed(){
+
     }
-*/
 }
