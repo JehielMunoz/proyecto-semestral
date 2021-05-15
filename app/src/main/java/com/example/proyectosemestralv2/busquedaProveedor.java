@@ -114,7 +114,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onBackPressed(){
-        //startActivity(new Intent (busquedaProveedor.this, menu_inicio.class));
+        startActivity(new Intent (busquedaProveedor.this, menuInicio.class));
         finish();
     }
 
