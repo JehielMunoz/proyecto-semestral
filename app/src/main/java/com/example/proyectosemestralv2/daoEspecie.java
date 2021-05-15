@@ -4,20 +4,25 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.*;
+import com.google.firebase.database.ValueEventListener;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 class daoEspecie {
     Context context;
     Especie especie; //Declaramos objeto de tipo especie
-    ArrayList<Especie> list; //contiene n especies
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
 
@@ -26,6 +31,23 @@ class daoEspecie {
     public daoEspecie(Context context) {
         this.context = context;
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
+    }
+
+    public void leeEspecie(DatabaseReference mDatabase, String codString){
+        ValueEventListener especieListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Especie especie = dataSnapshot.getValue(Especie.class);
+                String msg = especie.getEspecie().toString();
+                System.out.println();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        //Especie especie = mDatabase.child("data").child(codString);
     }
     public boolean creaEspecie(Especie especie, String codString) {
         //if (search(especie.getCodigo_correlativo()) == 0) {

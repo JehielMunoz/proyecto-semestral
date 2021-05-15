@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     EditText codItem, numFactura, desItem, rutProv;
@@ -19,6 +21,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
     daoEspecie dao;
     Spinner estado_spinner;
 
+    String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
