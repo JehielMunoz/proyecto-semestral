@@ -62,23 +62,26 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         lista = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference("proveedores");
         //mDatabase.addListenerForSingleValueEvent(valueEventListener);
+
+        String rutProv = rutProveedor.getText().toString();
+        Query query = mDatabase.child("proveedores").orderByChild("rut_proveedor").equalTo("3333333-3");
+        query.addValueEventListener(new ValueEventListener(){
+            public void onDataChange(DataSnapshot dataSnapshot){
+                if(dataSnapshot!=null){
+                    razonSocial.setText(dataSnapshot.child("razon_social").getValue(String.class));
+                    rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
+                    telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(String.class));
+                    emailProveedor.setText(dataSnapshot.child("email").getValue(String.class));
+                    //recreate();
+                }else{
+                    razonSocial.setText("Razon no encontrada");
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError){}});
     }
 
-/*    ValueEventListener valueEventListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            lista.clear();
-            if(dataSnapshot.exists()){
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    Proveedor proveedor = snapshot.getValue(Proveedor.class);
-                    lista.add(proveedor);
-                }
 
-            }
-        }
-        @Override public void onCancelled(@NonNull DatabaseError databaseError) {}};
-
- */
 
     @Override
     public void onClick(View v) {
@@ -93,13 +96,14 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                             rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
                             telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(String.class));
                             emailProveedor.setText(dataSnapshot.child("email").getValue(String.class));
+                            //recreate();
                         }else{
                             razonSocial.setText("Razon no encontrada");
                         }
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError){}});
-                recreate();
+
             case R.id.retornoButton:
                 Intent intentRB = new Intent(busquedaProveedor.this, menuInicio.class);
                 startActivity(intentRB);
