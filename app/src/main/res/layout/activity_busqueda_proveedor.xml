@@ -124,7 +124,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/rutBusca"
         app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@drawable/barra_separadora"
         tools:ignore="MissingConstraints" />
@@ -177,7 +177,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/rutBusca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="170dp"

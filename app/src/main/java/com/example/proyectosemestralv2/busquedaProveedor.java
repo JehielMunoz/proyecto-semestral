@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class busquedaProveedor extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    EditText razonSocial, rutProveedor, telefonoProveedor, emailProveedor;
+    EditText razonSocial, rutProveedor, telefonoProveedor, emailProveedor, rutBusca;
     Button retornoBtn, buscarBtn, guardarCambiosBtn;
     Spinner estado_spinner;
 
@@ -39,6 +39,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busqueda_proveedor);
 
+        rutBusca =         (EditText)findViewById(R.id.rutBusca);
         razonSocial =       (EditText)findViewById(R.id.razonSocial);
         rutProveedor =      (EditText)findViewById(R.id.rutProveedor);
         telefonoProveedor = (EditText)findViewById(R.id.telefonoProveedor);
@@ -63,7 +64,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference("proveedores");
         //mDatabase.addListenerForSingleValueEvent(valueEventListener);
 
-        String rutProv = rutProveedor.getText().toString();
+       /* String rutProv = rutProveedor.getText().toString();
         Query query = mDatabase.child("proveedores").orderByChild("rut_proveedor").equalTo("3333333-3");
         query.addValueEventListener(new ValueEventListener(){
             public void onDataChange(DataSnapshot dataSnapshot){
@@ -78,7 +79,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                 }
             }
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError){}});
+            public void onCancelled(@NonNull DatabaseError databaseError){}});*/
     }
 
 
@@ -87,8 +88,8 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buscarButton:
-                String rutProv = rutProveedor.getText().toString();
-                Query query = mDatabase.orderByChild("rut_proveedor").equalTo("rutProv");
+                String rutProv = rutBusca.getText().toString();
+                Query query = mDatabase.child(rutProv);
                 query.addValueEventListener(new ValueEventListener(){
                     public void onDataChange(DataSnapshot dataSnapshot){
                         if(dataSnapshot!=null){
@@ -103,10 +104,11 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError){}});
-
+                break;
             case R.id.retornoButton:
                 Intent intentRB = new Intent(busquedaProveedor.this, menuInicio.class);
                 startActivity(intentRB);
+                break;
             case R.id.guardarCambiosButton:
                 break;
         }

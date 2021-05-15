@@ -55,11 +55,10 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 finish(); break;
             case R.id.BuscarProvedorBtn:
                 startActivity(new Intent(menuInicio.this, busquedaProveedor.class));
-                finish(); break;
+                break;
         }
     }
 
     public void onBackPressed(){
-        finish();
     }
 }
