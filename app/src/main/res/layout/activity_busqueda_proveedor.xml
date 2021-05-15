@@ -4,35 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".busquedaProveedor"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".busquedaProveedor">
 
     <TextView
-        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="25dp"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
 
     <Spinner
         android:id="@+id/estado_spinner"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="196dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:background="@drawable/btnpress"
         android:textColor="#009688"
+        app:layout_constraintBottom_toTopOf="@+id/guardarCambiosButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toEndOf="@+id/precioItem"
         app:layout_constraintTop_toBottomOf="@+id/rutProveedor"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -41,11 +44,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:width="200dp"
-        android:background="@color/btnColor"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/telefonoProveedor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintVertical_bias="0.212"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -56,22 +62,25 @@
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/retornoButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintVertical_bias="0.277"
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="100dp"
         android:text="Rut"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador"
         tools:ignore="MissingConstraints" />
@@ -83,11 +92,13 @@
         android:width="9dp"
         android:background="#3B7A20"
         android:text="BUSCAR"
+        app:layout_constraintBottom_toTopOf="@+id/separador"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="121dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloBienvenida"
+        app:layout_constraintVertical_bias="0.472"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/emailProveedor"
@@ -95,23 +106,28 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
         android:width="200dp"
-        android:background="@color/btnColor"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/estado_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintVertical_bias="0.594"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/separador"
         android:layout_width="300dp"
         android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@drawable/barra_separadora"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="192dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,27 +136,31 @@
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="121dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tituloBienvenida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
         android:text="BUSCADOR PROVEEDORES"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -148,6 +168,7 @@
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,58 +176,67 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="170dp"
         android:background="@color/exitColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="121dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloBienvenida"
+        app:layout_constraintVertical_bias="0.066"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/rutProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
         android:width="200dp"
-        android:background="@color/btnColor"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/guardarCambiosButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/telefonoProveedor"
+        app:layout_constraintVertical_bias="0.217"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/telefonoProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
         android:width="200dp"
-        android:background="@color/btnColor"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/guardarCambiosButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/titEtadoProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="204dp"
         android:text="Estado"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintVertical_bias="0.274"
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
@@ -214,10 +244,28 @@
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/retornoButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintVertical_bias="0.149"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/guardarCambiosButton"
+        android:layout_width="190dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="92dp"
+        android:width="9dp"
+        android:background="#3B7A20"
+        android:text="Guardar cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titEtadoProveedor"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -229,24 +277,12 @@
         android:background="@color/red"
         android:text="Volver"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titEtadoProveedor"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/guardarCambiosButton"
-        android:layout_width="190dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="92dp"
-        android:width="9dp"
-        android:background="#3B7A20"
-        android:text="Guardar cambios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titEtadoProveedor"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
 

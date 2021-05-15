@@ -13,7 +13,7 @@ public class Adaptador_Spinner extends BaseAdapter {
         this.context = context;
         this.array = array;
     }
-//en proceso   by felipe
+//en proceso
 
     @Override
     public int getCount() {
