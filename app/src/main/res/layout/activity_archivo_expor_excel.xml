@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".Archivo_ExporExcel">
+    android:background="@color/white"
+    tools:context=".archivoExporExcel">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/guardarCambiosbtn"
         android:layout_width="113dp"
         android:layout_height="53dp"
         android:layout_marginEnd="35dp"
@@ -35,7 +35,8 @@
         android:backgroundTint="@color/teal_700"
         android:text="Atras"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+
+        app:layout_constraintEnd_toStartOf="@+id/guardarCambiosbtn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,15 +52,73 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:text="Exportar Items A Excel"
+        android:text="Exportar Items"
         android:textColor="@color/teal_700"
-        android:textSize="20dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/excelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exportar a Excel"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.182"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exportar a PDF"
+        android:textSize="20dp"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/excelText"
+        app:layout_constraintVertical_bias="0.269"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnExportExcel"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        android:text="Exportar"
+        app:layout_constraintBottom_toTopOf="@+id/btnExportPDF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/excelText"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnExportPDF"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        android:text="Exportar "
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/guardarCambiosbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.493"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

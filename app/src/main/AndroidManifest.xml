@@ -17,6 +17,7 @@
         <activity android:name=".addItem" />
         <activity android:name=".registroProveedores" />
         <activity android:name=".registroUsuarios" />
+        <activity android:name=".archivoExporExcel" />
         <activity android:name=".menuInicio" />
         <activity android:name=".busquedaProveedor"/>
         <activity android:name=".MainActivity">

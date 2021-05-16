@@ -16,8 +16,6 @@ public class registroUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuarios);
 
-
-
 //*******************************
         returnButton= findViewById(R.id.retorno);
 
@@ -31,8 +29,6 @@ public class registroUsuarios extends AppCompatActivity {
 //*******************************
 
     }
-
-
 
 
 /*
