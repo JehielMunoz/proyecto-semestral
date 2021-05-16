@@ -31,7 +31,7 @@ public class BuscarUsuario extends AppCompatActivity {
             }
         });
 
-            btnCancelarBusqueda.setOnClickListener(new View.OnClickListener() {
+        btnCancelarBusqueda.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(BuscarUsuario.this,menuInicio.class);
@@ -39,5 +39,7 @@ public class BuscarUsuario extends AppCompatActivity {
                 }
             });
 
+    }
+     public void onBackPressed(){
     }
 }

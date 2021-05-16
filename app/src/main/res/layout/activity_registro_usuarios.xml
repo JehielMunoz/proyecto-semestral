@@ -1,157 +1,211 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/teal_700">
+    android:background="@color/white"
+    tools:context=".BuscarUsuario">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/teal_700"
-        android:orientation="vertical"
-        android:stretchColumns="1"
-        android:layout_marginTop="50dp">
+    <Button
+        android:id="@+id/btnGuardarCambios"
+        android:layout_width="164dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="#3B7A20"
+        android:text="guardar cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintVertical_bias="0.477"
+        tools:ignore="MissingConstraints" />
 
-        <TableRow android:padding="5dip">
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_span="2"
-                android:gravity="center_horizontal"
-                android:text="Registro Usuarios"
-                android:textColor="#0ff"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_marginLeft="10dp"
-                android:text="Nombre"
-                android:textColor="#fff"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/userName"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:padding="5dp"
-                android:textColor="#000" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Correo"
-                android:textColor="#fff"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/correo"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:hint=""
-                android:padding="5dp"
-                android:textColor="#000" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Telefono"
-                android:textColor="#fff"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/nroTelefonico"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:background="#fff"
-                android:hint=""
-                android:padding="5dp"
-                android:textColor="#000" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Contraseña"
-                android:textColor="#fff"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:hint=""
-                android:padding="5dp"
-                android:textColor="#000" />
-        </TableRow>
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="164dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/red"
+        android:text="cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTelefono"
+        app:layout_constraintVertical_bias="0.481"
+        tools:ignore="MissingConstraints" />
 
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="15px">
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREAR USUARIO"
+        android:textColor="@color/teal_700"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/separador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.505"
+        tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/registroUsuario"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="35dp"
-                android:background="@color/black"
-                android:text="guardar"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:backgroundTint="#1DCF50" />
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:inputType="text"
+        android:text="Nombre"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/textTelefono"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575"
+        tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/retornoUsuarios"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/black"
-                android:text="Volver"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:backgroundTint="#B66B3A" />
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="Correo"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/textTelefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.496"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Telefono"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardarCambios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintVertical_bias="0.293"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textTelefono2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Password"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardarCambios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintVertical_bias="0.626"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="267dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="267dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.116"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="267dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:inputType="number"
+        android:text="  "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toEndOf="@+id/textTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintVertical_bias="0.165"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="267dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toEndOf="@+id/textTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintVertical_bias="0.382"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/separador"
+        android:layout_width="300dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155"
+        app:srcCompat="@drawable/barra_separadora"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/btnGuardarCambios"
         android:layout_width="164dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="#3B7A20"
         android:text="guardar cambios"
@@ -25,7 +25,7 @@
     <Button
         android:id="@+id/btnCancelarBusqueda"
         android:layout_width="164dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="@color/red"
         android:text="cancelar"
@@ -132,22 +132,23 @@
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="190dp"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="@color/exitColor"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="  "
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20"
         app:layout_constraintVertical_bias="0.341"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="122dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="267dp"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="50dp"
@@ -167,7 +168,7 @@
     <EditText
         android:id="@+id/editTextTextPersonName5"
         android:layout_width="267dp"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="50dp"
@@ -187,14 +188,14 @@
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="267dp"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="@color/teal_700"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="  "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

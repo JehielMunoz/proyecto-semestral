@@ -20,6 +20,7 @@
         <activity android:name=".archivoExporExcel" />
         <activity android:name=".menuInicio" />
         <activity android:name=".busquedaProveedor"/>
+        <activity android:name=".BuscarUsuario"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

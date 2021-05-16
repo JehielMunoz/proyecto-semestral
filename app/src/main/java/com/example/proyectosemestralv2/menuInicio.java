@@ -18,7 +18,8 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
             generarActasBtn,
             solicitudAdminBtn,
             cerrarSesionBtn,
-            registroUsuariosBtn;
+            registroUsuariosBtn,
+            buscarUserBtn;
 
 
     @Override
@@ -31,14 +32,26 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         registroUsuariosBtn =   (Button)findViewById(R.id.RegistroUsuariosBtn);
         buscarProvedorBtn =     (Button)findViewById(R.id.BuscarProvedorBtn);
         buscarItemsBtn =        (Button)findViewById(R.id.BuscarItemsBtn);
-        cerrarSesionBtn= (Button)findViewById(R.id.CerrarSesionBtn);
-        exportarDatosBtn= (Button)findViewById(R.id.ExportarDatosBtn);
+        cerrarSesionBtn=        (Button)findViewById(R.id.CerrarSesionBtn);
+        exportarDatosBtn=       (Button)findViewById(R.id.ExportarDatosBtn);
+        buscarUserBtn=          (Button)findViewById(R.id.BuscarUsuarioBtn);
+
+
+
 
         ingresoItemsBtn.setOnClickListener(this);
         registroProvedorBtn.setOnClickListener(this);
         registroUsuariosBtn.setOnClickListener(this);
         buscarProvedorBtn.setOnClickListener(this);
         buscarItemsBtn.setOnClickListener(this);
+
+        buscarUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this,BuscarUsuario.class));
+                startActivity(intent);
+            }
+        });
 
         cerrarSesionBtn.setOnClickListener(new View.OnClickListener() {
             @Override

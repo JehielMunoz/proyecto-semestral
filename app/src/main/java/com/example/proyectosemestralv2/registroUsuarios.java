@@ -17,7 +17,7 @@ public class registroUsuarios extends AppCompatActivity {
         setContentView(R.layout.activity_registro_usuarios);
 
 //*******************************
-        returnButton= findViewById(R.id.retorno);
+        returnButton= findViewById(R.id.btnCancelar);
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
