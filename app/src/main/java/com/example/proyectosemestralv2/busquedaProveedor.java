@@ -27,9 +27,6 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
     Button retornoBtn, buscarBtn, guardarCambiosBtn;
     Spinner estado_spinner;
 
-    private RecyclerView recyclerView;
-    private daoProveedores dao;
-
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
     ArrayList<Proveedor> lista;
@@ -60,26 +57,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         retornoBtn.setOnClickListener(this);
         guardarCambiosBtn.setOnClickListener(this);
 
-        lista = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference("proveedores");
-        //mDatabase.addListenerForSingleValueEvent(valueEventListener);
-
-       /* String rutProv = rutProveedor.getText().toString();
-        Query query = mDatabase.child("proveedores").orderByChild("rut_proveedor").equalTo("3333333-3");
-        query.addValueEventListener(new ValueEventListener(){
-            public void onDataChange(DataSnapshot dataSnapshot){
-                if(dataSnapshot!=null){
-                    razonSocial.setText(dataSnapshot.child("razon_social").getValue(String.class));
-                    rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
-                    telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(String.class));
-                    emailProveedor.setText(dataSnapshot.child("email").getValue(String.class));
-                    //recreate();
-                }else{
-                    razonSocial.setText("Razon no encontrada");
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError){}});*/
     }
 
 
@@ -97,7 +75,6 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                             rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
                             telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(String.class));
                             emailProveedor.setText(dataSnapshot.child("email").getValue(String.class));
-                            //recreate();
                         }else{
                             razonSocial.setText("Razon no encontrada");
                         }
@@ -119,14 +96,8 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         startActivity(new Intent (busquedaProveedor.this, menuInicio.class));
         finish();
     }
-
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+    public void onNothingSelected(AdapterView<?> parent) {}
 }

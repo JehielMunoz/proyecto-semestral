@@ -85,7 +85,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v){
         switch (v.getId()){
             //case R.id.BuscarItemsBtn:
-                //Intent inentBI= new Intent (menu_inicio.this, buscar)
+                //startActivity(new Intent(menuInicio.this, BuscarItemsBtn.class));
             case R.id.IngresoItemsBtn:
                 startActivity(new Intent(menuInicio.this, addItem.class));
                 finish(); break;

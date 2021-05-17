@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/observacionIngreso"
+        app:layout_constraintTop_toBottomOf="@+id/obsEspecie"
         app:layout_constraintVertical_bias="0.517"
         tools:ignore="MissingConstraints" />
 
@@ -43,20 +43,21 @@
         android:id="@+id/btnGuardar"
         android:layout_width="129dp"
         android:layout_height="37dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/btnpress"
         android:text="actualizar item"
         app:backgroundTint="#3B7A20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
 
+        app:layout_constraintHorizontal_bias="0.841"
         app:layout_constraintStart_toEndOf="@+id/btnvolver"
-        app:layout_constraintTop_toBottomOf="@+id/observacionIngreso"
-        app:layout_constraintVertical_bias="0.521"
+        app:layout_constraintTop_toBottomOf="@+id/obsEspecie"
+        app:layout_constraintVertical_bias="0.516"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/codigoItem2"
+        android:id="@+id/codEspecie"
         android:layout_width="297dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -66,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        app:layout_constraintTop_toBottomOf="@+id/descEspecie"
         app:layout_constraintVertical_bias="0.474"
         tools:ignore="MissingConstraints" />
 
@@ -84,12 +85,12 @@
         app:layout_constraintEnd_toStartOf="@+id/codigoItem2"
         app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        app:layout_constraintTop_toBottomOf="@+id/descEspecie"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/descripItem"
+        android:id="@+id/descEspecie"
         android:layout_width="301dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -111,7 +112,7 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/codigoIngresoItem2"
-        app:layout_constraintEnd_toStartOf="@+id/descripItem"
+        app:layout_constraintEnd_toStartOf="@+id/descEspecie"
         app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
@@ -129,7 +130,7 @@
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -144,7 +145,7 @@
         android:text="Nro Factura"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
         app:layout_constraintEnd_toStartOf="@+id/rutProveedor"
         app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +159,7 @@
         android:layout_height="wrap_content"
         android:text="Rut Proveedor"
         android:textColor="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
         app:layout_constraintEnd_toStartOf="@+id/rutProveedor"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toEndOf="@+id/numFactura"
@@ -173,7 +174,7 @@
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +183,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/observacionIngreso"
+        android:id="@+id/obsEspecie"
         android:layout_width="383dp"
         android:layout_height="28dp"
         android:layout_marginStart="12dp"
@@ -196,9 +197,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ubicacionItem"
+        app:layout_constraintTop_toBottomOf="@+id/ubiEspecie"
         app:layout_constraintVertical_bias="0.262"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/codBusca"
+        android:layout_width="53dp"
+        android:layout_height="24dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buscaEspecie"
+        android:layout_width="55dp"
+        android:layout_height="17dp"
+        android:background="@drawable/btnpress"
+        android:text="busca"
+        app:backgroundTint="@color/red"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView11"
@@ -207,16 +235,16 @@
         android:text="Observaciones"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/observacionIngreso"
+        app:layout_constraintBottom_toTopOf="@+id/obsEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ubicacionItem"
+        app:layout_constraintTop_toBottomOf="@+id/ubiEspecie"
         app:layout_constraintVertical_bias="0.689"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/ubicacionItem"
+        android:id="@+id/ubiEspecie"
         android:layout_width="385dp"
         android:layout_height="28dp"
         android:layout_marginStart="12dp"
@@ -242,7 +270,7 @@
         android:text="Ubicacion Especie"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
@@ -274,7 +302,7 @@
         android:text="Precio Total"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.642"
@@ -301,7 +329,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/preciototal"
+        android:id="@+id/precioTot"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -358,7 +386,7 @@
         app:layout_constraintEnd_toStartOf="@+id/estado_spinner"
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        app:layout_constraintTop_toBottomOf="@+id/descEspecie"
         app:layout_constraintVertical_bias="0.029"
         tools:ignore="MissingConstraints" />
 
@@ -387,7 +415,7 @@
         android:text="Centro de Costos"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
@@ -405,10 +433,10 @@
         android:ems="10"
 
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/preciototal"
+        app:layout_constraintTop_toBottomOf="@+id/precioTot"
         app:layout_constraintVertical_bias="0.65"
         tools:ignore="MissingConstraints" />
 
@@ -416,7 +444,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

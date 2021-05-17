@@ -214,7 +214,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Codigo Especie"
+        android:text="Código correlativo correspondiente"
         android:textColor="#009688"
         android:textSize="15dp"
 
@@ -228,32 +228,17 @@
 
     <EditText
         android:id="@+id/codigoEspecie"
-        android:layout_width="164dp"
-        android:layout_height="28dp"
+        android:layout_width="149dp"
+        android:layout_height="24dp"
         android:background="@drawable/btnpress"
         android:backgroundTint="@color/exitColor"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/cargarCodigo"
-        android:layout_width="102dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="#3B7A20"
-        android:text="CARGAR CODIGO"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toEndOf="@+id/codigoEspecie"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -287,7 +272,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ubicacionItem"
-        app:layout_constraintVertical_bias="0.262"
+        app:layout_constraintVertical_bias="0.256"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -326,7 +311,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioItem3"
+        android:id="@+id/precioItem"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -401,7 +386,7 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
 
-        app:layout_constraintEnd_toStartOf="@+id/precioItem3"
+        app:layout_constraintEnd_toStartOf="@+id/precioItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recurso"
         app:layout_constraintVertical_bias="0.342"
