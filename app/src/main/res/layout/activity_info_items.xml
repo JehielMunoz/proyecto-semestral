@@ -64,7 +64,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
+
+        app:layout_constraintStart_toEndOf="@+id/btnvolver"
         app:layout_constraintTop_toBottomOf="@+id/observacionIngreso"
         app:layout_constraintVertical_bias="0.521"
         tools:ignore="MissingConstraints" />
@@ -88,13 +89,14 @@
         android:id="@+id/codigoIngresoItem2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="Codigo"
         android:textColor="#009688"
-        android:textSize="15dp"
 
+        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/recurso"
         app:layout_constraintEnd_toStartOf="@+id/codigoItem2"
-        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descripItem"
         app:layout_constraintVertical_bias="0.304"
@@ -256,44 +258,49 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.208"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp" />
+        app:layout_constraintVertical_bias="0.199"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Precio Total"
         android:textColor="#009688"
-
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/precioItemIVA"
-        app:layout_constraintHorizontal_bias="0.987"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.299"
+        app:layout_constraintVertical_bias="0.288"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/cantidadItem2"
+        android:id="@+id/precioUni"
         android:layout_width="92dp"
         android:layout_height="24dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/precioItem3"
+
+        app:layout_constraintBottom_toTopOf="@+id/cantidad"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.545"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/recurso"
+        android:id="@+id/preciototal"
         android:layout_width="88dp"
         android:layout_height="23dp"
         android:background="@drawable/btnpress"
@@ -301,9 +308,10 @@
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toEndOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
+        app:layout_constraintVertical_bias="0.48"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -314,9 +322,11 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
+        app:layout_constraintVertical_bias="0.419"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -329,10 +339,10 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
+        app:layout_constraintVertical_bias="0.418"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -387,19 +397,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginBottom="48dp"
         android:text="Centro de Costos"
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cantidadItem2"
         app:layout_constraintVertical_bias="0.406"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioItem3"
+        android:id="@+id/cantidad"
         android:layout_width="88dp"
         android:layout_height="23dp"
         android:background="@drawable/btnpress"
@@ -414,18 +425,20 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioItemIVA"
+        android:id="@+id/centroCosto"
         android:layout_width="88dp"
         android:layout_height="23dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/recurso"
-        app:layout_constraintVertical_bias="0.388"
+
+        app:layout_constraintTop_toBottomOf="@+id/preciototal"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <ImageView
