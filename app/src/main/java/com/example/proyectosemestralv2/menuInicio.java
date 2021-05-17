@@ -19,7 +19,8 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
             solicitudAdminBtn,
             cerrarSesionBtn,
             registroUsuariosBtn,
-            buscarUserBtn;
+            buscarUserBtn,
+            infoItems;
 
 
     @Override
@@ -35,8 +36,8 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         cerrarSesionBtn=        (Button)findViewById(R.id.CerrarSesionBtn);
         exportarDatosBtn=       (Button)findViewById(R.id.ExportarDatosBtn);
         buscarUserBtn=          (Button)findViewById(R.id.BuscarUsuarioBtn);
-
-
+        //infoItems = (Button)findViewById(R.id.);
+//este boton tienen que mostrar el items cargado
 
 
         ingresoItemsBtn.setOnClickListener(this);
