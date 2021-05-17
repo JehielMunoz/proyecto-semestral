@@ -9,21 +9,6 @@
     tools:context=".addItem">
 
     <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ubicacion Especie"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.89"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,7 +90,7 @@
     <EditText
         android:id="@+id/descripItem"
         android:layout_width="301dp"
-        android:layout_height="23dp"
+        android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="textPersonName"
@@ -135,7 +120,7 @@
     <EditText
         android:id="@+id/numFactura"
         android:layout_width="95dp"
-        android:layout_height="23dp"
+        android:layout_height="28dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginEnd="208dp"
@@ -183,7 +168,7 @@
     <EditText
         android:id="@+id/rutProveedor"
         android:layout_width="113dp"
-        android:layout_height="24dp"
+        android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
@@ -198,7 +183,7 @@
     <EditText
         android:id="@+id/observacionIngreso"
         android:layout_width="383dp"
-        android:layout_height="25dp"
+        android:layout_height="28dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginEnd="12dp"
@@ -232,7 +217,7 @@
     <EditText
         android:id="@+id/ubicacionItem"
         android:layout_width="385dp"
-        android:layout_height="27dp"
+        android:layout_height="28dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginEnd="12dp"
@@ -246,7 +231,22 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
-        app:layout_constraintVertical_bias="0.435"
+        app:layout_constraintVertical_bias="0.378"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicacion Especie"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintVertical_bias="0.642"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -285,13 +285,13 @@
     <EditText
         android:id="@+id/precioUni"
         android:layout_width="92dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
 
-        app:layout_constraintBottom_toTopOf="@+id/cantidad"
+        app:layout_constraintBottom_toTopOf="@+id/textView28"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/textView25"
@@ -302,7 +302,7 @@
     <EditText
         android:id="@+id/preciototal"
         android:layout_width="88dp"
-        android:layout_height="23dp"
+        android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
@@ -332,7 +332,7 @@
     <EditText
         android:id="@+id/fechaRecepcion"
         android:layout_width="85dp"
-        android:layout_height="21dp"
+        android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="datetime"
@@ -364,7 +364,7 @@
     <Spinner
         android:id="@+id/estado_spinner"
         android:layout_width="86dp"
-        android:layout_height="26dp"
+        android:layout_height="28dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/btnpress"
@@ -378,67 +378,37 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="cantidad"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.43"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="28dp"
         android:text="Centro de Costos"
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cantidadItem2"
-        app:layout_constraintVertical_bias="0.406"
-        tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/cantidad"
-        android:layout_width="88dp"
-        android:layout_height="23dp"
-        android:background="@drawable/btnpress"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/fechaRecepcion"
-        app:layout_constraintVertical_bias="0.671"
+        app:layout_constraintTop_toBottomOf="@+id/precioUni"
+        app:layout_constraintVertical_bias="0.828"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/centroCosto"
         android:layout_width="88dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="48dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/btnpress"
         android:ems="10"
+
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-
         app:layout_constraintTop_toBottomOf="@+id/preciototal"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.65"
         tools:ignore="MissingConstraints" />
 
     <ImageView
