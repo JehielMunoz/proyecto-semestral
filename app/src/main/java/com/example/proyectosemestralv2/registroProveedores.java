@@ -38,15 +38,15 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         guardarProveedor = (Button) findViewById(R.id.guardarProv);
         razonSocialProv = (EditText) findViewById(R.id.razonSocial);
         rutProveedor = (EditText) findViewById(R.id.rut);
-        telefonoProvedor = (EditText) findViewById(R.id.telefonoProveedor);
-        emailProvedor = (EditText) findViewById(R.id.emailProveedor);
+        telefonoProvedor = (EditText) findViewById(R.id.nroTelefonico);
+        emailProvedor = (EditText) findViewById(R.id.password);
 
         dao = new daoProveedores(this);
 
         returnButton.setOnClickListener(this);
         guardarProveedor.setOnClickListener(this);
 
-        Query query = mDatabase.child("data").child("proveedores");
+        //Query query = mDatabase.child("proveedores");
 
     }
 
@@ -62,7 +62,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
                 String razonSocial = razonSocialProv.getText().toString();
                 String rut = rutProveedor.getText().toString();
-                Integer telefono = Integer.parseInt(telefonoProvedor.getText().toString());
+                int telefono = Integer.parseInt(telefonoProvedor.getText().toString());
                 String email = emailProvedor.getText().toString();
 
                 proveedor.setRazonSocial(razonSocial);

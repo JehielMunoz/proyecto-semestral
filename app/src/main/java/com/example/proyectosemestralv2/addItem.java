@@ -111,8 +111,6 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 especie.setCentro_de_costo(centro_de_costo);//especie.setCentro_de_costo("TEST");
                 especie.setUbicacion_actual(ubicacion);
                 especie.setObservaciones(observacion);
-                System.out.println(especie.getCantidad()+especie.getCodigo_correlativo()+especie.getCentro_de_costo()+
-                        especie.getEspecie()+especie.getEstado()+especie.getFecha_recepcion());
                 //if(!especie.isNull()){
                 //    Toast.makeText(this,"Complete todos los campos", Toast.LENGTH_LONG).show();
                 //}else
