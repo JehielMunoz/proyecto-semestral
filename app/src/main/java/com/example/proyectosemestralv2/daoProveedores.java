@@ -43,9 +43,20 @@ public class daoProveedores {
 
             }
         };
+        //Especie especie = mDatabase.child("data").child(codString);
     }
+
+
     public boolean creaProveedor(Proveedor proveedor, String rut) {
         mDatabase.child("proveedores").child(rut).setValue(proveedor);
         return true;
     }
 }
+/*
+        this.id = id;
+        this.telefono = telefono;
+        this.razonSocial = razonSocial;
+        this.rut = rut;
+        this.email = email;
+        this.estado = estado;
+ */

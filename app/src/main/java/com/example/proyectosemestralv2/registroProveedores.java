@@ -36,17 +36,24 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
         returnButton = (Button) findViewById(R.id.retorno);
         guardarProveedor = (Button) findViewById(R.id.guardarProv);
-        razonSocialProv = (EditText) findViewById(R.id.razonSocial);
-        rutProveedor = (EditText) findViewById(R.id.rut);
-        telefonoProvedor = (EditText) findViewById(R.id.nroTelefonico);
-        emailProvedor = (EditText) findViewById(R.id.password);
+        razonSocialProv = (EditText) findViewById(R.id.razonSocialIng);
+        rutProveedor = (EditText) findViewById(R.id.rutIng);
+        telefonoProvedor = (EditText) findViewById(R.id.nroTelefonicoIng);
+        emailProvedor = (EditText) findViewById(R.id.correoIng);
 
         dao = new daoProveedores(this);
 
         returnButton.setOnClickListener(this);
         guardarProveedor.setOnClickListener(this);
 
-        //Query query = mDatabase.child("proveedores");
+        Query query = mDatabase.child("proveedores");
+        query.addValueEventListener(new ValueEventListener(){
+            public void onDataChange(DataSnapshot dataSnapshot){
+                if(dataSnapshot!=null){
+                    String cont = String.valueOf(dataSnapshot.getChildrenCount()+2);
+                    rutProveedor.setText(cont);
+                }else{ System.out.println("Error en datasnapshot.");}
+            }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
 
     }
 
@@ -62,7 +69,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
                 String razonSocial = razonSocialProv.getText().toString();
                 String rut = rutProveedor.getText().toString();
-                int telefono = Integer.parseInt(telefonoProvedor.getText().toString());
+                Integer telefono = Integer.parseInt(telefonoProvedor.getText().toString());
                 String email = emailProvedor.getText().toString();
 
                 proveedor.setRazonSocial(razonSocial);
@@ -77,8 +84,9 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                     startActivity(intentCP);
                     finish();
                 } else {
-                    Toast.makeText(this,"Codigo ya existe", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"Proveedor ya esta registrado", Toast.LENGTH_LONG).show();
                 }
+                // break;
         }
     }
 

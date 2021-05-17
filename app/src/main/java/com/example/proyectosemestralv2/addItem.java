@@ -64,7 +64,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         cargarCodigo.setOnClickListener(this);
 
 
-        Query query = mDatabase.child("data").child("especies");
+        Query query = mDatabase.child("proveedores").child("especies");
         query.addValueEventListener(new ValueEventListener(){
             public void onDataChange(DataSnapshot dataSnapshot){
                 if(dataSnapshot!=null){

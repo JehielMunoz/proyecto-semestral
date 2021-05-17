@@ -7,8 +7,6 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +42,7 @@
                 android:textColor="#009688"/>
 
             <EditText
-                android:id="@+id/razonSocial"
+                android:id="@+id/razonSocialIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -67,7 +65,7 @@
                 android:textColor="#009688" />
 
             <EditText
-                android:id="@+id/rut"
+                android:id="@+id/rutIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -92,7 +90,7 @@
                 android:textColor="#009688" />
 
             <EditText
-                android:id="@+id/nroTelefonico"
+                android:id="@+id/nroTelefonicoIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -117,7 +115,7 @@
                 android:textColor="#009688"/>
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/correoIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
