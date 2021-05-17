@@ -31,6 +31,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

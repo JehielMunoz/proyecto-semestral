@@ -44,7 +44,7 @@
                 android:textColor="#009688"/>
 
             <EditText
-                android:id="@+id/userName"
+                android:id="@+id/razonSocial"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -67,7 +67,7 @@
                 android:textColor="#009688" />
 
             <EditText
-                android:id="@+id/correo"
+                android:id="@+id/rut"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -129,30 +129,6 @@
                 android:textColor="#000" />
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Estado"
-                android:textColor="@color/btnColor"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-
-            <Spinner
-                android:id="@+id/estado_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:alwaysDrawnWithCache="false"
-                android:animateLayoutChanges="false" />
-
-        </TableRow>
-
         <TableRow android:layout_marginBottom="15px"
             android:layout_marginTop="20dp">
 
@@ -170,7 +146,7 @@
                 android:layout_marginLeft="35dp"/>
 
             <Button
-                android:id="@+id/registroUsuario"
+                android:id="@+id/guardarProv"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_gravity="center_horizontal"

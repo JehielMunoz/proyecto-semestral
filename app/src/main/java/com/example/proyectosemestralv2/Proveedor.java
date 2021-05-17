@@ -3,10 +3,10 @@ package com.example.proyectosemestralv2;
 public class Proveedor {
 
     int id, telefono;
-    String razon_social, rut_proveedor, email;
+    String razon_social, rut_proveedor, email, Proveedor;
     boolean estado;
 
-    public Proveedor(int id, int telefono, String razon_social, String rut_proveedor, String email, boolean estado) {
+    public Proveedor() {
         this.id = id;
         this.telefono = telefono;
         this.razon_social = razon_social;
@@ -21,6 +21,11 @@ public class Proveedor {
         }
         return true;
     }
+
+
+    public String getProveedor() { return Proveedor; }
+
+    public void setProveedor(String proveedor) { Proveedor = proveedor; }
 
     public int getId() {
         return id;
@@ -62,11 +67,7 @@ public class Proveedor {
         this.email = email;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
+    public boolean isEstado() { return estado; }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
+    public void setEstado(boolean estado) { this.estado = estado; }
 }

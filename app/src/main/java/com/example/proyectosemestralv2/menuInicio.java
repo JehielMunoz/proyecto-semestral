@@ -10,18 +10,9 @@ import android.widget.EditText;
 
 public class menuInicio extends AppCompatActivity implements View.OnClickListener {
 
-    Button  ingresoItemsBtn,
-            buscarItemsBtn,
-            registroProvedorBtn,
-            buscarProvedorBtn,
-            exportarDatosBtn,
-            generarActasBtn,
-            solicitudAdminBtn,
-            cerrarSesionBtn,
-            registroUsuariosBtn,
-            buscarUserBtn,
-            infoItems;
-
+    Button  ingresoItemsBtn, buscarItemsBtn, registroProvedorBtn, buscarProvedorBtn,
+            exportarDatosBtn, generarActasBtn, solicitudAdminBtn, cerrarSesionBtn,
+            registroUsuariosBtn, buscarUserBtn, infoItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +28,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         exportarDatosBtn=       (Button)findViewById(R.id.ExportarDatosBtn);
         buscarUserBtn=          (Button)findViewById(R.id.BuscarUsuarioBtn);
         infoItems = (Button)findViewById(R.id.BuscarItemsBtn);
-//este boton tienen que mostrar el items cargado
+        //este boton tienen que mostrar el items cargado
 
 
         ingresoItemsBtn.setOnClickListener(this);
