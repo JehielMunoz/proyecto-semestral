@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <!-->
+        <activity android:name=".infoItems"></activity>
+        <!--
+        >
         <activity android:name=".Especie"></activity>
 
         <activity android:name=".daoEspecie" />
@@ -19,8 +21,8 @@
         <activity android:name=".registroUsuarios" />
         <activity android:name=".archivoExporExcel" />
         <activity android:name=".menuInicio" />
-        <activity android:name=".busquedaProveedor"/>
-        <activity android:name=".BuscarUsuario"/>
+        <activity android:name=".busquedaProveedor" />
+        <activity android:name=".BuscarUsuario" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

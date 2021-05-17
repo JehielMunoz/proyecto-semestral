@@ -9,11 +9,26 @@
     tools:context=".addItem">
 
     <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicacion Especie"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintVertical_bias="0.89"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="ITEMS"
+        android:text="INFORMACION DE ITEMS"
         android:textColor="#009688"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
@@ -29,7 +44,7 @@
         android:layout_width="107dp"
         android:layout_height="37dp"
         android:background="@drawable/btnpress"
-        android:text="Cancelar"
+        android:text="volver"
         app:backgroundTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,78 +56,46 @@
 
     <Button
         android:id="@+id/btnGuardar"
-        android:layout_width="107dp"
+        android:layout_width="129dp"
         android:layout_height="37dp"
         android:background="@drawable/btnpress"
-        android:text="aceptar"
+        android:text="actualizar item"
         app:backgroundTint="#3B7A20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toEndOf="@+id/btnCancelar"
         app:layout_constraintTop_toBottomOf="@+id/observacionIngreso"
-        app:layout_constraintVertical_bias="0.515"
+        app:layout_constraintVertical_bias="0.521"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/codigoItem2"
-        android:layout_width="174dp"
-        android:layout_height="24dp"
+        android:layout_width="297dp"
+        android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        app:layout_constraintVertical_bias="0.45"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="78dp" />
+        tools:layout_editor_absoluteX="89dp" />
 
     <TextView
         android:id="@+id/codigoIngresoItem2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
         android:text="Codigo"
         android:textColor="#009688"
         android:textSize="15dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Estado"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/estado_spinner"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintBottom_toTopOf="@+id/recurso"
+        app:layout_constraintEnd_toStartOf="@+id/codigoItem2"
+        app:layout_constraintHorizontal_bias="0.302"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descripItem"
-        app:layout_constraintVertical_bias="0.01"
-        tools:ignore="MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/estado_spinner"
-        android:layout_width="58dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/btnpress"
-        android:textColor="#009688"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toEndOf="@+id/codigoItem2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.304"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -124,23 +107,25 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.255"
+        app:layout_constraintVertical_bias="0.166"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripcion"
+        android:text="Especie"
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/codigoIngresoItem2"
         app:layout_constraintEnd_toStartOf="@+id/descripItem"
+        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.517"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -206,67 +191,6 @@
         app:layout_constraintVertical_bias="0.393"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/codigoIngresoItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Codigo Especie"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/codigoItem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/codigoEspecie"
-        android:layout_width="164dp"
-        android:layout_height="26dp"
-        android:background="@drawable/btnpress"
-        android:backgroundTint="@color/exitColor"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/cargarCodigo"
-        android:layout_width="102dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="#3B7A20"
-        android:text="CARGAR CODIGO"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toEndOf="@+id/codigoEspecie"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ubicacion Especie"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.562"
-        tools:ignore="MissingConstraints" />
-
     <EditText
         android:id="@+id/observacionIngreso"
         android:layout_width="383dp"
@@ -315,10 +239,150 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
-        app:layout_constraintVertical_bias="0.473"
+        app:layout_constraintVertical_bias="0.435"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Precio Unitario"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio Total"
+        android:textColor="#009688"
+
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintEnd_toStartOf="@+id/precioItemIVA"
+        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.178"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/cantidadItem2"
+        android:layout_width="92dp"
+        android:layout_height="24dp"
+        android:background="@drawable/btnpress"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/precioItem3"
+        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintStart_toEndOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.537"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/recurso"
+        android:layout_width="88dp"
+        android:layout_height="23dp"
+        android:background="@drawable/btnpress"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha Recepcion"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <EditText
+        android:id="@+id/fechaRecepcion"
+        android:layout_width="85dp"
+        android:layout_height="21dp"
+        android:background="@drawable/btnpress"
+        android:ems="10"
+        android:inputType="datetime"
+        android:text=""
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Estado"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/estado_spinner"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/estado_spinner"
+        android:layout_width="86dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/btnpress"
+        android:textColor="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/codigoItem2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cantidad"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintVertical_bias="0.43"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Centro de Costos"
+        android:textColor="#009688"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantidadItem2"
+        app:layout_constraintVertical_bias="0.406"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -329,173 +393,26 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.774"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recurso"
-        app:layout_constraintVertical_bias="0.351"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/fechaRecepcion"
+        app:layout_constraintVertical_bias="0.612"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/precioItemIVA"
         android:layout_width="88dp"
         android:layout_height="23dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fechaRecepcion"
-        app:layout_constraintVertical_bias="0.363"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/cantidad"
-        android:layout_width="130dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/btnpress"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/precioItemIVA"
-        app:layout_constraintVertical_bias="0.675"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ IVA TOTAL"
-        android:textColor="#009688"
-
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/precioItemIVA"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.585"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cantidad"
-        android:textColor="#009688"
-
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/cantidad"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.568"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ IVA TOTAL"
-        android:textColor="#009688"
-
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/precioItemIVA"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.585"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-
-        android:text="Precio"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/precioItem"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/recurso"
-        app:layout_constraintVertical_bias="0.342"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-
-        android:layout_marginBottom="172dp"
-        android:text="Recursos"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/precioItem"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha Recepcion"
-        android:textColor="#009688"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView23"
-        app:layout_constraintEnd_toStartOf="@+id/fechaRecepcion"
-        app:layout_constraintStart_toEndOf="@+id/recurso"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/recurso"
-        android:layout_width="88dp"
-        android:layout_height="23dp"
-        android:background="@drawable/btnpress"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/textView23"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.772"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codigoItem2"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/fechaRecepcion"
-        android:layout_width="85dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/btnpress"
-        android:ems="10"
-        android:inputType="datetime"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/textView23"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.992"
-        app:layout_constraintStart_toEndOf="@+id/recurso"
-        app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
-        app:layout_constraintVertical_bias="0.486"
+        app:layout_constraintVertical_bias="0.443"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -504,8 +421,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/descripItem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.185"
         app:srcCompat="@drawable/barra_separadora" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
