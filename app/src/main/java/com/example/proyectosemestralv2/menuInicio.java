@@ -36,7 +36,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         cerrarSesionBtn=        (Button)findViewById(R.id.CerrarSesionBtn);
         exportarDatosBtn=       (Button)findViewById(R.id.ExportarDatosBtn);
         buscarUserBtn=          (Button)findViewById(R.id.BuscarUsuarioBtn);
-        //infoItems = (Button)findViewById(R.id.);
+        infoItems = (Button)findViewById(R.id.BuscarItemsBtn);
 //este boton tienen que mostrar el items cargado
 
 
@@ -45,6 +45,17 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         registroUsuariosBtn.setOnClickListener(this);
         buscarProvedorBtn.setOnClickListener(this);
         buscarItemsBtn.setOnClickListener(this);
+
+
+        //se va a informacion de items
+        infoItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this,infoItems.class));
+                startActivity(intent);
+            }
+        });
+
 
         buscarUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override

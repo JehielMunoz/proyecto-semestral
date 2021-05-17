@@ -62,9 +62,12 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descripItem"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="78dp" />
+        app:layout_constraintVertical_bias="0.513"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/codigoIngresoItem2"
@@ -264,7 +267,7 @@
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.562"
+        app:layout_constraintVertical_bias="0.803"
         tools:ignore="MissingConstraints" />
 
     <EditText
