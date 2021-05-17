@@ -80,9 +80,9 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
                 if(dao.creaProveedor(proveedor, rut)){
                     Toast.makeText(this,"Registro exitoso",Toast.LENGTH_LONG).show();
-                    Intent intentCP = new Intent(registroProveedores.this, MainActivity.class);
-                    startActivity(intentCP);
-                    finish();
+                    // Intent intentCP = new Intent(registroProveedores.this, MainActivity.class);
+                    // startActivity(intentCP);
+                    // finish();
                 } else {
                     Toast.makeText(this,"Proveedor ya esta registrado", Toast.LENGTH_LONG).show();
                 }
