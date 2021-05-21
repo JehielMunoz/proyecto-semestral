@@ -36,17 +36,17 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busqueda_proveedor);
 
-        rutBusca =         (EditText)findViewById(R.id.rutBusca);
-        razonSocial =       (EditText)findViewById(R.id.razonSocial);
-        rutProveedor =      (EditText)findViewById(R.id.rutProveedor);
-        telefonoProveedor = (EditText)findViewById(R.id.telefonoProveedor);
-        emailProveedor =    (EditText)findViewById(R.id.emailProveedor);
+        rutBusca =         (EditText)findViewById(R.id.bpRutBusca);
+        razonSocial =       (EditText)findViewById(R.id.bpRazonSocial);
+        rutProveedor =      (EditText)findViewById(R.id.bpRutProveedor);
+        telefonoProveedor = (EditText)findViewById(R.id.bpTelefonoProveedor);
+        emailProveedor =    (EditText)findViewById(R.id.bpEmailProveedor);
 
-        buscarBtn =         (Button)findViewById(R.id.buscarButton);
-        retornoBtn =        (Button)findViewById(R.id.retornoButton);
-        guardarCambiosBtn = (Button)findViewById(R.id.guardarCambiosButton);
+        buscarBtn =         (Button)findViewById(R.id.bpBuscarButton);
+        retornoBtn =        (Button)findViewById(R.id.bpRetornoButton);
+        guardarCambiosBtn = (Button)findViewById(R.id.bpGuardarCambiosButton);
 
-        estado_spinner =    (Spinner)findViewById(R.id.estado_spinner);
+        estado_spinner =    (Spinner)findViewById(R.id.bpEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -65,15 +65,15 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buscarButton:
+            case R.id.bpBuscarButton:
                 String rutProv = rutBusca.getText().toString();
                 Query query = mDatabase.child(rutProv);
                 query.addValueEventListener(new ValueEventListener(){
                     public void onDataChange(DataSnapshot dataSnapshot){
                         if(dataSnapshot!=null){
-                            razonSocial.setText(dataSnapshot.child("razon_social").getValue(String.class));
-                            rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
-                            telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(String.class));
+                            razonSocial.setText(dataSnapshot.child("razonSocial").getValue(String.class));
+                            rutProveedor.setText(dataSnapshot.child("rut").getValue(String.class));
+                            telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(Long.class).toString());
                             emailProveedor.setText(dataSnapshot.child("email").getValue(String.class));
                         }else{
                             razonSocial.setText("Razon no encontrada");
@@ -82,11 +82,11 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError){}});
                 break;
-            case R.id.retornoButton:
+            case R.id.bpRetornoButton:
                 Intent intentRB = new Intent(busquedaProveedor.this, menuInicio.class);
                 startActivity(intentRB);
                 break;
-            case R.id.guardarCambiosButton:
+            case R.id.bpGuardarCambiosButton:
                 break;
         }
     }
@@ -96,6 +96,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         startActivity(new Intent (busquedaProveedor.this, menuInicio.class));
         finish();
     }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
     @Override

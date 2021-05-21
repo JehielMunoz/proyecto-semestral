@@ -47,13 +47,13 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         guardarProveedor.setOnClickListener(this);
 
         Query query = mDatabase.child("proveedores");
-        query.addValueEventListener(new ValueEventListener(){
-            public void onDataChange(DataSnapshot dataSnapshot){
-                if(dataSnapshot!=null){
-                    String cont = String.valueOf(dataSnapshot.getChildrenCount()+2);
-                    rutProveedor.setText(cont);
-                }else{ System.out.println("Error en datasnapshot.");}
-            }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
+//        query.addValueEventListener(new ValueEventListener(){
+//            public void onDataChange(DataSnapshot dataSnapshot){
+//                if(dataSnapshot!=null){
+//                    String cont = String.valueOf(dataSnapshot.getChildrenCount()+2);
+//                    rutProveedor.setText(cont);
+//                }else{ System.out.println("Error en datasnapshot.");}
+//            }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
 
     }
 

@@ -72,7 +72,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
                 android:background="@color/btnColor"
-                android:hint=""
                 android:padding="5dp"
                 android:textColor="#000" />
         </TableRow>
