@@ -34,12 +34,12 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
-        returnButton = (Button) findViewById(R.id.retorno);
-        guardarProveedor = (Button) findViewById(R.id.guardarProv);
-        razonSocialProv = (EditText) findViewById(R.id.razonSocialIng);
-        rutProveedor = (EditText) findViewById(R.id.rutIng);
-        telefonoProvedor = (EditText) findViewById(R.id.nroTelefonicoIng);
-        emailProvedor = (EditText) findViewById(R.id.correoIng);
+        returnButton = (Button) findViewById(R.id.rpRetorno);
+        guardarProveedor = (Button) findViewById(R.id.rpGuardarProv);
+        razonSocialProv = (EditText) findViewById(R.id.rpRazonSocialIng);
+        rutProveedor = (EditText) findViewById(R.id.rpRutIng);
+        telefonoProvedor = (EditText) findViewById(R.id.rpNroTelefonicoIng);
+        emailProvedor = (EditText) findViewById(R.id.rpCorreoIng);
 
         dao = new daoProveedores(this);
 
@@ -60,11 +60,11 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.retorno:
+            case R.id.rpRetorno:
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
                 startActivity(intent);
                 break;
-            case R.id.guardarProv:
+            case R.id.rpGuardarProv:
                 Proveedor proveedor = new Proveedor();
 
                 String razonSocial = razonSocialProv.getText().toString();

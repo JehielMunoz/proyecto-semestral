@@ -42,7 +42,7 @@
                 android:textColor="#009688"/>
 
             <EditText
-                android:id="@+id/razonSocialIng"
+                android:id="@+id/rpRazonSocialIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -65,7 +65,7 @@
                 android:textColor="#009688" />
 
             <EditText
-                android:id="@+id/rutIng"
+                android:id="@+id/rpRutIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -89,7 +89,7 @@
                 android:textColor="#009688" />
 
             <EditText
-                android:id="@+id/nroTelefonicoIng"
+                android:id="@+id/rpNroTelefonicoIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -114,7 +114,7 @@
                 android:textColor="#009688"/>
 
             <EditText
-                android:id="@+id/correoIng"
+                android:id="@+id/rpCorreoIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -130,7 +130,7 @@
             android:layout_marginTop="20dp">
 
             <Button
-                android:id="@+id/retorno"
+                android:id="@+id/rpRetorno"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_gravity="center_horizontal"
@@ -143,7 +143,7 @@
                 android:layout_marginLeft="35dp"/>
 
             <Button
-                android:id="@+id/guardarProv"
+                android:id="@+id/rpGuardarProv"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_gravity="center_horizontal"
