@@ -39,19 +39,19 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
-        codigoEspecie = (EditText)findViewById(R.id.codigoEspecie);
-        numFactura =    (EditText)findViewById(R.id.numFactura);
-        desItem =       (EditText)findViewById(R.id.descripItem);
-        rutProv =       (EditText)findViewById(R.id.rutProveedor);
-        fRecepcion =    (EditText)findViewById(R.id.fechaRecepcion);
-        precioItem =    (EditText)findViewById(R.id.precioItem);
-        precioTotal=    (EditText)findViewById(R.id.precioItemIVA);
-        ubiItem =       (EditText)findViewById(R.id.ubicacionItem);
-        obsIngreso =    (EditText)findViewById(R.id.observacionIngreso);
-        recurso =       (EditText)findViewById(R.id.recurso);
-        btnGuardar =    (Button)findViewById(R.id.btnGuardar);
-        btnCancelar =   (Button)findViewById(R.id.btnCancelar);
-        estado_spinner = (Spinner)findViewById(R.id.estado_spinner);
+        codigoEspecie = (EditText)findViewById(R.id.ingCodigoEspecie);
+        numFactura =    (EditText)findViewById(R.id.ingNumFactura);
+        desItem =       (EditText)findViewById(R.id.ingDescripItem);
+        rutProv =       (EditText)findViewById(R.id.ingRutProveedor);
+        fRecepcion =    (EditText)findViewById(R.id.ingFechaRecepcion);
+        precioItem =    (EditText)findViewById(R.id.ingPrecioItem);
+        precioTotal=    (EditText)findViewById(R.id.ingPrecioItemIVA);
+        ubiItem =       (EditText)findViewById(R.id.ingUbicacionItem);
+        obsIngreso =    (EditText)findViewById(R.id.ingObservacionIngreso);
+        recurso =       (EditText)findViewById(R.id.ingRecurso);
+        btnGuardar =    (Button)findViewById(R.id.ingBtnGuardar);
+        btnCancelar =   (Button)findViewById(R.id.ingBtnCancelar);
+        estado_spinner = (Spinner)findViewById(R.id.ingEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -85,7 +85,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnGuardar:
+            case R.id.ingBtnGuardar:
                 Especie especie = new Especie();
 
                 String codString = codigoEspecie.getText().toString();

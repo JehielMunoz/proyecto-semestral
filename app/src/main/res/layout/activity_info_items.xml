@@ -25,7 +25,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnvolver"
+        android:id="@+id/infBtnVolver"
         android:layout_width="107dp"
         android:layout_height="37dp"
         android:background="@drawable/btnpress"
@@ -35,12 +35,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/obsEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/infObsEspecie"
         app:layout_constraintVertical_bias="0.517"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/infBtnGuardar"
         android:layout_width="129dp"
         android:layout_height="37dp"
         android:layout_marginBottom="4dp"
@@ -51,13 +51,13 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.841"
-        app:layout_constraintStart_toEndOf="@+id/btnvolver"
-        app:layout_constraintTop_toBottomOf="@+id/obsEspecie"
+        app:layout_constraintStart_toEndOf="@+id/infBtnVolver"
+        app:layout_constraintTop_toBottomOf="@+id/infObsEspecie"
         app:layout_constraintVertical_bias="0.516"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/codEspecie"
+        android:id="@+id/infCodEspecie"
         android:layout_width="297dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/infDescEspecie"
         app:layout_constraintVertical_bias="0.474"
         tools:ignore="MissingConstraints" />
 
@@ -76,21 +76,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:layout_marginLeft="20dp"
         android:text="Codigo"
         android:textColor="#009688"
-
         android:textSize="15dp"
-
         app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintEnd_toStartOf="@+id/codigoItem2"
         app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/infDescEspecie"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/descEspecie"
+        android:id="@+id/infDescEspecie"
         android:layout_width="301dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -112,7 +110,7 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/codigoIngresoItem2"
-        app:layout_constraintEnd_toStartOf="@+id/descEspecie"
+        app:layout_constraintEnd_toStartOf="@+id/infDescEspecie"
         app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
@@ -120,37 +118,37 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/numFactura"
+        android:id="@+id/infNumFactura"
         android:layout_width="95dp"
         android:layout_height="28dp"
         android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginEnd="208dp"
-        android:layout_marginRight="208dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="195dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infDescEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.393"
+        app:layout_constraintVertical_bias="0.379"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:text="Nro Factura"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
-        app:layout_constraintEnd_toStartOf="@+id/rutProveedor"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintBottom_toTopOf="@+id/infDescEspecie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.421"
+        app:layout_constraintVertical_bias="0.378"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -159,22 +157,22 @@
         android:layout_height="wrap_content"
         android:text="Rut Proveedor"
         android:textColor="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
-        app:layout_constraintEnd_toStartOf="@+id/rutProveedor"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/numFactura"
+        app:layout_constraintBottom_toTopOf="@+id/infDescEspecie"
+        app:layout_constraintEnd_toStartOf="@+id/infRutProveedor"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@+id/infNumFactura"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.378"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/rutProveedor"
+        android:id="@+id/infRutProveedor"
         android:layout_width="113dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infDescEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +181,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/obsEspecie"
+        android:id="@+id/infObsEspecie"
         android:layout_width="383dp"
         android:layout_height="28dp"
         android:layout_marginStart="12dp"
@@ -197,12 +195,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ubiEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/infUbiEspecie"
         app:layout_constraintVertical_bias="0.262"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/codBusca"
+        android:id="@+id/infCodigoBusca"
         android:layout_width="53dp"
         android:layout_height="24dp"
         android:backgroundTint="@color/black"
@@ -213,7 +211,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buscaEspecie"
+        android:id="@+id/infBuscaEspecie"
         android:layout_width="55dp"
         android:layout_height="17dp"
         android:background="@drawable/btnpress"
@@ -235,16 +233,16 @@
         android:text="Observaciones"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/obsEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infObsEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ubiEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/infUbiEspecie"
         app:layout_constraintVertical_bias="0.689"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/ubiEspecie"
+        android:id="@+id/infUbiEspecie"
         android:layout_width="385dp"
         android:layout_height="28dp"
         android:layout_marginStart="12dp"
@@ -259,7 +257,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/infEstadoSpinner"
         app:layout_constraintVertical_bias="0.378"
         tools:ignore="MissingConstraints" />
 
@@ -270,12 +268,12 @@
         android:text="Ubicacion Especie"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infUbiEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.642"
+        app:layout_constraintVertical_bias="0.8"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -302,7 +300,7 @@
         android:text="Precio Total"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infUbiEspecie"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.642"
@@ -312,7 +310,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioUni"
+        android:id="@+id/infPrecioUni"
         android:layout_width="92dp"
         android:layout_height="28dp"
         android:layout_marginTop="36dp"
@@ -329,7 +327,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioTot"
+        android:id="@+id/infPrecioTot"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -339,7 +337,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/infEstadoSpinner"
         app:layout_constraintVertical_bias="0.48"
         tools:ignore="MissingConstraints" />
 
@@ -359,7 +357,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/fechaRecepcion"
+        android:id="@+id/infFechaRecepcion"
         android:layout_width="85dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -383,15 +381,15 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toStartOf="@+id/estado_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/infEstadoSpinner"
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/infDescEspecie"
         app:layout_constraintVertical_bias="0.029"
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/estado_spinner"
+        android:id="@+id/infEstadoSpinner"
         android:layout_width="86dp"
         android:layout_height="28dp"
         android:layout_marginEnd="16dp"
@@ -401,7 +399,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/codigoItem2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.414"
         tools:ignore="MissingConstraints" />
@@ -415,17 +412,17 @@
         android:text="Centro de Costos"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infUbiEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/precioUni"
+        app:layout_constraintTop_toBottomOf="@+id/infPrecioUni"
         app:layout_constraintVertical_bias="0.828"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/centroCosto"
+        android:id="@+id/infCentroCosto"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:layout_marginBottom="4dp"
@@ -433,10 +430,10 @@
         android:ems="10"
 
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/ubiEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infUbiEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/precioTot"
+        app:layout_constraintTop_toBottomOf="@+id/infPrecioTot"
         app:layout_constraintVertical_bias="0.65"
         tools:ignore="MissingConstraints" />
 
@@ -444,7 +441,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/descEspecie"
+        app:layout_constraintBottom_toTopOf="@+id/infDescEspecie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

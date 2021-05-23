@@ -25,7 +25,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnCancelar"
+        android:id="@+id/ingBtnCancelar"
         android:layout_width="107dp"
         android:layout_height="37dp"
         android:background="@drawable/btnpress"
@@ -33,14 +33,14 @@
         app:backgroundTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/observacionIngreso"
+        app:layout_constraintTop_toBottomOf="@+id/ingObservacionIngreso"
         app:layout_constraintVertical_bias="0.517"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/ingBtnGuardar"
         android:layout_width="107dp"
         android:layout_height="37dp"
         android:background="@drawable/btnpress"
@@ -49,13 +49,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
-        app:layout_constraintTop_toBottomOf="@+id/observacionIngreso"
+        app:layout_constraintStart_toEndOf="@+id/ingBtnCancelar"
+        app:layout_constraintTop_toBottomOf="@+id/ingObservacionIngreso"
         app:layout_constraintVertical_bias="0.515"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/codigoItem2"
+        android:id="@+id/ingCodigoItem2"
         android:layout_width="174dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        app:layout_constraintTop_toBottomOf="@+id/ingDescripItem"
         app:layout_constraintVertical_bias="0.513"
         tools:ignore="MissingConstraints" />
 
@@ -77,7 +77,6 @@
         android:text="Codigo"
         android:textColor="#009688"
         android:textSize="15dp"
-
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.027"
@@ -94,16 +93,16 @@
         android:text="Estado"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/estado_spinner"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingEstadoSpinner"
         app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripItem"
+        app:layout_constraintTop_toBottomOf="@+id/ingDescripItem"
         app:layout_constraintVertical_bias="0.01"
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/estado_spinner"
+        android:id="@+id/ingEstadoSpinner"
         android:layout_width="58dp"
         android:layout_height="28dp"
         android:layout_marginEnd="16dp"
@@ -113,13 +112,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toEndOf="@+id/codigoItem2"
+        app:layout_constraintStart_toEndOf="@+id/ingCodigoItem2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/descripItem"
+        android:id="@+id/ingDescripItem"
         android:layout_width="301dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -141,13 +140,13 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/codigoIngresoItem2"
-        app:layout_constraintEnd_toStartOf="@+id/descripItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingDescripItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/numFactura"
+        android:id="@+id/ingNumFactura"
         android:layout_width="95dp"
         android:layout_height="28dp"
         android:layout_marginStart="5dp"
@@ -157,7 +156,7 @@
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingDescripItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -172,8 +171,8 @@
         android:text="Nro Factura"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
-        app:layout_constraintEnd_toStartOf="@+id/rutProveedor"
+        app:layout_constraintBottom_toTopOf="@+id/ingDescripItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingRutProveedor"
         app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -186,22 +185,22 @@
         android:layout_height="wrap_content"
         android:text="Rut Proveedor"
         android:textColor="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
-        app:layout_constraintEnd_toStartOf="@+id/rutProveedor"
+        app:layout_constraintBottom_toTopOf="@+id/ingDescripItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingRutProveedor"
         app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/numFactura"
+        app:layout_constraintStart_toEndOf="@+id/ingNumFactura"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.378"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/rutProveedor"
+        android:id="@+id/ingRutProveedor"
         android:layout_width="113dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingDescripItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
@@ -217,8 +216,7 @@
         android:text="Código correlativo correspondiente"
         android:textColor="#009688"
         android:textSize="15dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/numFactura"
+        app:layout_constraintBottom_toTopOf="@+id/ingNumFactura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
@@ -227,7 +225,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/codigoEspecie"
+        android:id="@+id/ingCodigoEspecie"
         android:layout_width="149dp"
         android:layout_height="24dp"
         android:background="@drawable/btnpress"
@@ -248,7 +246,7 @@
         android:text="Ubicacion Especie"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
@@ -257,7 +255,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/observacionIngreso"
+        android:id="@+id/ingObservacionIngreso"
         android:layout_width="383dp"
         android:layout_height="28dp"
         android:layout_marginStart="12dp"
@@ -271,7 +269,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ubicacionItem"
+        app:layout_constraintTop_toBottomOf="@+id/ingUbicacionItem"
         app:layout_constraintVertical_bias="0.256"
         tools:ignore="MissingConstraints" />
 
@@ -282,16 +280,16 @@
         android:text="Observaciones"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/observacionIngreso"
+        app:layout_constraintBottom_toTopOf="@+id/ingObservacionIngreso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ubicacionItem"
+        app:layout_constraintTop_toBottomOf="@+id/ingUbicacionItem"
         app:layout_constraintVertical_bias="0.689"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/ubicacionItem"
+        android:id="@+id/ingUbicacionItem"
         android:layout_width="385dp"
         android:layout_height="28dp"
         android:layout_marginStart="12dp"
@@ -306,27 +304,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/ingEstadoSpinner"
         app:layout_constraintVertical_bias="0.473"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioItem"
+        android:id="@+id/ingPrecioItem"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
         app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recurso"
+        app:layout_constraintTop_toBottomOf="@+id/ingRecurso"
         app:layout_constraintVertical_bias="0.351"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/precioItemIVA"
+        android:id="@+id/ingPrecioItemIVA"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:layout_marginEnd="15dp"
@@ -334,11 +332,11 @@
         android:background="@drawable/btnpress"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fechaRecepcion"
+        app:layout_constraintTop_toBottomOf="@+id/ingFechaRecepcion"
         app:layout_constraintVertical_bias="0.363"
         tools:ignore="MissingConstraints" />
 
@@ -350,8 +348,8 @@
         android:textColor="#009688"
 
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/precioItemIVA"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingPrecioItemIVA"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
@@ -366,8 +364,8 @@
         android:textColor="#009688"
 
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-        app:layout_constraintEnd_toStartOf="@+id/precioItemIVA"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingPrecioItemIVA"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
@@ -380,16 +378,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-
         android:text="Precio"
         android:textColor="#009688"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/ubicacionItem"
-
-        app:layout_constraintEnd_toStartOf="@+id/precioItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingUbicacionItem"
+        app:layout_constraintEnd_toStartOf="@+id/ingPrecioItemIVA"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recurso"
+        app:layout_constraintTop_toBottomOf="@+id/ingRecurso"
         app:layout_constraintVertical_bias="0.342"
+        app:layout_constraintHorizontal_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -405,7 +402,7 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
 
-        app:layout_constraintEnd_toStartOf="@+id/recurso"
+        app:layout_constraintEnd_toStartOf="@+id/ingRecurso"
         app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -420,13 +417,13 @@
         android:textColor="#009688"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
-        app:layout_constraintEnd_toStartOf="@+id/fechaRecepcion"
-        app:layout_constraintStart_toEndOf="@+id/recurso"
+        app:layout_constraintEnd_toStartOf="@+id/ingFechaRecepcion"
+        app:layout_constraintStart_toEndOf="@+id/ingRecurso"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/recurso"
+        android:id="@+id/ingRecurso"
         android:layout_width="88dp"
         android:layout_height="28dp"
         android:background="@drawable/btnpress"
@@ -436,11 +433,11 @@
         app:layout_constraintEnd_toStartOf="@+id/textView23"
         app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codigoItem2"
+        app:layout_constraintTop_toBottomOf="@+id/ingCodigoItem2"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/fechaRecepcion"
+        android:id="@+id/ingFechaRecepcion"
         android:layout_width="85dp"
         android:layout_height="28dp"
         android:layout_marginEnd="16dp"
@@ -452,8 +449,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textView23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.992"
-        app:layout_constraintStart_toEndOf="@+id/recurso"
-        app:layout_constraintTop_toBottomOf="@+id/estado_spinner"
+        app:layout_constraintStart_toEndOf="@+id/ingRecurso"
+        app:layout_constraintTop_toBottomOf="@+id/ingEstadoSpinner"
         app:layout_constraintVertical_bias="0.486"
         tools:ignore="MissingConstraints" />
 
@@ -461,7 +458,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/descripItem"
+        app:layout_constraintBottom_toTopOf="@+id/ingDescripItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"

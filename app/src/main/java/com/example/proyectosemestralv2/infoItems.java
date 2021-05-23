@@ -37,21 +37,21 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
         //DB
         //TESTEO
-        codBusca = (EditText)findViewById(R.id.codBusca);
-        buscaEspecie = (Button)findViewById(R.id.buscaEspecie);
+        codBusca = (EditText)findViewById(R.id.infCodigoBusca);
+        buscaEspecie = (Button)findViewById(R.id.infBuscaEspecie);
         buscaEspecie.setOnClickListener(this);
         //TESTEO
-        numFactura =        (EditText)findViewById(R.id.numFactura);
-        rutProveedor =      (EditText)findViewById(R.id.rutProveedor);
-        descEspecie =       (EditText)findViewById(R.id.descEspecie);
-        codEspecie =        (EditText)findViewById(R.id.codEspecie);
-        fechaRecepcion =    (EditText)findViewById(R.id.fechaRecepcion);
-        precioUni =         (EditText)findViewById(R.id.precioUni);
-        precioTot =         (EditText)findViewById(R.id.precioTot);
-        centroCosto =       (EditText)findViewById(R.id.centroCosto);
-        ubiEspecie =        (EditText)findViewById(R.id.ubiEspecie);
-        obsEspecie =        (EditText)findViewById(R.id.obsEspecie);
-        estado_spinner =    (Spinner)findViewById(R.id.estado_spinner);
+        numFactura =        (EditText)findViewById(R.id.infNumFactura);
+        rutProveedor =      (EditText)findViewById(R.id.infRutProveedor);
+        descEspecie =       (EditText)findViewById(R.id.infDescEspecie);
+        codEspecie =        (EditText)findViewById(R.id.infCodEspecie);
+        fechaRecepcion =    (EditText)findViewById(R.id.infFechaRecepcion);
+        precioUni =         (EditText)findViewById(R.id.infPrecioUni);
+        precioTot =         (EditText)findViewById(R.id.infPrecioTot);
+        centroCosto =       (EditText)findViewById(R.id.infCentroCosto);
+        ubiEspecie =        (EditText)findViewById(R.id.infUbiEspecie);
+        obsEspecie =        (EditText)findViewById(R.id.infObsEspecie);
+        estado_spinner =    (Spinner)findViewById(R.id.infEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -78,7 +78,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
 
 
         dao = new daoEspecie(this); //inicializa dao con el contexto actual
-        btnvolver = (Button)findViewById(R.id.btnvolver);
+        btnvolver = (Button)findViewById(R.id.infBtnVolver);
         btnvolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +91,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buscaEspecie:
+            case R.id.infBuscaEspecie:
                 //String cod = codBusca.getText().toString();
                 /*Query query = mDatabase.child("data").child("especies").child("74");
                 query.addValueEventListener(new ValueEventListener(){
