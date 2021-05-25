@@ -92,6 +92,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.infBuscaEspecie:
+                // !!!!! NO BORRAR !!!!!!
                 //String cod = codBusca.getText().toString();
                 /*Query query = mDatabase.child("data").child("especies").child("74");
                 query.addValueEventListener(new ValueEventListener(){
@@ -109,6 +110,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
                             obsEspecie.setText(dataSnapshot.child("observaciones").getValue(String.class));
                         }else{ System.out.println("Error en datasnapshot.");}
                     }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});*/
+                // !!!!! NO BORRAR !!!!!!
             break;
         }
     }

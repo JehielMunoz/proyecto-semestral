@@ -25,7 +25,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
     EditText codigoEspecie, numFactura, desItem, rutProv, precioTotal;
     EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso;
-    Button btnGuardar, btnCancelar, cargarCodigo;
+    Button btnGuardar, btnCancelar;
     daoEspecie dao;
     Spinner estado_spinner;
 
@@ -61,7 +61,6 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         dao = new daoEspecie(this); //inicializa dao con el contexto actual
 
         btnGuardar.setOnClickListener(this);
-        cargarCodigo.setOnClickListener(this);
 
 
         Query query = mDatabase.child("data").child("especies");
