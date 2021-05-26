@@ -2,11 +2,7 @@ package com.example.proyectosemestralv2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
-import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ChildEventListener;
@@ -17,23 +13,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.io.File;
-import java.util.Date;
 import java.util.Locale;
 
 import jxl.*;
 import jxl.write.*;
 import jxl.write.Number;
+import jxl.write.biff.RowsExceededException;
 
 class daoExportExcel extends AppCompatActivity {
 
     public static void export(DatabaseReference mDatabase) {
 
-        //File sd = Environment.getExternalStorageDirectory();
         File sd = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        String csvFile = "test2.xls";
+        String csvFile = "test7.xls";
 
         File directory = new File(sd.getAbsolutePath());
 
@@ -73,130 +67,57 @@ class daoExportExcel extends AppCompatActivity {
                     if(dataSnapshot!=null){
                         String cont;
                         int i;
-                        for(i=1; i<22;i++){
+                        for(i=1; i<80;i++) {
                             cont = String.valueOf(i);
-                            try {
-                                String codigo_correlativo = String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
-                                sheetA.addCell(new Label(0, i, codigo_correlativo));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String especie = dataSnapshot.child(cont).child("especie").getValue(String.class);
-                                sheetA.addCell(new Label(1, i, especie));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                sheetA.addCell(new Label(2, i, "1")); //cantidad
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String estado = dataSnapshot.child(cont).child("estado").getValue(String.class);
-                                sheetA.addCell(new Label(3, i, estado));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String precio_unitario = String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class));
-                                sheetA.addCell(new Label(4, i, precio_unitario));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String precio_total = String.valueOf(dataSnapshot.child("precio_total").getValue(long.class));
-                                sheetA.addCell(new Label(5, i, precio_total));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String fecha_recepcion = dataSnapshot.child(cont).child("fecha_recepcion").getValue(String.class);
-                                sheetA.addCell(new Label(6, i, fecha_recepcion));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String numero_factura = String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class));
-                                sheetA.addCell(new Label(7, i, numero_factura));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String rut_proveedor = dataSnapshot.child(cont).child("rut_proveedor").getValue(String.class);
-                                sheetA.addCell(new Label(8, i, rut_proveedor));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String centro_de_costo = dataSnapshot.child(cont).child("centro_de_costo").getValue(String.class);
-                                sheetA.addCell(new Label(9, i, centro_de_costo));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String ubicacion_actual = dataSnapshot.child(cont).child("ubicacion_actual").getValue(String.class);
-                                sheetA.addCell(new Label(10, i, ubicacion_actual));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
-                            try {
-                                String observaciones = dataSnapshot.child(cont).child("observaciones").getValue(String.class);
-                                sheetA.addCell(new Label(11, i, observaciones));
-                            } catch (WriteException e) {
-                                e.printStackTrace();
-                            }
+                            String codigo_correlativo = String.valueOf(dataSnapshot.child(cont).child("codigo_correlativo").getValue(long.class));
+                            String especie = String.valueOf(dataSnapshot.child(cont).child("especie").getValue(String.class));
+                            String estado = String.valueOf(dataSnapshot.child(cont).child("estado").getValue(String.class));
+                            String precio_unitario = String.valueOf(dataSnapshot.child(cont).child("precio_unitario").getValue(long.class));
+                            String precio_total = String.valueOf(dataSnapshot.child(cont).child("precio_total").getValue(long.class));
+                            String fecha_recepcion = String.valueOf(dataSnapshot.child(cont).child("fecha_recepcion").getValue(String.class));
+                            String numero_factura = String.valueOf(dataSnapshot.child(cont).child("numero_factura").getValue(long.class));
+                            String rut_proveedor = String.valueOf(dataSnapshot.child(cont).child("rut_proveedor").getValue(String.class));
+                            String centro_de_costo = String.valueOf(dataSnapshot.child(cont).child("centro_de_costo").getValue(String.class));
+                            String ubicacion_actual = String.valueOf(dataSnapshot.child(cont).child("ubicacion_actual").getValue(String.class));
+                            String observaciones = String.valueOf(dataSnapshot.child(cont).child("observaciones").getValue(String.class));
 
-                            try {workbook.write();}
-                            catch (IOException e) {e.printStackTrace();}
+                            try {
+                                sheetA.addCell(new Label(0, i, codigo_correlativo));
+                                sheetA.addCell(new Label(1, i, especie));
+                                sheetA.addCell(new Label(2, i, "1"));
+                                sheetA.addCell(new Label(3, i, estado));
+                                sheetA.addCell(new Label(4, i, precio_unitario));
+                                sheetA.addCell(new Label(5, i, precio_total));
+                                sheetA.addCell(new Label(6, i, fecha_recepcion));
+                                sheetA.addCell(new Label(7, i, numero_factura));
+                                sheetA.addCell(new Label(8, i, rut_proveedor));
+                                sheetA.addCell(new Label(9, i, centro_de_costo));
+                                sheetA.addCell(new Label(10, i, ubicacion_actual));
+                                sheetA.addCell(new Label(11, i, observaciones));
+
+                            } catch (RowsExceededException e) {
+                                e.printStackTrace();
+                            } catch (WriteException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        try {
+                            workbook.write();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        // close workbook
+                        try {
+                            workbook.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (WriteException e) {
+                            e.printStackTrace();
                         }
                     }
-                }
-                public void onCancelled(DatabaseError databaseError) {}
-            });
-            // close workbook
-            workbook.close();
+                }public void onCancelled(DatabaseError databaseError) {}});
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
-/*
-    Context context;
-    Especie especie;
-    String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
-    private DatabaseReference mDatabase;
-    public daoExportExcel(){}
-    public daoExportExcel(Context context) throws IOException {
-        this.context = context;
-        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
-    }
-
-    public WritableWorkbook createWorkbook(String fileName) throws IOException {
-        WorkbookSettings wbSettings = new WorkbookSettings();
-        wbSettings.setUseTemporaryFileDuringWrite(true);
-        File sdCard = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        File dir = new File(sdCard.getAbsolutePath() + "/JExcelApiTest");
-        dir.mkdirs();
-        File wbfile = new File(dir,fileName);
-        WritableWorkbook wb = Workbook.createWorkbook(wbfile,wbSettings);
-        return wb;
-    }
-    public void generateSheet(WritableWorkbook wb, DatabaseReference mDatabase) throws IOException, WriteException {
-        WritableSheet sheet = wb.createSheet("First Sheet", 0);
-        writeCells(sheet);
-        wb.write();
-        wb.close();
-    }
-    public void writeCells(WritableSheet sheet) throws WriteException {
-
-        for(int i=0;i<3;i++) {
-            Label label = new Label(0, i, "A label record");
-            sheet.addCell(label);
-            for(int j=0;i<20;i++) {
-                Number number = new Number(j, i, 3.1459);
-                sheet.addCell(number);
-
-
- */
