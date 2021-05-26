@@ -72,6 +72,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 }else{ System.out.println("Error en datasnapshot.");}
             }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
 
+
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
