@@ -8,20 +8,6 @@
     android:orientation="vertical"
     tools:context=".busquedaProveedor">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-
     <Spinner
         android:id="@+id/bpEstadoSpinner"
         android:layout_width="215dp"
@@ -141,7 +127,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/bpTitRutBusqueada"
+        android:id="@+id/bpTitRutBusqueda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
