@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class infoItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button buscaEspecie;
     EditText codBusca;
-    Button btnvolver;
+    Button btnvolver, btnBusquedaAvanzada;
     EditText numFactura, rutProveedor, descEspecie, codEspecie, fechaRecepcion,
                 precioUni, precioTot, centroCosto, ubiEspecie, obsEspecie;
     Spinner estado_spinner;
@@ -39,7 +39,11 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
         //TESTEO
         codBusca = (EditText)findViewById(R.id.infCodigoBusca);
         buscaEspecie = (Button)findViewById(R.id.infBuscaEspecie);
+        btnBusquedaAvanzada = (Button)findViewById(R.id.infBtnBusqAvanzada);
+
+        btnBusquedaAvanzada.setOnClickListener(this);
         buscaEspecie.setOnClickListener(this);
+
         //TESTEO
         numFactura =        (EditText)findViewById(R.id.infNumFactura);
         rutProveedor =      (EditText)findViewById(R.id.infRutProveedor);
@@ -51,6 +55,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
         centroCosto =       (EditText)findViewById(R.id.infCentroCosto);
         ubiEspecie =        (EditText)findViewById(R.id.infUbiEspecie);
         obsEspecie =        (EditText)findViewById(R.id.infObsEspecie);
+
         estado_spinner =    (Spinner)findViewById(R.id.infEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
@@ -111,7 +116,11 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
                         }else{ System.out.println("Error en datasnapshot.");}
                     }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});*/
                 // !!!!! NO BORRAR !!!!!!
-            break;
+                break;
+            case R.id.infBtnBusqAvanzada:
+                // Intent intentBA = new Intent (infoItems.this, busquedaAvanzadaItems.class);
+                startActivity(new Intent (infoItems.this, busquedaAvanzadaItems.class) /* intentBA */);
+                break;
         }
     }
 

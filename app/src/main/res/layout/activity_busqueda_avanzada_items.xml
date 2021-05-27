@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".busquedaAvanzadaItems"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tituloBusqueda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUSQUEDA AVANZADA"
+        android:textColor="@color/btnColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codigo correlativo"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/tituloBusqueda"
+        android:layout_marginTop="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baCodigoCorelativo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/exitColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloBusqueda"
+        android:layout_marginTop="40dp"
+        app:layout_constraintHorizontal_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numero factura"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/baCodigoCorelativo"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baNroFactura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baCodigoCorelativo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rut proveedor"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintTop_toBottomOf="@+id/baNroFactura"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baRutProveedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baNroFactura"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha recepcion"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/baRutProveedor"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baFechaRecepcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baRutProveedor"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/baMargen"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/barra_separadora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baFechaRecepcion"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/baTituloPrecios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRECIOS"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/baMargen"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unitario"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintTop_toBottomOf="@+id/baTituloPrecios"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baPrecioUnitario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="80dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baTituloPrecios"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_bias="0.3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintTop_toBottomOf="@+id/baTituloPrecios"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baPrecioTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="80dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baTituloPrecios"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/baMargenDos"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/barra_separadora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baPrecioUnitario"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Spinner
+        android:id="@+id/baEstadoSpinner"
+        android:layout_width="58dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/btnpress"
+        android:textColor="#009688"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baMargenDos"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.26"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintTop_toBottomOf="@+id/baMargenDos"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Centro de Costos"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintTop_toBottomOf="@+id/baMargenDos"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baCentroCostos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="80dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baMargenDos"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.9"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicacion Especie"
+        android:textColor="@color/btnColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/baCentroCostos"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/baUbicacionEspecie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:background="@drawable/btnpress_bourder"
+        android:backgroundTint="@color/btnColor"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baCentroCostos"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/baBtnCancelar"
+        android:layout_width="107dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btnpress"
+        android:text="Cancelar"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baUbicacionEspecie"
+        android:layout_marginTop="40dp"
+        app:layout_constraintHorizontal_bias="0.2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/baBtnBusqueda"
+        android:layout_width="107dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btnpress"
+        android:text="buscar"
+        app:backgroundTint="#3B7A20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baUbicacionEspecie"
+        android:layout_marginTop="40dp"
+        app:layout_constraintHorizontal_bias="0.8"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
