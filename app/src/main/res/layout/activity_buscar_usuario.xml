@@ -207,7 +207,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/separador"
+        android:id="@+id/buSeparador"
         android:layout_width="300dp"
         android:layout_height="5dp"
         android:layout_marginBottom="550dp"

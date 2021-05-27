@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         app:layout_constraintVertical_bias="0.303"
         tools:ignore="MissingConstraints" />
 
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -86,7 +86,7 @@
         android:width="9dp"
         android:background="#3B7A20"
         android:text="BUSCAR"
-        app:layout_constraintBottom_toTopOf="@+id/separador"
+        app:layout_constraintBottom_toTopOf="@+id/bpSeparador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,12 +109,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         app:layout_constraintVertical_bias="0.018"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/separador"
+        android:id="@+id/bpSeparador"
         android:layout_width="350dp"
         android:layout_height="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,7 +173,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -221,7 +221,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toEndOf="@+id/bpTitEmail"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         app:layout_constraintVertical_bias="0.806"
         tools:ignore="MissingConstraints" />
 
@@ -240,7 +240,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         app:layout_constraintVertical_bias="0.302"
         tools:ignore="MissingConstraints" />
 
@@ -259,7 +259,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador"
+        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
         app:layout_constraintVertical_bias="0.149"
         tools:ignore="MissingConstraints" />
 

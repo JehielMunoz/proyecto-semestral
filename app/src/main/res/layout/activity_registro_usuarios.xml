@@ -47,7 +47,7 @@
         android:textColor="@color/teal_700"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/separador"
+        app:layout_constraintBottom_toBottomOf="@+id/cuSeparador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -199,7 +199,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/separador"
+        android:id="@+id/cuSeparador"
         android:layout_width="300dp"
         android:layout_height="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
