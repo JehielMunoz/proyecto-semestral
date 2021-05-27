@@ -20,6 +20,7 @@
         <TableRow android:padding="5dip">
 
             <TextView
+                android:id="@+id/rpTitRegistro"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:layout_span="2"
@@ -33,6 +34,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/rpTitRazonSocial"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
@@ -55,6 +57,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/rpTitRut"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
@@ -79,6 +82,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/rpTitTelefono"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
@@ -104,6 +108,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/rpTitEmail"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"

@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toEndOf="@+id/btnCancelarBusqueda"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/buTelefono"
         app:layout_constraintVertical_bias="0.477"
         tools:ignore="MissingConstraints" />
 
@@ -34,16 +34,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/buTitTelefono"
         app:layout_constraintVertical_bias="0.481"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/buTituloBuscarUsuarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BUSCAR USUARIO"
         android:textSize="20dp"
+        android:textStyle="bold"
         android:textColor="@color/teal_700"
         app:layout_constraintBottom_toTopOf="@+id/BuscarUsuarioBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +54,7 @@
 
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/buTitNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -61,31 +62,31 @@
         android:inputType="text"
         android:text="Nombre"
         android:textColor="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/textTelefono"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
+        app:layout_constraintBottom_toTopOf="@+id/buTitTelefono"
+        app:layout_constraintEnd_toStartOf="@+id/buNombre"
         app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscarUser"
-        app:layout_constraintVertical_bias="0.372"
+        app:layout_constraintTop_toBottomOf="@+id/buTitUsuario"
+        app:layout_constraintVertical_bias="0.35"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/buTitCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:textColor="@color/teal_700"
         android:text="Correo"
-        app:layout_constraintBottom_toTopOf="@+id/textTelefono"
+        app:layout_constraintBottom_toTopOf="@+id/buTitTelefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.392"
+        app:layout_constraintTop_toBottomOf="@+id/buTitNombre"
+        app:layout_constraintVertical_bias="0.45"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textTelefono"
+        android:id="@+id/buTitTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
@@ -95,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toBottomOf="@+id/buCorreo"
         app:layout_constraintVertical_bias="0.293"
         tools:ignore="MissingConstraints" />
 
@@ -106,24 +107,23 @@
         android:text="Buscar"
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="#3B7A20"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/buNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.575"
-
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/buscarUser"
+        android:id="@+id/buTitUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Usuario"
         android:textSize="17dp"
         android:textColor="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/buNombre"
+        app:layout_constraintEnd_toStartOf="@+id/buUsuario"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -131,7 +131,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/buUsuario"
         android:layout_width="190dp"
         android:layout_height="30dp"
         android:background="@drawable/btnpress_bourder"
@@ -139,15 +139,15 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="  "
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/buNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/buTituloBuscarUsuarios"
         app:layout_constraintVertical_bias="0.341"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/buNombre"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="10dp"
@@ -160,14 +160,14 @@
         android:text="  "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/buTitTelefono"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.283"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/buCorreo"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="10dp"
@@ -180,14 +180,14 @@
         android:text="  "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/buTitTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/buNombre"
         app:layout_constraintVertical_bias="0.116"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/buTelefono"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="10dp"
@@ -200,9 +200,9 @@
         android:text="  "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toEndOf="@+id/textTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/buTitTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/buCorreo"
         app:layout_constraintVertical_bias="0.165"
         tools:ignore="MissingConstraints" />
 
@@ -210,13 +210,12 @@
         android:id="@+id/separador"
         android:layout_width="300dp"
         android:layout_height="5dp"
-        android:layout_marginBottom="576dp"
+        android:layout_marginBottom="550dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.612"
-
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/buUsuario"
         app:srcCompat="@drawable/barra_separadora"
         tools:ignore="MissingConstraints" />
 

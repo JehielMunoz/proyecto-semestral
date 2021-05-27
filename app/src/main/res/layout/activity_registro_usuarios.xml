@@ -17,10 +17,10 @@
         android:text="guardar cambios"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/btnCancelar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-        app:layout_constraintVertical_bias="0.477"
+        app:layout_constraintTop_toBottomOf="@+id/cuTelefono"
+        app:layout_constraintVertical_bias="0.47"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -34,18 +34,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTelefono"
-        app:layout_constraintVertical_bias="0.481"
+        app:layout_constraintTop_toBottomOf="@+id/cuTitTelefono"
+        app:layout_constraintVertical_bias="0.48"
         tools:ignore="MissingConstraints" />
 
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/cuTitCrearUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CREAR USUARIO"
         android:textColor="@color/teal_700"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/separador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +55,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/cuTitNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -62,61 +63,63 @@
         android:inputType="text"
         android:text="Nombre"
         android:textColor="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/textTelefono"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cuTitTelefono"
+        app:layout_constraintEnd_toStartOf="@+id/cuCorreo"
         app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575"
+        app:layout_constraintVertical_bias="0.55"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/cuTitCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:text="Correo"
         android:textColor="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/textTelefono"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cuTitTelefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/cuTitNombre"
         app:layout_constraintVertical_bias="0.496"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textTelefono"
+        android:id="@+id/cuTitTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textStyle="bold"
         android:text="Telefono"
         android:textColor="@color/teal_700"
         app:layout_constraintBottom_toTopOf="@+id/btnGuardarCambios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toBottomOf="@+id/cuCorreo"
         app:layout_constraintVertical_bias="0.293"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textTelefono2"
+        android:id="@+id/cuTitPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="Password"
         android:textColor="@color/teal_700"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnGuardarCambios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
-        app:layout_constraintVertical_bias="0.626"
+        app:layout_constraintTop_toBottomOf="@+id/cuCorreo"
+        app:layout_constraintVertical_bias="0.65"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/cuNombre"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="16dp"
@@ -130,13 +133,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.74"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toEndOf="@+id/cuTitNombre"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283"
+        app:layout_constraintVertical_bias="0.27"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/cuCorreo"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="16dp"
@@ -150,13 +153,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toEndOf="@+id/cuTitTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/cuNombre"
         app:layout_constraintVertical_bias="0.116"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/cuTelefono"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="16dp"
@@ -170,13 +173,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toEndOf="@+id/textTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintStart_toEndOf="@+id/cuTitTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/cuCorreo"
         app:layout_constraintVertical_bias="0.165"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/cuContraseña"
         android:layout_width="267dp"
         android:layout_height="30dp"
         android:layout_marginEnd="16dp"
@@ -190,8 +193,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
-        app:layout_constraintStart_toEndOf="@+id/textTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintStart_toEndOf="@+id/cuTitTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/cuCorreo"
         app:layout_constraintVertical_bias="0.382"
         tools:ignore="MissingConstraints" />
 

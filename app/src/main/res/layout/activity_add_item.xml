@@ -22,6 +22,7 @@
 
 
             <TextView
+                android:id="@+id/ingTxtIngreso"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -44,7 +45,7 @@
 
                 <TableRow>
                     <TextView
-
+                        android:id="@+id/ingTitCodCorrelativo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Codigo Correlativo:   "
@@ -63,6 +64,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitNroFactura"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="N° Factura:"
@@ -82,6 +84,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitRutProveedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rut Proveedor:"
@@ -100,6 +103,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitDescripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Descripcion:"
@@ -116,6 +120,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Codigo:"
@@ -131,9 +136,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="           "></TextView>
+                    android:hint="           ">
+
+                </TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitEstadoSpinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estado"
@@ -141,7 +149,8 @@
                     <Spinner
                         android:id="@+id/ingEstadoSpinner"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></Spinner>
+                        android:layout_height="wrap_content"
+                        ></Spinner>
                 </TableRow>
                 <TextView
                     android:layout_width="wrap_content"
@@ -151,6 +160,7 @@
                 <TableRow>
                     />
                     <TextView
+                        android:id="@+id/ingTitFecRecepcion"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="Fecha recepcion:"
@@ -169,6 +179,7 @@
                 <TableRow>
 
                     <TextView
+                        android:id="@+id/ingTitRecursos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Recursos:"
@@ -186,6 +197,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitPrecioNeto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Precio Neto:"
@@ -204,6 +216,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitPrecioItemIVA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Precio:"
@@ -224,6 +237,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/ingTitUbicacionEspecie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ubicacion Especie:"
@@ -243,9 +257,9 @@
                 <TableRow>
 
                     <TextView
+                        android:id="@+id/ingTitObservacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:text="Observacion:"
                         android:textColor="@color/black"/>
                     <EditText

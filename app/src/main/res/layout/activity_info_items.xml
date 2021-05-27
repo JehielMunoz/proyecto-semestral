@@ -19,6 +19,7 @@
 
 
             <TextView
+                android:id="@+id/infTitInfoItems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -73,6 +74,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitNroFactura"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="N° Factura:"
@@ -91,6 +93,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitRutProveedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rut Proveedor:"
@@ -109,6 +112,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitDescripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Descripcion:"
@@ -125,6 +129,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Codigo:"
@@ -143,6 +148,7 @@
                     android:hint="           "></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitEstado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estado"
@@ -163,6 +169,7 @@
                 <TableRow>
                     />
                     <TextView
+                        android:id="@+id/ingTitFecRecepcion"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="Fecha recepcion:"
@@ -181,6 +188,7 @@
                 <TableRow>
 
                     <TextView
+                        android:id="@+id/infTitRecursos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Recursos:"
@@ -198,6 +206,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitPrecioUni"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Precio Neto:"
@@ -217,6 +226,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitPrecioTot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Precio:"
@@ -237,6 +247,7 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
+                        android:id="@+id/infTitUbiEspecie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ubicacion Especie:"
@@ -256,6 +267,7 @@
                 <TableRow>
 
                     <TextView
+                        android:id="@+id/ingTitObservacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -277,6 +289,7 @@
                 <TableRow>
 
                     <TextView
+                        android:id="@+id/infTitCentroCosto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Centro de Costo:"
