@@ -57,7 +57,11 @@ public class archivoExporExcel extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnExportExcel:
-                daoExport.export(mDatabase);
+                try {
+                    daoExport.export(mDatabase,this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 Toast.makeText(this,"excel creado",Toast.LENGTH_LONG).show();
         }
     }
