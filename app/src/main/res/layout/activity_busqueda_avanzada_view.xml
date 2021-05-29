@@ -20,17 +20,14 @@
             >
 
 
-
             <TextView
-                android:id="@+id/ingTxtIngreso"
+                android:id="@+id/viewTxtIngreso"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:text="VER BUSQUEDA AVANZADA"
                 android:textColor="@color/black"
-                android:text="BUSQUEDA AVANZADA"></TextView>
-
-
+                android:textSize="25dp"></TextView>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -50,14 +47,14 @@
 
                 <TableRow>
                     <TextView
-                        android:id="@+id/ingTitNroFactura"
+                        android:id="@+id/viewTitNroFactura"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="N° Factura:"
                         android:textColor="@color/black"/>
 
-                    <EditText
-                        android:id="@+id/ingNumFactura"
+                    <TextView
+                        android:id="@+id/viewNumFactura"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="N Factura"
@@ -70,14 +67,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/ingTitRutProveedor"
+                        android:id="@+id/viewTitRutProveedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rut Proveedor:"
                         android:textColor="@color/black"/>
 
-                    <EditText
-                        android:id="@+id/ingRutProveedor"
+                    <TextView
+                        android:id="@+id/viewRutProveedor"
                         android:inputType="number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -89,14 +86,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/ingTitDescripcion"
+                        android:id="@+id/viewTitDescripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Descripcion:"
                         android:textColor="@color/black"/>
 
-                    <EditText
-                        android:id="@+id/ingDescripItem"
+                    <TextView
+                        android:id="@+id/viewDescripItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Descripcion"
@@ -106,14 +103,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/ingTitCodigo"
+                        android:id="@+id/viewTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Codigo:"
                         android:textColor="@color/black"/>
 
-                    <EditText
-                        android:id="@+id/ingCodigoItem2"
+                    <TextView
+                        android:id="@+id/viewCodigoItem2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="codigo"
@@ -127,13 +124,13 @@
                 </TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/ingTitEstadoSpinner"
+                        android:id="@+id/viewTitEstadoSpinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estado"
                         android:textColor="@color/black"/>
                     <Spinner
-                        android:id="@+id/ingEstadoSpinner"
+                        android:id="@+id/viewEstadoSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         ></Spinner>
@@ -146,13 +143,13 @@
                 <TableRow>
                     />
                     <TextView
-                        android:id="@+id/ingTitFecRecepcion"
+                        android:id="@+id/viewTitFecRecepcion"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="Fecha recepcion:"
                         android:textColor="@color/black"/>
-                    <EditText
-                        android:id="@+id/ingFechaRecepcion"
+                    <TextView
+                        android:id="@+id/viewFechaRecepcion"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:hint="Fecha Recepcion"
@@ -165,14 +162,14 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/ingTitRecursos"
+                        android:id="@+id/viewTitRecursos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Recursos:"
                         android:textColor="@color/black"/>
 
-                    <EditText
-                        android:id="@+id/ingRecurso"
+                    <TextView
+                        android:id="@+id/viewRecurso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Recursos"
@@ -187,14 +184,14 @@
 
                 <TableRow>
                     <TextView
-                        android:id="@+id/ingTitUbicacionEspecie"
+                        android:id="@+id/viewTitUbicacionEspecie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ubicacion Especie:"
                         android:textColor="@color/black"
                         />
-                    <EditText
-                        android:id="@+id/ingUbicacionItem"
+                    <TextView
+                        android:id="@+id/viewUbicacionItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
@@ -207,13 +204,13 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/ingTitObservacion"
+                        android:id="@+id/viewTitObservacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Observacion:"
                         android:textColor="@color/black"/>
-                    <EditText
-                        android:id="@+id/ingObservacionIngreso"
+                    <TextView
+                        android:id="@+id/viewObservacionIngreso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
@@ -235,14 +232,14 @@
             </TableLayout>
 
             <Button
-                android:id="@+id/ingBtnCancelar"
+                android:id="@+id/viewBtnCancelar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F44336"
                 android:text="cancelar" />
 
             <Button
-                android:id="@+id/ingBtnGuardar"
+                android:id="@+id/viewBtnGuardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4CAF50"

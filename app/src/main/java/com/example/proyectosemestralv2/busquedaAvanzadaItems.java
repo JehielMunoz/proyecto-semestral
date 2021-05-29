@@ -41,8 +41,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         nroFactura = (EditText)findViewById(R.id.baNroFactura);
         rutProveedor = (EditText)findViewById(R.id.baRutProveedor);
         fechaRecepcion = (EditText)findViewById(R.id.baFechaRecepcion);
-        precioUnitario = (EditText)findViewById(R.id.baPrecioUnitario);
-        precioTotal = (EditText)findViewById(R.id.baPrecioTotal);
+
         centroCostos = (EditText)findViewById(R.id.baCentroCostos);
         ubicacionEspecie = (EditText)findViewById(R.id.baUbicacionEspecie);
         estadoSpinner = (Spinner)findViewById(R.id.baEstadoSpinner);

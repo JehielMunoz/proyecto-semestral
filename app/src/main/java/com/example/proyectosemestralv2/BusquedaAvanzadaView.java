@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class BusquedaAvanzada extends AppCompatActivity {
+public class BusquedaAvanzadaView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_busqueda_avanzada);
+        setContentView(R.layout.activity_busqueda_avanzada_view);
+
+
     }
 }
