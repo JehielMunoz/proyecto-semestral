@@ -1,76 +1,297 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-    android:background="@color/white">
-
-    <TextView
-        android:id="@+id/textView4"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:gravity="center"
-        android:text="Ver Items"
-        android:textColor="@color/teal_700"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.015" />
+        android:layout_height="match_parent"
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="125dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        android:text="Aceptar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
+        >
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="125dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="528dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        android:text="Atras"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="472dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
+            <TextView
+                android:id="@+id/ingTxtIngreso"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:text="VER ITEMS"></TextView>
+
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:stretchColumns="1"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+
+
+
+                <TableRow/>
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitNroFactura"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="N° Factura:"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/ingNumFactura"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="N Factura"
+                        android:inputType="number"
+                        android:background="@color/teal_700"/>
+                </TableRow>
+
+
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitRutProveedor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rut Proveedor:"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/ingRutProveedor"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="ej: 11111111-7"
+                        android:background="@color/teal_700"/>
+
+                </TableRow>
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitDescripcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descripcion:"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/ingDescripItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Descripcion"
+                        android:background="@color/teal_700"/>
+                </TableRow>
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitCodigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Codigo:"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/ingCodigoItem2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="codigo"
+                        android:background="@color/teal_700"/>
+                </TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="           ">
+
+                </TextView>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitEstadoSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado"
+                        android:textColor="@color/black"/>
+                    <Spinner
+                        android:id="@+id/ingEstadoSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ></Spinner>
+                </TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="           "></TextView>
+
+                <TableRow>
+                    />
+                    <TextView
+                        android:id="@+id/ingTitFecRecepcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Fecha recepcion:"
+                        android:textColor="@color/black"/>
+                    <EditText
+                        android:id="@+id/ingFechaRecepcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:hint="Fecha Recepcion"
+                        android:inputType="datetime"
+                        android:background="@color/teal_700"/>
+                </TableRow>
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/ingTitRecursos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recursos:"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/ingRecurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Recursos"
+                        android:background="@color/teal_700"/>
+                </TableRow>
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitPrecioNeto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Precio Neto:"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/ingPrecioItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Precio Neto"
+                        android:background="@color/teal_700"
+                        android:inputType="numberDecimal"/>
+                </TableRow>
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitPrecioItemIVA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Precio:"
+                        android:textColor="@color/black"/>
+                    <EditText
+                        android:id="@+id/ingPrecioItemIVA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Total"
+                        android:background="@color/teal_700"
+                        android:inputType="numberDecimal"
+
+                        />
+
+                </TableRow>
+
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/ingTitUbicacionEspecie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubicacion Especie:"
+                        android:textColor="@color/black"
+                        />
+                    <EditText
+                        android:id="@+id/ingUbicacionItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/teal_700"
+                        android:hint="oficina/comedor/bodega"
+                        android:inputType="textPersonName"/>
+                </TableRow>
+
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/ingTitObservacion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Observacion:"
+                        android:textColor="@color/black"/>
+                    <EditText
+                        android:id="@+id/ingObservacionIngreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/teal_700"
+                        android:hint="observacion"
+                        android:inputType="textPersonName"/>
+
+                </TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="           "></TextView>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="           "></TextView>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/ingBtnCancelar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F44336"
+                android:text="cancelar" />
+
+            <Button
+                android:id="@+id/ingBtnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#4CAF50"
+                android:text="aceptar" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+
+
+

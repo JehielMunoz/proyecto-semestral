@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class infoItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class BuscarItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button buscaEspecie;
     EditText codBusca;
     Button btnvolver, btnBusquedaAvanzada;
@@ -32,7 +32,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_items);
+        setContentView(R.layout.activity_buscar_items);
         //DB
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
         //DB
@@ -87,7 +87,7 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
         btnvolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(new Intent(infoItems.this,menuInicio.class));
+                Intent intent= new Intent(new Intent(BuscarItems.this,menuInicio.class));
                 startActivity(intent);
             }
         });
@@ -118,14 +118,14 @@ public class infoItems extends AppCompatActivity implements View.OnClickListener
                 // !!!!! NO BORRAR !!!!!!
                 break;
             case R.id.infBtnBusqAvanzada:
-                // Intent intentBA = new Intent (infoItems.this, busquedaAvanzadaItems.class);
-                startActivity(new Intent (infoItems.this, busquedaAvanzadaItems.class) /* intentBA */);
+                // Intent intentBA = new Intent (BuscarItems.this, busquedaAvanzadaItems.class);
+                startActivity(new Intent (BuscarItems.this, busquedaAvanzadaItems.class) /* intentBA */);
                 break;
         }
     }
 
     public void onBackPressed(){
-        startActivity(new Intent (infoItems.this, menuInicio.class));
+        startActivity(new Intent (BuscarItems.this, menuInicio.class));
         finish();
     }
     @Override

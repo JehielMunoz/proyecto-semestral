@@ -37,7 +37,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         btnBusquedaAvan = (Button)findViewById(R.id.baBtnBusqueda);
         btnRetorno = (Button)findViewById(R.id.baBtnCancelar);
 
-        codCorrelativo = (EditText)findViewById(R.id.baCodigoCorelativo);
+
         nroFactura = (EditText)findViewById(R.id.baNroFactura);
         rutProveedor = (EditText)findViewById(R.id.baRutProveedor);
         fechaRecepcion = (EditText)findViewById(R.id.baFechaRecepcion);
