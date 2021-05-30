@@ -20,7 +20,6 @@
             >
 
 
-
             <TextView
                 android:id="@+id/ingTxtIngreso"
                 android:layout_width="400dp"
@@ -28,7 +27,7 @@
                 android:gravity="center"
                 android:textSize="25dp"
                 android:textColor="@color/black"
-                android:text="INGRESO DE ITEMS"></TextView>
+                android:text="INGRESO DE ITEMS" />
 
 
 
@@ -42,9 +41,10 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
 
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
                     android:layout_height="20dp"
-                    android:layout_width="match_parent"></TextView>
+                    android:layout_width="match_parent" />
 
                 <TableRow>
                     <TextView
@@ -60,14 +60,18 @@
                         android:layout_height="match_parent"
                         android:background="@color/teal_700"
                         android:hint=" correlativo" />
-                    <TextView android:layout_margin="@dimen/cardview_default_radius"
+
+                    <TextView
+                        android:layout_margin="@dimen/cardview_default_radius"
                         android:layout_height="20dp"
-                        android:layout_width="match_parent"></TextView>
+                        android:layout_width="match_parent" />
 
                 </TableRow>
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
+
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
                     android:layout_height="20dp"
-                    android:layout_width="match_parent"></TextView>
+                    android:layout_width="match_parent" />
 
 
                 <TableRow>
@@ -88,8 +92,9 @@
                 </TableRow>
 
 
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp" />
                 <TableRow>
                     <TextView
                         android:id="@+id/ingTitRutProveedor"
@@ -107,8 +112,10 @@
                         android:background="@color/teal_700"/>
 
                 </TableRow>
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp" />
                 <TableRow>
                     <TextView
                         android:id="@+id/ingTitDescripcion"
@@ -124,8 +131,10 @@
                         android:hint="Descripcion"
                         android:background="@color/teal_700"/>
                 </TableRow>
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp" />
                 <TableRow>
                     <TextView
                         android:id="@+id/ingTitCodigo"
@@ -145,7 +154,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="           ">
+                    >
 
                 </TextView>
                 <TableRow>
@@ -155,21 +164,22 @@
                         android:layout_height="wrap_content"
                         android:text="Estado"
                         android:textColor="@color/black"/>
+
                     <Spinner
                         android:id="@+id/ingEstadoSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
-                        android:backgroundTint="@color/teal_700"
-                        ></Spinner>
+                        android:backgroundTint="@color/teal_700" />
                 </TableRow>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="           "></TextView>
+                    android:hint="           " />
 
                 <TableRow>
-                    />
+
                     <TextView
                         android:id="@+id/ingTitFecRecepcion"
                         android:layout_width="wrap_content"
@@ -184,8 +194,10 @@
                         android:inputType="datetime"
                         android:background="@color/teal_700"/>
                 </TableRow>
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp" />
 
                 <TableRow>
 
@@ -203,8 +215,10 @@
                         android:hint="Recursos"
                         android:background="@color/teal_700"/>
                 </TableRow>
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp" />
 
                 <TableRow>
                     <TextView
