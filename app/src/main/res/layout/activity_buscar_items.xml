@@ -24,39 +24,25 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:text="INFORMACION DE ITEMS"
+                android:text=" BUSCAR ITEMS"
                 android:textColor="@color/black"></TextView>
+
             <TextView android:layout_margin="@dimen/cardview_default_radius"
-                android:layout_height="20dp"
-                android:layout_width="20dp"></TextView>
-            <LinearLayout
-                android:layout_width="400dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                >
+                android:layout_height="20dp" android:layout_width="match_parent"></TextView>
+            <Button
+                android:id="@+id/biScanerCam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btnpress_bourder"
+                android:text="  Scan Codigo  "
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:backgroundTint="#135"
+                android:textColor="@color/white"
+                />
 
-            <EditText
-                android:id="@+id/infCodigoBusca"
-                android:layout_width="200dp"
-                android:layout_height="30dp"
-                android:text=" "
-                android:layout_gravity="right"
-                android:background="@color/teal_700"
-                android:textColor="@color/black"
-
-                ></EditText>
-
-                <Button
-                    android:id="@+id/infBuscaEspecie"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:backgroundTint="#4CAF50"
-                    android:hint="Buscar"
-                    android:textColor="@color/black"></Button>
-
-            </LinearLayout>
+            <TextView android:layout_margin="@dimen/cardview_default_radius"
+                android:layout_height="20dp" android:layout_width="match_parent"></TextView>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -67,21 +53,47 @@
                 android:background="@color/white"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
-                
+
+
+                <TableRow>
+
+                    <Button
+                        android:id="@+id/biBuscaEspecie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btnpress_bourder"
+                        android:text="Buscar"
+                        android:backgroundTint="#135"
+                        android:textColor="@color/white"
+                        />
+
+                    <EditText
+                        android:id="@+id/biCodigoBusca"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:hint=" Buscar Producto   "
+
+                        android:inputType="textPersonName"
+                        android:background="@drawable/btnpress_bourder"
+                        android:backgroundTint="@color/teal_700"/>
+                </TableRow>
+
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"></TextView>
 
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
                     android:layout_height="20dp"></TextView>
 
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitNroFactura"
+                        android:id="@+id/biTitNroFactura"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="N° Factura:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/infNumFactura"
+                        android:id="@+id/biNumFactura"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="N Factura"
@@ -93,14 +105,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitRutProveedor"
+                        android:id="@+id/biTitRutProveedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rut Proveedor:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/infRutProveedor"
+                        android:id="@+id/biRutProveedor"
                         android:inputType="number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -112,14 +124,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitDescripcion"
+                        android:id="@+id/biTitDescripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Descripcion:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/infDescEspecie"
+                        android:id="@+id/biDescEspecie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Descripcion"
@@ -129,14 +141,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitCodigo"
+                        android:id="@+id/biTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Codigo:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/infCodEspecie"
+                        android:id="@+id/biCodEspecie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="codigo"
@@ -148,13 +160,13 @@
                     android:hint="           "></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitEstado"
+                        android:id="@+id/biTitEstado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estado"
                         android:textColor="@color/black"/>
                     <Spinner
-                        android:id="@+id/infEstadoSpinner"
+                        android:id="@+id/biEstadoSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
@@ -169,13 +181,13 @@
                 <TableRow>
                     />
                     <TextView
-                        android:id="@+id/ingTitFecRecepcion"
+                        android:id="@+id/biTitFecRecepcion"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="Fecha recepcion:"
                         android:textColor="@color/black"/>
                     <EditText
-                        android:id="@+id/infFechaRecepcion"
+                        android:id="@+id/biFechaRecepcion"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:hint="Fecha Recepcion"
@@ -188,7 +200,7 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/infTitRecursos"
+                        android:id="@+id/biTitRecursos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Recursos:"
@@ -196,6 +208,7 @@
                         />
 
                     <EditText
+                        android:id="@+id/biRecursos"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Recursos"
@@ -206,14 +219,14 @@
 
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitPrecioUni"
+                        android:id="@+id/biTitPrecioUni"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Precio Neto:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/infPrecioUni"
+                        android:id="@+id/biPrecioUni"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Precio Neto"
@@ -226,13 +239,13 @@
 
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitPrecioTot"
+                        android:id="@+id/biTitPrecioTot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Precio:"
                         android:textColor="@color/black"/>
                     <EditText
-                        android:id="@+id/infPrecioTot"
+                        android:id="@+id/biPrecioTot"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Total"
@@ -247,14 +260,14 @@
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
-                        android:id="@+id/infTitUbiEspecie"
+                        android:id="@+id/biTitUbiEspecie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ubicacion Especie:"
                         android:textColor="@color/black"
                         />
                     <EditText
-                        android:id="@+id/infUbiEspecie"
+                        android:id="@+id/biUbiEspecie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
@@ -267,14 +280,14 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/ingTitObservacion"
+                        android:id="@+id/biTitObservacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="Observacion:"
                         android:textColor="@color/black"/>
                     <EditText
-                        android:id="@+id/infObsEspecie"
+                        android:id="@+id/biObsEspecie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
@@ -289,14 +302,14 @@
                 <TableRow>
 
                     <TextView
-                        android:id="@+id/infTitCentroCosto"
+                        android:id="@+id/biTitCentroCosto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Centro de Costo:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/infCentroCosto"
+                        android:id="@+id/biCentroCosto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
@@ -315,20 +328,20 @@
             </TableLayout>
 
             <Button
-                android:id="@+id/infBtnVolver"
+                android:id="@+id/biBtnVolver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F44336"
                 android:text="atras" />
 
             <Button
-                android:id="@+id/infBtnGuardar"
+                android:id="@+id/biBtnGuardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4CAF50"
                 android:text="actualizar item" />
             <Button
-                android:id="@+id/infBtnBusqAvanzada"
+                android:id="@+id/biBtnBusqAvanzada"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4CAF50"

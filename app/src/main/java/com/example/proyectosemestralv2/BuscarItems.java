@@ -37,26 +37,26 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
         //DB
         //TESTEO
-        codBusca = (EditText)findViewById(R.id.infCodigoBusca);
-        buscaEspecie = (Button)findViewById(R.id.infBuscaEspecie);
-        btnBusquedaAvanzada = (Button)findViewById(R.id.infBtnBusqAvanzada);
+        codBusca = (EditText)findViewById(R.id.biCodigoBusca);
+        buscaEspecie = (Button)findViewById(R.id.biBuscaEspecie);
+        btnBusquedaAvanzada = (Button)findViewById(R.id.biBtnBusqAvanzada);
 
         btnBusquedaAvanzada.setOnClickListener(this);
         buscaEspecie.setOnClickListener(this);
 
         //TESTEO
-        numFactura =        (EditText)findViewById(R.id.infNumFactura);
-        rutProveedor =      (EditText)findViewById(R.id.infRutProveedor);
-        descEspecie =       (EditText)findViewById(R.id.infDescEspecie);
-        codEspecie =        (EditText)findViewById(R.id.infCodEspecie);
-        fechaRecepcion =    (EditText)findViewById(R.id.infFechaRecepcion);
-        precioUni =         (EditText)findViewById(R.id.infPrecioUni);
-        precioTot =         (EditText)findViewById(R.id.infPrecioTot);
-        centroCosto =       (EditText)findViewById(R.id.infCentroCosto);
-        ubiEspecie =        (EditText)findViewById(R.id.infUbiEspecie);
-        obsEspecie =        (EditText)findViewById(R.id.infObsEspecie);
+        numFactura =        (EditText)findViewById(R.id.biNumFactura);
+        rutProveedor =      (EditText)findViewById(R.id.biRutProveedor);
+        descEspecie =       (EditText)findViewById(R.id.biDescEspecie);
+        codEspecie =        (EditText)findViewById(R.id.biCodEspecie);
+        fechaRecepcion =    (EditText)findViewById(R.id.biFechaRecepcion);
+        precioUni =         (EditText)findViewById(R.id.biPrecioUni);
+        precioTot =         (EditText)findViewById(R.id.biPrecioTot);
+        centroCosto =       (EditText)findViewById(R.id.biCentroCosto);
+        ubiEspecie =        (EditText)findViewById(R.id.biUbiEspecie);
+        obsEspecie =        (EditText)findViewById(R.id.biObsEspecie);
 
-        estado_spinner =    (Spinner)findViewById(R.id.infEstadoSpinner);
+        estado_spinner =    (Spinner)findViewById(R.id.biEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -83,7 +83,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
 
         dao = new daoEspecie(this); //inicializa dao con el contexto actual
-        btnvolver = (Button)findViewById(R.id.infBtnVolver);
+        btnvolver = (Button)findViewById(R.id.biBtnVolver);
         btnvolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.infBuscaEspecie:
+            case R.id.biBuscaEspecie:
                 // !!!!! NO BORRAR !!!!!!
                 //String cod = codBusca.getText().toString();
                 /*Query query = mDatabase.child("data").child("especies").child("74");
@@ -117,7 +117,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                     }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});*/
                 // !!!!! NO BORRAR !!!!!!
                 break;
-            case R.id.infBtnBusqAvanzada:
+            case R.id.biBtnBusqAvanzada:
                 // Intent intentBA = new Intent (BuscarItems.this, busquedaAvanzadaItems.class);
                 startActivity(new Intent (BuscarItems.this, busquedaAvanzadaItems.class) /* intentBA */);
                 break;

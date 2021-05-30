@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,10 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    EditText codigoEspecie, numFactura, desItem, rutProv, precioTotal;
+    EditText codigoEspecie, ingCodigoItem2,numFactura, desItem, rutProv, precioTotal;
     EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso;
     Button btnGuardar, btnCancelar;
     daoEspecie dao;
+
     Spinner estado_spinner;
 
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
@@ -39,7 +41,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
-        codigoEspecie = (EditText)findViewById(R.id.ingCodigoEspecie);
+        codigoEspecie = (EditText) findViewById(R.id.ingCodigoEspecie);
         numFactura =    (EditText)findViewById(R.id.ingNumFactura);
         desItem =       (EditText)findViewById(R.id.ingDescripItem);
         rutProv =       (EditText)findViewById(R.id.ingRutProveedor);
@@ -120,6 +122,8 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                     Toast.makeText(this,"Codigo ya existe", Toast.LENGTH_LONG).show();
                 }
                 break;
+
+
         }
     }
     public void onBackPressed(){
@@ -135,5 +139,51 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+
+        //validaciones no terminado
     }
-}
+    public void Enviar(View v){
+      if (numFactura.getText().toString().isEmpty()){
+          Toast.makeText(this, " Campo numero factura Vacio",Toast.LENGTH_LONG).show();
+      }else {
+        if (rutProv.getText().toString().isEmpty()){
+              Toast.makeText(this, " Campo rut Vacio",Toast.LENGTH_LONG).show();
+        }else{
+            if (desItem.getText().toString().isEmpty()){
+                Toast.makeText(this, " Campo descripcion Vacio",Toast.LENGTH_LONG).show();
+            }else{
+            if (codigoEspecie.getText().toString().isEmpty()){
+                Toast.makeText(this, " Campo codigo Vacio",Toast.LENGTH_LONG).show();;
+                }else{
+                    if(estado_spinner.getSelectedItem().toString().trim() == "Pick one") {
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                    }else{
+                        if (fRecepcion.getText().toString().isEmpty()){
+                            Toast.makeText(this, " Campo recepcion Vacio",Toast.LENGTH_LONG).show();
+                        }else{
+                            if (recurso.getText().toString().isEmpty()){
+                                Toast.makeText(this, " Campo recurso Vacio",Toast.LENGTH_LONG).show();
+                            }else{
+                                if (ubiItem.getText().toString().isEmpty()){
+                                    Toast.makeText(this, " Campo Ubicacion Vacio",Toast.LENGTH_LONG).show();
+                                }else{
+                                    Toast.makeText(this, " listo formulario completo",Toast.LENGTH_LONG).show();
+
+
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+      }
+
+
+    }
+
+    //termino de codigo validaciones
+
+    }

@@ -42,6 +42,9 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
 
+                <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp"
+                    android:layout_width="match_parent"></TextView>
 
                 <TableRow>
                     <TextView
@@ -57,9 +60,14 @@
                         android:layout_height="match_parent"
                         android:background="@color/teal_700"
                         android:hint=" correlativo" />
+                    <TextView android:layout_margin="@dimen/cardview_default_radius"
+                        android:layout_height="20dp"
+                        android:layout_width="match_parent"></TextView>
+
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+                    android:layout_height="20dp"
+                    android:layout_width="match_parent"></TextView>
 
 
                 <TableRow>
@@ -131,6 +139,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="codigo"
+                        android:inputType="number"
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView
@@ -150,6 +159,8 @@
                         android:id="@+id/ingEstadoSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/teal_700"
+                        android:backgroundTint="@color/teal_700"
                         ></Spinner>
                 </TableRow>
                 <TextView
