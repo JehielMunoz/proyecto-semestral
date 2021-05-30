@@ -1,8 +1,10 @@
 package com.example.proyectosemestralv2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +25,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
 public class archivoExporExcel extends AppCompatActivity implements View.OnClickListener {
-    Button guardarCambios, btnAtras, export, guardarPDFbtn;
+    Button guardarCambios, btnAtras, export, export_ubicacion;
     daoExportExcel daoExport;
     daoEspecie daoEspecie;
     private DatabaseReference mDatabase;
@@ -33,7 +35,8 @@ public class archivoExporExcel extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archivo_export_excel);
 
-        export =        findViewById(R.id.btnExportExcel);
+        export =        findViewById(R.id.btnExportGralExcel);
+        export_ubicacion= findViewById(R.id.btnExportUbiExcel);
         guardarCambios= findViewById(R.id.guardarCambiosbtn);
         btnAtras =      findViewById(R.id.btnAtras);
 
@@ -53,10 +56,11 @@ public class archivoExporExcel extends AppCompatActivity implements View.OnClick
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnExportExcel:
+            case R.id.btnExportGralExcel:
                 try {
                     daoExport.export(mDatabase,this);
                 } catch (IOException e) {
