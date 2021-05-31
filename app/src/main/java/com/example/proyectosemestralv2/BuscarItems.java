@@ -104,29 +104,34 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                 Query query = mDatabase.child("data").child("especies").child(cod);
                 query.addValueEventListener(new ValueEventListener(){
                     public void onDataChange(DataSnapshot dataSnapshot){
-                        if(dataSnapshot!=null){
-                            String bdNumFactura =   String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class));
-                            String bdRutProveedor = String.valueOf(dataSnapshot.child("rut_proveedor").getValue(String.class));
-                            String bdDescEspecie =  String.valueOf(dataSnapshot.child("especie").getValue(String.class));
-                            String bdCodEspecie =   String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(String.class));
-                            String bdFRecep     =   String.valueOf(dataSnapshot.child("fecha_recepcion").getValue(String.class));
-                            String bdPrecioUni  =   String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class));
-                            String bdPrecioTot  =   String.valueOf(dataSnapshot.child("precio_total").getValue(long.class));
-                            String bdCentroCosto =  String.valueOf(dataSnapshot.child("centro_de_costo").getValue(String.class));
-                            String bdUbiEspecie =   String.valueOf(dataSnapshot.child("ubicacion_actual").getValue(String.class));
-                            String bdObsEspecie =   String.valueOf(dataSnapshot.child("observaciones").getValue(String.class));
+                        if(dataSnapshot!=null) {
+                            String control = String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
+                            if (!control.equals("null")){
+                                String bdNumFactura =   String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class));
+                                String bdRutProveedor = String.valueOf(dataSnapshot.child("rut_proveedor").getValue(String.class));
+                                String bdDescEspecie =  String.valueOf(dataSnapshot.child("especie").getValue(String.class));
+                                String bdCodEspecie =   String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
+                                String bdFRecep =       String.valueOf(dataSnapshot.child("fecha_recepcion").getValue(String.class));
+                                String bdPrecioUni =    String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class));
+                                String bdPrecioTot =    String.valueOf(dataSnapshot.child("precio_total").getValue(long.class));
+                                String bdCentroCosto =  String.valueOf(dataSnapshot.child("centro_de_costo").getValue(String.class));
+                                String bdUbiEspecie =   String.valueOf(dataSnapshot.child("ubicacion_actual").getValue(String.class));
+                                String bdObsEspecie =   String.valueOf(dataSnapshot.child("observaciones").getValue(String.class));
 
-                            numFactura.setText(bdNumFactura);
-                            rutProveedor.setText(bdRutProveedor);
-                            descEspecie.setText(bdDescEspecie);
-                            codEspecie.setText(bdCodEspecie);
-                            fechaRecepcion.setText(bdFRecep);
-                            precioUni.setText(bdPrecioUni);
-                            precioTot.setText(bdPrecioTot);
-                            centroCosto.setText(bdCentroCosto);
-                            ubiEspecie.setText(bdUbiEspecie);
-                            obsEspecie.setText(bdObsEspecie);
-                        }else{ Toast.makeText(BuscarItems.this,"Codigo no existe en la base de datos.",Toast.LENGTH_LONG).show();}
+                                numFactura.setText(bdNumFactura);
+                                rutProveedor.setText(bdRutProveedor);
+                                descEspecie.setText(bdDescEspecie);
+                                codEspecie.setText(bdCodEspecie);
+                                fechaRecepcion.setText(bdFRecep);
+                                precioUni.setText(bdPrecioUni);
+                                precioTot.setText(bdPrecioTot);
+                                centroCosto.setText(bdCentroCosto);
+                                ubiEspecie.setText(bdUbiEspecie);
+                                obsEspecie.setText(bdObsEspecie);
+                            }else{
+                                Toast.makeText(BuscarItems.this,"Codigo no existe en la base de datos.",Toast.LENGTH_LONG).show();
+                            }
+                        }
                     }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
                 break;
             case R.id.biBtnBusqAvanzada:
