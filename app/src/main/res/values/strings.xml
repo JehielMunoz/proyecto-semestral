@@ -2,7 +2,6 @@
     <string name="app_name">ProyectoSemestralV2</string>
 
     <string-array name="estados">
-        <item>Estados</item>
         <item>B</item>
         <item>M</item>
         <item>R</item>
