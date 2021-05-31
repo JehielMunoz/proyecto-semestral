@@ -30,7 +30,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
 public class archivoExporExcel extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    Button guardarCambios, btnAtras, export, export_ubicacion;
+    Button btnAtras, export, export_ubicacion;
     Spinner ubi_spinner;
     daoExportExcel daoExport;
     daoEspecie daoEspecie;
@@ -44,7 +44,6 @@ public class archivoExporExcel extends AppCompatActivity implements View.OnClick
 
         export = findViewById(R.id.btnExportGralExcel);
         export_ubicacion = findViewById(R.id.btnExportUbiExcel);
-        guardarCambios = findViewById(R.id.guardarCambiosbtn);
         btnAtras = findViewById(R.id.btnAtras);
 
         ubi_spinner =   findViewById(R.id.exUbicacionExport);

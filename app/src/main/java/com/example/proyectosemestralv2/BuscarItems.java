@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     Button buscaEspecie;
     EditText codBusca;
     Button btnvolver, btnBusquedaAvanzada;
+    EditText biCodigoBusca;
     EditText numFactura, rutProveedor, descEspecie, codEspecie, fechaRecepcion,
                 precioUni, precioTot, centroCosto, ubiEspecie, obsEspecie;
     Spinner estado_spinner;
@@ -55,7 +57,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         centroCosto =       (EditText)findViewById(R.id.biCentroCosto);
         ubiEspecie =        (EditText)findViewById(R.id.biUbiEspecie);
         obsEspecie =        (EditText)findViewById(R.id.biObsEspecie);
-
+        biCodigoBusca =     (EditText)findViewById(R.id.biCodigoBusca);
         estado_spinner =    (Spinner)findViewById(R.id.biEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
@@ -63,7 +65,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         estado_spinner.setAdapter(adapter);
         estado_spinner.setOnItemSelectedListener(this);
 
-
+/*
         Query query = mDatabase.child("data").child("especies").child("74");
         query.addValueEventListener(new ValueEventListener(){
             public void onDataChange(DataSnapshot dataSnapshot){
@@ -80,7 +82,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                     obsEspecie.setText(dataSnapshot.child("observaciones").getValue(String.class));
                 }else{ System.out.println("Error en datasnapshot.");}
             }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
-
+*/
 
         dao = new daoEspecie(this); //inicializa dao con el contexto actual
         btnvolver = (Button)findViewById(R.id.biBtnVolver);
@@ -97,25 +99,35 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.biBuscaEspecie:
-                // !!!!! NO BORRAR !!!!!!
-                //String cod = codBusca.getText().toString();
-                /*Query query = mDatabase.child("data").child("especies").child("74");
+
+                String cod = biCodigoBusca.getText().toString();
+                Query query = mDatabase.child("data").child("especies").child(cod);
                 query.addValueEventListener(new ValueEventListener(){
                     public void onDataChange(DataSnapshot dataSnapshot){
                         if(dataSnapshot!=null){
-                            numFactura.setText(dataSnapshot.child("numero_factura").getValue(String.class));
-                            rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
-                            descEspecie.setText(dataSnapshot.child("especie").getValue(String.class));
-                            codEspecie.setText(dataSnapshot.child("codigo_correlativo").getValue(String.class));
-                            fechaRecepcion.setText(dataSnapshot.child("fecha_recepcion").getValue(String.class));
-                            precioUni.setText(dataSnapshot.child("precio_unitario").getValue(String.class));
-                            precioTot.setText(dataSnapshot.child("precio_total").getValue(String.class));
-                            centroCosto.setText(dataSnapshot.child("centro_de_costo").getValue(String.class));
-                            ubiEspecie.setText(dataSnapshot.child("ubicacion_actual").getValue(String.class));
-                            obsEspecie.setText(dataSnapshot.child("observaciones").getValue(String.class));
-                        }else{ System.out.println("Error en datasnapshot.");}
-                    }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});*/
-                // !!!!! NO BORRAR !!!!!!
+                            String bdNumFactura =   String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class));
+                            String bdRutProveedor = String.valueOf(dataSnapshot.child("rut_proveedor").getValue(String.class));
+                            String bdDescEspecie =  String.valueOf(dataSnapshot.child("especie").getValue(String.class));
+                            String bdCodEspecie =   String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(String.class));
+                            String bdFRecep     =   String.valueOf(dataSnapshot.child("fecha_recepcion").getValue(String.class));
+                            String bdPrecioUni  =   String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class));
+                            String bdPrecioTot  =   String.valueOf(dataSnapshot.child("precio_total").getValue(long.class));
+                            String bdCentroCosto =  String.valueOf(dataSnapshot.child("centro_de_costo").getValue(String.class));
+                            String bdUbiEspecie =   String.valueOf(dataSnapshot.child("ubicacion_actual").getValue(String.class));
+                            String bdObsEspecie =   String.valueOf(dataSnapshot.child("observaciones").getValue(String.class));
+
+                            numFactura.setText(bdNumFactura);
+                            rutProveedor.setText(bdRutProveedor);
+                            descEspecie.setText(bdDescEspecie);
+                            codEspecie.setText(bdCodEspecie);
+                            fechaRecepcion.setText(bdFRecep);
+                            precioUni.setText(bdPrecioUni);
+                            precioTot.setText(bdPrecioTot);
+                            centroCosto.setText(bdCentroCosto);
+                            ubiEspecie.setText(bdUbiEspecie);
+                            obsEspecie.setText(bdObsEspecie);
+                        }else{ Toast.makeText(BuscarItems.this,"Codigo no existe en la base de datos.",Toast.LENGTH_LONG).show();}
+                    }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
                 break;
             case R.id.biBtnBusqAvanzada:
                 // Intent intentBA = new Intent (BuscarItems.this, busquedaAvanzadaItems.class);
