@@ -10,5 +10,10 @@
         <item>Activo</item>
         <item>Inactivo</item>
     </string-array>
+    <string-array name="ubicaciones">
+        <item>Seleccione Ubicacion</item>
+        <item>SALA .3  PRE BÁSICA</item>
+        <item>SALA PROFESORES</item>
+    </string-array>
 
 </resources>

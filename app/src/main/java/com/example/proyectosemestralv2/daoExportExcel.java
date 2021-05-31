@@ -51,13 +51,15 @@ class daoExportExcel extends AppCompatActivity {
         String year =   String.valueOf(calendar.get(Calendar.YEAR));
         String month =  String.valueOf(calendar.get(Calendar.MONTH)+1);
         String day  =   String.valueOf(calendar.get(Calendar.DATE));
-        String hour =   String.valueOf(calendar.get(Calendar.HOUR));
+        String hour =   String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
         String minutes= String.valueOf(calendar.get(Calendar.MINUTE));
         String seconds= String.valueOf(calendar.get(Calendar.SECOND));
         if(Integer.parseInt(hour)<10){      hour =      "0" + hour; }
         if(Integer.parseInt(minutes)<10){   minutes =   "0" + minutes;}
         if(Integer.parseInt(seconds)<10){   seconds =   "0" + seconds;}
-        String nameFormat = "EXPORT_INVENTARIO_"
+        String fUbi=ubicacion;
+        if(!ubicacion.equals("")){fUbi=ubicacion+"_";}
+        String nameFormat = "export_inventario_" + fUbi
                 + year + "-" + month + "-" + day + "_"
                 + hour + "-" + minutes + "-" + seconds +".xls";
         String nFile = nameFormat;
@@ -87,13 +89,9 @@ class daoExportExcel extends AppCompatActivity {
 
         try {
             File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),nFile);
-            //file.createNewFile();
-            //get data
-
-            //file path
             WorkbookSettings wbSettings = new WorkbookSettings();
             wbSettings.setLocale(new Locale(Locale.ENGLISH.getLanguage(), Locale.ENGLISH.getCountry()));
-
+            wbSettings.setEncoding("Cp1252");
             Workbook workbookTemplate = Workbook.getWorkbook(file,wbSettings);
             WritableWorkbook workbook = Workbook.createWorkbook(file,workbookTemplate);
             workbookTemplate.close();

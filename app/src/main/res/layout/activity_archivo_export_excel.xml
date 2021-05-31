@@ -9,39 +9,19 @@
     tools:context=".archivoExporExcel">
 
     <Button
-        android:id="@+id/guardarCambiosbtn"
-        android:layout_width="113dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        android:text="guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921"
-        tools:ignore="MissingConstraints" />
-
-    <Button
         android:id="@+id/btnAtras"
         android:layout_width="113dp"
         android:layout_height="53dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginLeft="159dp"
         android:background="@drawable/btnpress_bourder"
 
         android:backgroundTint="@color/teal_700"
         android:text="Atras"
         app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toStartOf="@+id/guardarCambiosbtn"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921"
+        app:layout_constraintVertical_bias="0.911"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -130,17 +110,20 @@
 
     <Spinner
         android:id="@+id/exUbicacionExport"
-        android:layout_width="359dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="45dp"
+        android:minWidth="350dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:background="@drawable/btnpress"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnExportUbiExcel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24"
         app:layout_constraintVertical_bias="0.134"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:listitem="@android:layout/simple_spinner_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
