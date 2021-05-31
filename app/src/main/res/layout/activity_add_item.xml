@@ -317,10 +317,18 @@
                 android:text="cancelar" />
 
             <Button
+                android:id="@+id/ingValidarInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#4CAF50"
+                android:onClick="validarbtn"
+                android:text=" Validar informacion" />
+            <Button
                 android:id="@+id/ingBtnGuardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4CAF50"
+                android:onClick="onClick"
                 android:text="aceptar" />
 
         </LinearLayout>

@@ -140,50 +140,88 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
     public void onNothingSelected(AdapterView<?> parent) {
 
 
-        //validaciones no terminado
+
     }
-    public void Enviar(View v){
-      if (numFactura.getText().toString().isEmpty()){
-          Toast.makeText(this, " Campo numero factura Vacio",Toast.LENGTH_LONG).show();
-      }else {
-        if (rutProv.getText().toString().isEmpty()){
-              Toast.makeText(this, " Campo rut Vacio",Toast.LENGTH_LONG).show();
-        }else{
-            if (desItem.getText().toString().isEmpty()){
-                Toast.makeText(this, " Campo descripcion Vacio",Toast.LENGTH_LONG).show();
-            }else{
-            if (codigoEspecie.getText().toString().isEmpty()){
-                Toast.makeText(this, " Campo codigo Vacio",Toast.LENGTH_LONG).show();;
-                }else{
-                    if(estado_spinner.getSelectedItem().toString().trim() == "Pick one") {
-                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-                    }else{
-                        if (fRecepcion.getText().toString().isEmpty()){
-                            Toast.makeText(this, " Campo recepcion Vacio",Toast.LENGTH_LONG).show();
-                        }else{
-                            if (recurso.getText().toString().isEmpty()){
-                                Toast.makeText(this, " Campo recurso Vacio",Toast.LENGTH_LONG).show();
-                            }else{
-                                if (ubiItem.getText().toString().isEmpty()){
-                                    Toast.makeText(this, " Campo Ubicacion Vacio",Toast.LENGTH_LONG).show();
-                                }else{
-                                    Toast.makeText(this, " listo formulario completo",Toast.LENGTH_LONG).show();
+    public void validarbtn(View v){
+        if (validar()){
+            Toast.makeText(this,"Valido correctamente ",Toast.LENGTH_LONG).show();
+        }
+    }
+    public boolean validar() {
+        boolean retorno = true;
 
 
+        String c1 = numFactura.getText().toString();
+        String c2 = rutProv.getText().toString();
+        String c3 = desItem.getText().toString();
+        String c4 = codigoEspecie.getText().toString();
+        String c6 = fRecepcion.getText().toString();
+        String c7 = recurso.getText().toString();
+        String c8 = precioItem.getText().toString();
+        String c9 = precioTotal.getText().toString();
+        String c10 = ubiItem.getText().toString();
+        String c11 = obsIngreso.getText().toString();
+        if (c1.isEmpty()) {
+            numFactura.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c2.isEmpty()) {
+            rutProv.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c3.isEmpty()) {
+            desItem.setError("este campo no puede quedar vacio");
+            retorno = false;
+            {
+                if (c4.isEmpty()) {
+                    codigoEspecie.setError("este campo no puede quedar vacio");
+                    retorno = false;
+                }
+                        if (c6.isEmpty()) {
+                            fRecepcion.setError("este campo no puede quedar vacio");
+                            retorno = false;
+                            {
+                                if (c7.isEmpty()) {
+                                    recurso.setError("este campo no puede quedar vacio");
+                                    retorno = false;
+                                    {
+                                        if (c8.isEmpty()) {
+                                            precioItem.setError("este campo no puede quedar vacio");
+                                            retorno = false;
+                                            {
+                                                if (c9.isEmpty()) {
+                                                    precioTotal.setError("este campo no puede quedar vacio");
+                                                    retorno = false;
+                                                    {
+                                                        if (c10.isEmpty()) {
+                                                            ubiItem.setError("este campo no puede quedar vacio");
+                                                            retorno = false;
+                                                            {
+                                                                if (c11.isEmpty()) {
+                                                                    obsIngreso.setError("este campo no puede quedar vacio");
+                                                                    retorno = false;
 
+
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-
+            return retorno;
             }
-      }
+        }
 
 
-    }
 
-    //termino de codigo validaciones
 
-    }
+

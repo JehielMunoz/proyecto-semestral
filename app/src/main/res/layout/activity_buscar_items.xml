@@ -25,10 +25,12 @@
                 android:gravity="center"
                 android:textSize="25dp"
                 android:text=" BUSCAR ITEMS"
-                android:textColor="@color/black"></TextView>
+                android:textColor="@color/black" />
 
-            <TextView android:layout_margin="@dimen/cardview_default_radius"
-                android:layout_height="20dp" android:layout_width="match_parent"></TextView>
+            <TextView
+                android:layout_margin="@dimen/cardview_default_radius"
+                android:layout_height="20dp"
+                android:layout_width="match_parent" />
             <Button
                 android:id="@+id/biScanerCam"
                 android:layout_width="wrap_content"
@@ -41,8 +43,10 @@
                 android:textColor="@color/white"
                 />
 
-            <TextView android:layout_margin="@dimen/cardview_default_radius"
-                android:layout_height="20dp" android:layout_width="match_parent"></TextView>
+            <TextView
+                android:layout_margin="@dimen/cardview_default_radius"
+                android:layout_height="20dp"
+                android:layout_width="match_parent" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -78,8 +82,9 @@
                         android:backgroundTint="@color/teal_700"/>
                 </TableRow>
 
-                <TextView android:layout_margin="@dimen/cardview_default_radius"
-                    android:layout_height="20dp"></TextView>
+                <TextView
+                    android:layout_margin="@dimen/cardview_default_radius"
+                    android:layout_height="20dp" />
 
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
                     android:layout_height="20dp"></TextView>
