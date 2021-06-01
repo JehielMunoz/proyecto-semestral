@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +27,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
     EditText razonSocial, rutProveedor, telefonoProveedor, emailProveedor, rutBusca;
     Button retornoBtn, buscarBtn, guardarCambiosBtn;
     Spinner estado_spinner;
-
+    daoProveedores dao;
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
     ArrayList<Proveedor> lista;
@@ -52,12 +53,12 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         estado_spinner.setAdapter(adapter);
         estado_spinner.setOnItemSelectedListener(this);
-
+        dao = new daoProveedores();
         buscarBtn.setOnClickListener(this);
         retornoBtn.setOnClickListener(this);
         guardarCambiosBtn.setOnClickListener(this);
 
-        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference("proveedores");
+        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
     }
 
 
@@ -67,20 +68,28 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.bpBuscarButton:
                 String rutProv = rutBusca.getText().toString();
-                Query query = mDatabase.child(rutProv);
-                query.addValueEventListener(new ValueEventListener(){
-                    public void onDataChange(DataSnapshot dataSnapshot){
-                        if(dataSnapshot!=null){
-                            razonSocial.setText(dataSnapshot.child("razonSocial").getValue(String.class));
-                            rutProveedor.setText(dataSnapshot.child("rut").getValue(String.class));
-                            telefonoProveedor.setText(dataSnapshot.child("telefono").getValue(Long.class).toString());
-                            emailProveedor.setText(dataSnapshot.child("email").getValue(String.class));
-                        }else{
-                            razonSocial.setText("Razon no encontrada");
-                        }
+                if(!rutProv.equals(null) || !rutProv.equals("null")) {
+                    if (dao.exist(rutProv, mDatabase)) {
+                        Query query = mDatabase.child("proveedores").child(rutProv);
+                        query.addValueEventListener(new ValueEventListener() {
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot != null) {
+                                    String bdrazonSocial = String.valueOf(dataSnapshot.child("razonSocial").getValue(String.class));
+                                    String bdRutProveedor_BP = String.valueOf(dataSnapshot.child("rut").getValue(String.class));
+                                    String bdTelefonoProv = String.valueOf(dataSnapshot.child("telefono").getValue(long.class));
+                                    String bdEmailProv = String.valueOf(dataSnapshot.child("email").getValue(String.class));
+                                    razonSocial.setText(bdrazonSocial);
+                                    rutProveedor.setText(bdRutProveedor_BP);
+                                    telefonoProveedor.setText(bdTelefonoProv);
+                                    emailProveedor.setText(bdEmailProv);
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {}});
+                    }else {
+                        Toast.makeText(busquedaProveedor.this, "Rut/Razon social no encontrada.", Toast.LENGTH_LONG).show();
                     }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError){}});
+                }
                 break;
             case R.id.bpRetornoButton:
                 Intent intentRB = new Intent(busquedaProveedor.this, menuInicio.class);

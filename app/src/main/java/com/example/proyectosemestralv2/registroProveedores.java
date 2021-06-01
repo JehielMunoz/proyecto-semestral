@@ -66,27 +66,31 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.rpGuardarProv:
                 Proveedor proveedor = new Proveedor();
+                Integer telefono;
 
-                String razonSocial = razonSocialProv.getText().toString();
-                String rut = rutProveedor.getText().toString();
-                Integer telefono = Integer.parseInt(telefonoProvedor.getText().toString());
-                String email = emailProvedor.getText().toString();
+                String razonSocial =    String.valueOf(razonSocialProv.getText());
+                String rut =            String.valueOf(rutProveedor.getText());
+                String telefonoCtrl =   String.valueOf(telefonoProvedor.getText());
+                if(telefonoCtrl.equals("")){ telefono = 0;}
+                else{   telefono =      Integer.parseInt(String.valueOf(telefonoProvedor.getText()));}
+                String email =          String.valueOf(emailProvedor.getText());
 
-                proveedor.setRazonSocial(razonSocial);
-                proveedor.setEmail(email);
-                proveedor.setTelefono(telefono);
-                proveedor.setRut(rut);
-                proveedor.setEstado(true);
+                if(!razonSocial.equals("") || !rut.equals("") || telefono != 0 || !email.equals("")) {
+                    proveedor.setRazonSocial(razonSocial);
+                    proveedor.setEmail(email);
+                    proveedor.setTelefono(telefono);
+                    proveedor.setRut(rut);
+                    proveedor.setEstado(true);
 
-                if(dao.creaProveedor(proveedor, rut)){
-                    Toast.makeText(this,"Registro exitoso",Toast.LENGTH_LONG).show();
-                    // Intent intentCP = new Intent(registroProveedores.this, MainActivity.class);
-                    // startActivity(intentCP);
-                    // finish();
-                } else {
-                    Toast.makeText(this,"Proveedor ya esta registrado", Toast.LENGTH_LONG).show();
+                    if (dao.creaProveedor(proveedor, rut, mDatabase)) {
+                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(this, "Proveedor ya esta registrado", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(this, "Debe ingresar todos los campos", Toast.LENGTH_LONG).show();
                 }
-                // break;
+                break;
         }
     }
 

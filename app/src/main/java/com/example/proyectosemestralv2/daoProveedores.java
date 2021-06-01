@@ -1,6 +1,7 @@
 package com.example.proyectosemestralv2;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -8,6 +9,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -45,18 +47,38 @@ public class daoProveedores {
         };
         //Especie especie = mDatabase.child("data").child(codString);
     }
+    public boolean exist(String rut, DatabaseReference mDatabase) {
+        final boolean[] existCtrl = {false};
+        Query query = mDatabase.child("proveedores").child(rut);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getChildrenCount()!=0){
+                    existCtrl[0] = true;}
+                else {
+                    existCtrl[0] = false;
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {}});
+        return existCtrl[0];
+    }
 
-
-    public boolean creaProveedor(Proveedor proveedor, String rut) {
-        mDatabase.child("proveedores").child(rut).setValue(proveedor);
-        return true;
+    public boolean creaProveedor(Proveedor proveedor, String rut, DatabaseReference mDatabase) {
+        final boolean[] createControl = {false};
+        Query query = mDatabase.child("proveedores").child(rut);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getChildrenCount()!=0){
+                    createControl[0] = false;}
+                else {
+                    mDatabase.child("proveedores").child(rut).setValue(proveedor);
+                    createControl[0] = true;
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {}});
+        return createControl[0];
     }
 }
-/*
-        this.id = id;
-        this.telefono = telefono;
-        this.razonSocial = razonSocial;
-        this.rut = rut;
-        this.email = email;
-        this.estado = estado;
- */

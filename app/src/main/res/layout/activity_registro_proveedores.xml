@@ -45,6 +45,7 @@
 
             <EditText
                 android:id="@+id/rpRazonSocialIng"
+                android:hint="Nombre de la empresa"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -69,6 +70,7 @@
 
             <EditText
                 android:id="@+id/rpRutIng"
+                android:hint="Rut sin punto con guion"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -100,7 +102,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/btnColor"
-                android:hint=""
+                android:hint="Solo numeros"
                 android:padding="5dp"
                 android:textColor="#000" />
         </TableRow>
