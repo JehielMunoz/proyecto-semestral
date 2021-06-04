@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    EditText codigoEspecie, ingCodigoItem2,numFactura, desItem, rutProv, precioTotal;
+    EditText codigoEspecie, ingCodigoItem2, numFactura, desItem, rutProv, precioTotal, codigoProd;
     EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso;
     Button btnGuardar, btnCancelar;
     daoEspecie dao;
@@ -42,18 +42,19 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
         codigoEspecie = (EditText) findViewById(R.id.ingCodigoEspecie);
-        numFactura =    (EditText)findViewById(R.id.ingNumFactura);
-        desItem =       (EditText)findViewById(R.id.ingDescripItem);
-        rutProv =       (EditText)findViewById(R.id.ingRutProveedor);
-        fRecepcion =    (EditText)findViewById(R.id.ingFechaRecepcion);
-        precioItem =    (EditText)findViewById(R.id.ingPrecioItem);
-        precioTotal=    (EditText)findViewById(R.id.ingPrecioItemIVA);
-        ubiItem =       (EditText)findViewById(R.id.ingUbicacionItem);
-        obsIngreso =    (EditText)findViewById(R.id.ingObservacionIngreso);
-        recurso =       (EditText)findViewById(R.id.ingRecurso);
-        btnGuardar =    (Button)findViewById(R.id.ingBtnGuardar);
-        btnCancelar =   (Button)findViewById(R.id.ingBtnCancelar);
-        estado_spinner = (Spinner)findViewById(R.id.ingEstadoSpinner);
+        numFactura = (EditText) findViewById(R.id.ingNumFactura);
+        desItem = (EditText) findViewById(R.id.ingDescripItem);
+        rutProv = (EditText) findViewById(R.id.ingRutProveedor);
+        fRecepcion = (EditText) findViewById(R.id.ingFechaRecepcion);
+        precioItem = (EditText) findViewById(R.id.ingPrecioItem);
+        codigoProd = (EditText) findViewById(R.id.ingCodigoItem2);
+        precioTotal = (EditText) findViewById(R.id.ingPrecioItemIVA);
+        ubiItem = (EditText) findViewById(R.id.ingUbicacionItem);
+        obsIngreso = (EditText) findViewById(R.id.ingObservacionIngreso);
+        recurso = (EditText) findViewById(R.id.ingRecurso);
+        btnGuardar = (Button) findViewById(R.id.ingBtnGuardar);
+        btnCancelar = (Button) findViewById(R.id.ingBtnCancelar);
+        estado_spinner = (Spinner) findViewById(R.id.ingEstadoSpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -66,19 +67,26 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
 
         Query query = mDatabase.child("data").child("especies");
-        query.addValueEventListener(new ValueEventListener(){
-            public void onDataChange(DataSnapshot dataSnapshot){
-                if(dataSnapshot!=null){
-                    String cont = String.valueOf(dataSnapshot.getChildrenCount()+2);
+        query.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null) {
+                    String cont = String.valueOf(dataSnapshot.getChildrenCount() + 2);
                     codigoEspecie.setText(cont);
-                }else{ System.out.println("Error en datasnapshot.");}
-            }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
+                } else {
+                    System.out.println("Error en datasnapshot.");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
 
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(addItem.this,menuInicio.class);
+                Intent intent = new Intent(addItem.this, menuInicio.class);
                 startActivity(intent);
             }
         });
@@ -105,29 +113,33 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 String observacion = obsIngreso.getText().toString();
 
                 especie.setCodigo_correlativo(codigo_correlativo);
-                especie.setEspecie(descripcion); especie.setCantidad(1);
-                especie.setEstado(estado); especie.setPrecio_unitario(precio_unitario);
+                especie.setEspecie(descripcion);
+                especie.setCantidad(1);
+                especie.setEstado(estado);
+                especie.setPrecio_unitario(precio_unitario);
                 especie.setPrecio_total(precio_total);//especie.setPrecio_total(9999999);
                 especie.setFecha_recepcion(fecha_recepcion);
-                especie.setNumero_factura(numero_factura); especie.setRut_proveedor(rut_proveedor);
+                especie.setNumero_factura(numero_factura);
+                especie.setRut_proveedor(rut_proveedor);
                 especie.setCentro_de_costo(centro_de_costo);//especie.setCentro_de_costo("TEST");
                 especie.setUbicacion_actual(ubicacion);
                 especie.setObservaciones(observacion);
                 //if(!especie.isNull()){
                 //    Toast.makeText(this,"Complete todos los campos", Toast.LENGTH_LONG).show();
                 //}else
-                if(dao.creaEspecie(especie , codString)){
-                    Toast.makeText(this,"Registro exitoso",Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(this,"Codigo ya existe", Toast.LENGTH_LONG).show();
+                if (dao.creaEspecie(especie, codString)) {
+                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this, "Codigo ya existe", Toast.LENGTH_LONG).show();
                 }
                 break;
 
 
         }
     }
-    public void onBackPressed(){
-        startActivity(new Intent (addItem.this, menuInicio.class));
+
+    public void onBackPressed() {
+        startActivity(new Intent(addItem.this, menuInicio.class));
         finish();
     }
 
@@ -140,21 +152,22 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
     public void onNothingSelected(AdapterView<?> parent) {
 
 
-
     }
-    public void validarbtn(View v){
-        if (validar()){
-            Toast.makeText(this,"Valido correctamente ",Toast.LENGTH_LONG).show();
+
+    public void validarbtn(View v) {
+        if (validar()) {
+            Toast.makeText(this, "Valido correctamente ", Toast.LENGTH_LONG).show();
         }
     }
+
     public boolean validar() {
         boolean retorno = true;
-
 
         String c1 = numFactura.getText().toString();
         String c2 = rutProv.getText().toString();
         String c3 = desItem.getText().toString();
         String c4 = codigoEspecie.getText().toString();
+        String c5 = codigoProd.getText().toString();
         String c6 = fRecepcion.getText().toString();
         String c7 = recurso.getText().toString();
         String c8 = precioItem.getText().toString();
@@ -172,56 +185,42 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         if (c3.isEmpty()) {
             desItem.setError("este campo no puede quedar vacio");
             retorno = false;
-            {
-                if (c4.isEmpty()) {
-                    codigoEspecie.setError("este campo no puede quedar vacio");
-                    retorno = false;
-                }
-                        if (c6.isEmpty()) {
-                            fRecepcion.setError("este campo no puede quedar vacio");
-                            retorno = false;
-                            {
-                                if (c7.isEmpty()) {
-                                    recurso.setError("este campo no puede quedar vacio");
-                                    retorno = false;
-                                    {
-                                        if (c8.isEmpty()) {
-                                            precioItem.setError("este campo no puede quedar vacio");
-                                            retorno = false;
-                                            {
-                                                if (c9.isEmpty()) {
-                                                    precioTotal.setError("este campo no puede quedar vacio");
-                                                    retorno = false;
-                                                    {
-                                                        if (c10.isEmpty()) {
-                                                            ubiItem.setError("este campo no puede quedar vacio");
-                                                            retorno = false;
-                                                            {
-                                                                if (c11.isEmpty()) {
-                                                                    obsIngreso.setError("este campo no puede quedar vacio");
-                                                                    retorno = false;
-
-
-                                                                }
-                                                            }
-
-                                                        }
-                                                    }
-                                                }
-
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            return retorno;
-            }
         }
-
-
+        if (c4.isEmpty()) {
+            codigoEspecie.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c5.isEmpty()) {
+            codigoProd.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c6.isEmpty()) {
+            fRecepcion.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c7.isEmpty()) {
+            recurso.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c8.isEmpty()) {
+            precioItem.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c9.isEmpty()) {
+            precioTotal.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c10.isEmpty()) {
+            ubiItem.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        if (c11.isEmpty()) {
+            obsIngreso.setError("este campo no puede quedar vacio");
+            retorno = false;
+        }
+        return retorno;
+    }
+}
 
 
 
