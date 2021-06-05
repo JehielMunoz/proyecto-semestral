@@ -68,8 +68,9 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.bpBuscarButton:
                 String rutProv = rutBusca.getText().toString();
-                if(!rutProv.equals(null) || !rutProv.equals("null")) {
-                    if (dao.exist(rutProv, mDatabase)) {
+                if(!rutProv.equals("")) {
+                    boolean ctrlExist = dao.exist(rutProv, mDatabase);
+                    if (ctrlExist==true) {
                         Query query = mDatabase.child("proveedores").child(rutProv);
                         query.addValueEventListener(new ValueEventListener() {
                             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -89,6 +90,8 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     }else {
                         Toast.makeText(busquedaProveedor.this, "Rut/Razon social no encontrada.", Toast.LENGTH_LONG).show();
                     }
+                }else{
+                    Toast.makeText(busquedaProveedor.this, "Debe ingresar un rut.", Toast.LENGTH_LONG).show();
                 }
                 break;
             case R.id.bpRetornoButton:

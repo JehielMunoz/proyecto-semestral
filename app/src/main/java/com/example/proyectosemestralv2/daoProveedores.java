@@ -65,20 +65,9 @@ public class daoProveedores {
     }
 
     public boolean creaProveedor(Proveedor proveedor, String rut, DatabaseReference mDatabase) {
-        final boolean[] createControl = {false};
-        Query query = mDatabase.child("proveedores").child(rut);
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.getChildrenCount()!=0){
-                    createControl[0] = false;}
-                else {
-                    mDatabase.child("proveedores").child(rut).setValue(proveedor);
-                    createControl[0] = true;
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {}});
-        return createControl[0];
+        boolean createControl = false;
+        createControl = exist(rut,mDatabase);
+        if(!createControl){mDatabase.child("proveedores").child(rut).setValue(proveedor);}
+        return createControl;
     }
 }
