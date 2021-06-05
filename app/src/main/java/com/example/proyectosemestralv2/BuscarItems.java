@@ -35,10 +35,9 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_items);
-        //DB
+
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
-        //DB
-        //TESTEO
+
         codBusca = (EditText)findViewById(R.id.biCodigoBusca);
         buscaEspecie = (Button)findViewById(R.id.biBuscaEspecie);
         btnBusquedaAvanzada = (Button)findViewById(R.id.biBtnBusqAvanzada);
@@ -46,7 +45,6 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         btnBusquedaAvanzada.setOnClickListener(this);
         buscaEspecie.setOnClickListener(this);
 
-        //TESTEO
         numFactura =        (EditText)findViewById(R.id.biNumFactura);
         rutProveedor =      (EditText)findViewById(R.id.biRutProveedor);
         descEspecie =       (EditText)findViewById(R.id.biDescEspecie);
