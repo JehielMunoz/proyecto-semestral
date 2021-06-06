@@ -81,8 +81,8 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                     proveedor.setTelefono(telefono);
                     proveedor.setRut(rut);
                     proveedor.setEstado(true);
-
-                    if (dao.creaProveedor(proveedor, rut, mDatabase)) {
+                    boolean creaProveedor = dao.creaProveedor(proveedor, rut, mDatabase);
+                    if (creaProveedor != true) {
                         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(this, "Proveedor ya esta registrado", Toast.LENGTH_LONG).show();

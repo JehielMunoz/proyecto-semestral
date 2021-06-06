@@ -19,13 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 public class BuscarItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button buscaEspecie;
     EditText codBusca;
-    Button btnvolver, btnBusquedaAvanzada, biScanerCam;
+    Button btnvolver, btnBusquedaAvanzada;
     EditText biCodigoBusca;
     EditText numFactura, rutProveedor, descEspecie, codEspecie, fechaRecepcion,
                 precioUni, precioTot, centroCosto, ubiEspecie, obsEspecie;
@@ -45,12 +43,10 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         buscaEspecie = (Button)findViewById(R.id.biBuscaEspecie);
         btnBusquedaAvanzada = (Button)findViewById(R.id.biBtnBusqAvanzada);
 
-        biScanerCam = findViewById(R.id.biScanerCam);
         btnBusquedaAvanzada.setOnClickListener(this);
         buscaEspecie.setOnClickListener(this);
 
         //TESTEO
-
         numFactura =        (EditText)findViewById(R.id.biNumFactura);
         rutProveedor =      (EditText)findViewById(R.id.biRutProveedor);
         descEspecie =       (EditText)findViewById(R.id.biDescEspecie);
@@ -68,7 +64,6 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         estado_spinner.setAdapter(adapter);
         estado_spinner.setOnItemSelectedListener(this);
-
 
 /*
         Query query = mDatabase.child("data").child("especies").child("74");
@@ -98,20 +93,6 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                 startActivity(intent);
             }
         });
-        biScanerCam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //
-                IntentIntegrator intengrador = new IntentIntegrator(BuscarItems.this);
-                intengrador.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-                intengrador.setPrompt("Lector - CDP");
-                intengrador.setCameraId(0);
-                intengrador.setBeepEnabled(true);
-                intengrador.setBarcodeImageEnabled(true);
-                intengrador.initiateScan();
-            }
-        });
-
 
     }
     @Override
@@ -170,20 +151,4 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {}
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-
-        if (result != null) {
-            if (result.getContents() == null) {
-                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
-                biCodigoBusca.setText(result.getContents());
-
-            }
-        } else {
-
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
 }
