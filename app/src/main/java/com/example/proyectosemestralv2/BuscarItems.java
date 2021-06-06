@@ -19,9 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class BuscarItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    Button buscaEspecie;
+    Button buscaEspecie, biScanerCam;
     EditText codBusca;
     Button btnvolver, btnBusquedaAvanzada;
     EditText biCodigoBusca;
@@ -47,6 +49,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         buscaEspecie.setOnClickListener(this);
 
         //TESTEO
+        biScanerCam = findViewById(R.id.biScanerCam);
         numFactura =        (EditText)findViewById(R.id.biNumFactura);
         rutProveedor =      (EditText)findViewById(R.id.biRutProveedor);
         descEspecie =       (EditText)findViewById(R.id.biDescEspecie);
@@ -86,11 +89,25 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
         dao = new daoEspecie(this); //inicializa dao con el contexto actual
         btnvolver = (Button)findViewById(R.id.biBtnVolver);
+
         btnvolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(new Intent(BuscarItems.this,menuInicio.class));
                 startActivity(intent);
+            }
+        });
+        biScanerCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                IntentIntegrator intengrador = new IntentIntegrator(BuscarItems.this);
+                intengrador.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                intengrador.setPrompt("Lector - CDP");
+                intengrador.setCameraId(0);
+                intengrador.setBeepEnabled(true);
+                intengrador.setBarcodeImageEnabled(true);
+                intengrador.initiateScan();
             }
         });
 
@@ -149,6 +166,23 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
     }
+
     @Override
     public void onNothingSelected(AdapterView<?> parent) {}
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+                biCodigoBusca.setText(result.getContents());
+
+            }
+        } else {
+
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 }

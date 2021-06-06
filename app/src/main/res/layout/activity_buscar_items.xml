@@ -75,11 +75,11 @@
                         android:id="@+id/biCodigoBusca"
                         android:layout_width="match_parent"
                         android:layout_height="47dp"
-                        android:hint=" Buscar Producto   "
-
-                        android:inputType="textPersonName"
                         android:background="@drawable/btnpress_bourder"
-                        android:backgroundTint="@color/teal_700"/>
+
+                        android:backgroundTint="@color/teal_700"
+                        android:hint=" Buscar Producto   "
+                        android:inputType="textPersonName" />
                 </TableRow>
 
                 <TextView
