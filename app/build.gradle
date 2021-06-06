@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.proyectosemestralv2"
-        minSdkVersion 16
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -40,7 +40,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:17.2.1'
     implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
     //implementation platform('com.google.firebase:firebase-bom:25.2.2')
-
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
