@@ -85,8 +85,23 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 ArrayList<Especie> coincidencias = new ArrayList<>();
                 Query query = mDatabase.child("data").child("especies");
                 String aux;
+                /*
+                array1 = lista de campos
+                array2 = busqueda
+                ArrayList<String> array3 = new ArrayList<>();
+                dataSnapshot = el resultado del query
+                for(int i = 0; i < dataSnapshot.getChildrenCount(); i++){
+                    for(int x = 0; x < array1.size(); x++){
+                        aux = String.valueOf(dataSnapshot.child(array1.get(0)).child(array2.get(0)));
+                        if(aux!=null && !array3.contains(aux)){array3.add()}
+                for(int z = 0; z < array3.size(); z++){
+                    if(
+                */
+                // Campos de busqueda
+                //"codigo_correlativo"  "numero_factura"    "rut_proveedor"
+                // "fecha_recepcion"    "centro_de_costo"   "ubicacion_actual"
 
-                if(codigoRelat != null){ itemsBusqueda.add(codigoRelat); }
+                if(codigoRelat != ""){ itemsBusqueda.add(codigoRelat);}
                 if(numeroFactura != null){ itemsBusqueda.add(numeroFactura); }
                 if(rutProv != null){ itemsBusqueda.add(rutProv); }
                 if(fecRecepcion != null){ itemsBusqueda.add(fecRecepcion); }

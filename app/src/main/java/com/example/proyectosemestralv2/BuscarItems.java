@@ -116,7 +116,6 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.biBuscaEspecie:
-
                 String cod = biCodigoBusca.getText().toString();
                 Query query = mDatabase.child("data").child("especies").child(cod);
                 query.addValueEventListener(new ValueEventListener(){
