@@ -169,6 +169,9 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {}
+
+
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
 

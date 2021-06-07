@@ -19,14 +19,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 //import com.google.firebase.database.FirebaseDatabase;
 
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     EditText codigoEspecie, ingCodigoItem2, numFactura, desItem, rutProv, precioTotal, codigoProd;
-    EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso;
-    Button btnGuardar, btnCancelar;
+    EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso,ingcodigoprod;
+    Button btnGuardar, btnCancelar,ingScanerCam;
     daoEspecie dao;
 
     Spinner estado_spinner;
@@ -40,6 +42,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         setContentView(R.layout.activity_add_item);
 
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
+
 
         codigoEspecie = (EditText) findViewById(R.id.ingCodigoEspecie);
         numFactura = (EditText) findViewById(R.id.ingNumFactura);
@@ -55,6 +58,23 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         btnGuardar = (Button) findViewById(R.id.ingBtnGuardar);
         btnCancelar = (Button) findViewById(R.id.ingBtnCancelar);
         estado_spinner = (Spinner) findViewById(R.id.ingEstadoSpinner);
+        ingScanerCam= findViewById(R.id.ingScanerCam);
+
+
+
+        ingScanerCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                IntentIntegrator intengrador = new IntentIntegrator(addItem.this);
+                intengrador.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                intengrador.setPrompt("Lector - BARRA Y QR - Escanea para agregar producto ");
+                intengrador.setCameraId(0);
+                intengrador.setBeepEnabled(true);
+                intengrador.setBarcodeImageEnabled(true);
+                intengrador.initiateScan();
+            }
+        });
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -160,6 +180,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         }
     }
 
+
     public boolean validar() {
         boolean retorno = true;
 
@@ -219,6 +240,28 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
             retorno = false;
         }
         return retorno;
+    }
+
+
+
+
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+                codigoProd.setText(result.getContents());
+
+
+            }
+        } else {
+
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
 
