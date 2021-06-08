@@ -1,8 +1,5 @@
 package com.example.proyectosemestralv2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -116,6 +116,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.biBuscaEspecie:
+
                 String cod = biCodigoBusca.getText().toString();
                 Query query = mDatabase.child("data").child("especies").child(cod);
                 query.addValueEventListener(new ValueEventListener(){

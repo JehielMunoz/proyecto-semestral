@@ -129,11 +129,12 @@
                         android:layout_height="wrap_content"
                         android:text="Estado"
                         android:textColor="@color/black"/>
-                    <Spinner
+                    <TextView
                         android:id="@+id/viewEstadoSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        ></Spinner>
+                        android:background="@color/btnColor"
+                        />
                 </TableRow>
                 <TextView
                     android:layout_width="wrap_content"
