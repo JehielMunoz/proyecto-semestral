@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".BusquedaAvanzadaView"></activity>
-        <activity android:name=".daoExportExcel" />
+        <activity android:name=".busquedaAvanzadaItems"></activity>
+        <activity android:name=".daoExportExcel"     />
         <activity android:name=".BuscarItems" />
         <!--
         >

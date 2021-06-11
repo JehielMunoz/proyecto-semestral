@@ -1,21 +1,37 @@
 package com.example.proyectosemestralv2;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+public class Lista_items extends AppCompatActivity implements View.OnClickListener {
 
-import java.util.ArrayList;
-
-public class Lista_items extends AppCompatActivity {
-
+    Button retornoBTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_items);
+
+        retornoBTN = (Button)findViewById(R.id.liBtnVolver);
+
+        retornoBTN.setOnClickListener(this);
     }
 
     public Lista_items(){
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.liBtnVolver:
+                Intent intentV = new Intent(Lista_items.this, busquedaAvanzadaItems.class);
+                startActivity(intentV);
+                break;
+        }
     }
 
 /*public class Adaptador_mensajes_estudiante extends BaseAdapter {

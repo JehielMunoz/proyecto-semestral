@@ -21,9 +21,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 
 public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -32,7 +29,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
     Spinner estadoSpinner;
     EditText nroFactura, rutProveedor, fechaRecepcion, centroCostos, ubicacionEspecie;
 
-    public List<String> resultados = new ArrayList<>();
+    public ArrayList<String> resultados = new ArrayList<>();
 
     CharSequence text = "Sin coincidencias";
     daoEspecie dao;
@@ -45,8 +42,6 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busqueda_avanzada_items);
-
-        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
         btnBusquedaAvan = (Button)findViewById(R.id.baBtnBusqueda);
         btnRetorno = (Button)findViewById(R.id.baBtnCancelar);
@@ -71,6 +66,9 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 startActivity(intent);
             }
         });
+
+        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
+
     }
 
     @Override
@@ -78,6 +76,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         switch (v.getId()) {
             case R.id.baBtnBusqueda:
                 ArrayList<String> busquedas = new ArrayList<>();
+                String auxBusquedas;
 
                 String numeroFactura = nroFactura.getText().toString();
                 String rutProv = rutProveedor.getText().toString();
@@ -90,26 +89,32 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 busquedas.add(rutProv); busquedas.add(fecRecepcion);
                 busquedas.add(centCostos); busquedas.add(ubEspecie);
 
-
-
-                for (int i = 0; i > busquedas.size(); i++){
-                    Query queryBA = mDatabase.child("data").child("especies").child(busquedas.get(i));
-                    queryBA.addValueEventListener(new ValueEventListener() {
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if(dataSnapshot != null){
-                                String result =  String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(String.class));
-                                resultados.add(result);
-                            } else {
-                                Toast.makeText(busquedaAvanzadaItems.this,"No hay registros en el sistema",Toast.LENGTH_LONG).show();
+                for (int i = 0; i < busquedas.size(); i++) {
+                    auxBusquedas = busquedas.get(i).toString();
+                    if (auxBusquedas != ""){
+                        Query queryBA = mDatabase.child("data").child("especies").child(auxBusquedas);
+                        // for (int x = 0; x <)
+                            queryBA.addValueEventListener(new ValueEventListener() {
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot != null) {
+                                    String result = String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(String.class));
+                                    resultados.add(result);
+                                }
                             }
-                        }
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError){}});
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) { } } );
+
+                    }
                 }
 
-                Set<String> hashset = new HashSet<String>(resultados);
-                resultados.clear();
-                resultados.addAll(hashset);
+                if (resultados.size() == 0){
+                    Toast.makeText(this, "No se encontraron coincidencias en sistema", Toast.LENGTH_SHORT).show();
+                    resultados.clear();
+                } else {
+                    Toast.makeText(this, "Coincidencias obtenidas ("+ resultados.get(6)+")", Toast.LENGTH_SHORT).show();
+                    // Intent intentLI = new Intent(busquedaAvanzadaItems.this, Lista_items.class);
+                    // startActivity(intentLI);
+                }
                 break;
         }
     }
@@ -124,11 +129,4 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
 
     }
 
-    public List<String> getResultados() {
-        return resultados;
-    }
-
-    public void setResultados(List<String> resultados) {
-        this.resultados = resultados;
-    }
 }
