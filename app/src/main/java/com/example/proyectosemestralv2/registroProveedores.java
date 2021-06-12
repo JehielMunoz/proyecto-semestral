@@ -74,15 +74,15 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                 if(telefonoCtrl.equals("")){ telefono = 0;}
                 else{   telefono =      Integer.parseInt(String.valueOf(telefonoProvedor.getText()));}
                 String email =          String.valueOf(emailProvedor.getText());
-
+                //String dbEstado =       String.valueOf();
                 if(!razonSocial.equals("") || !rut.equals("") || telefono != 0 || !email.equals("")) {
                     proveedor.setRazonSocial(razonSocial);
                     proveedor.setEmail(email);
                     proveedor.setTelefono(telefono);
                     proveedor.setRut(rut);
-                    proveedor.setEstado(true);
-                    boolean creaProveedor = dao.creaProveedor(proveedor, rut, mDatabase);
-                    if (creaProveedor != true) {
+                    //proveedor.setEstado(String);
+                    int creaProveedor = dao.creaProveedor(proveedor, rut, mDatabase);
+                    if (creaProveedor == 1) {
                         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(this, "Proveedor ya esta registrado", Toast.LENGTH_LONG).show();

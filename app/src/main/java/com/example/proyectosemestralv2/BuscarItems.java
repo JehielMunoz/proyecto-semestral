@@ -70,25 +70,6 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
         estado_spinner.setAdapter(adapter);
         estado_spinner.setOnItemSelectedListener(this);
 
-/*
-        Query query = mDatabase.child("data").child("especies").child("74");
-        query.addValueEventListener(new ValueEventListener(){
-            public void onDataChange(DataSnapshot dataSnapshot){
-                if(dataSnapshot!=null){
-                    numFactura.setText(String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class)));
-                    rutProveedor.setText(dataSnapshot.child("rut_proveedor").getValue(String.class));
-                    descEspecie.setText(dataSnapshot.child("especie").getValue(String.class));
-                    codEspecie.setText(String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class)));
-                    fechaRecepcion.setText(dataSnapshot.child("fecha_recepcion").getValue(String.class));
-                    precioUni.setText(String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class)));
-                    precioTot.setText(String.valueOf(dataSnapshot.child("precio_total").getValue(long.class)));
-                    centroCosto.setText(dataSnapshot.child("centro_de_costo").getValue(String.class));
-                    ubiEspecie.setText(dataSnapshot.child("ubicacion_actual").getValue(String.class));
-                    obsEspecie.setText(dataSnapshot.child("observaciones").getValue(String.class));
-                }else{ System.out.println("Error en datasnapshot.");}
-            }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
-*/
-
         dao = new daoEspecie(this); //inicializa dao con el contexto actual
         btnvolver = (Button)findViewById(R.id.biBtnVolver);
 

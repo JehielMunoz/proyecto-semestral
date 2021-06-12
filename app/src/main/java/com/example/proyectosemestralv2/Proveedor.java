@@ -2,21 +2,21 @@ package com.example.proyectosemestralv2;
 
 public class Proveedor {
 
-    int id, telefono;
-    String razon_social, rut_proveedor, email, Proveedor;
-    boolean estado;
-
-    public Proveedor() {
-        this.id = id;
+    int telefono;
+    String razon_social, rut, email, Proveedor;
+    String estado;
+    public Proveedor(){}
+    public Proveedor(int telefono, String razon_social, String rut,
+                     String email, String estado) {
         this.telefono = telefono;
         this.razon_social = razon_social;
-        this.rut_proveedor = rut_proveedor;
+        this.rut = rut;
         this.email = email;
         this.estado = estado;
     }
 
     public boolean isNull(){
-        if (id == 0 || telefono == 0 || rut_proveedor.equals("") || razon_social.equals("") || email.equals("")){
+        if (telefono == 0 || rut.equals("") || razon_social.equals("") || email.equals("")){
             return false;
         }
         return true;
@@ -26,14 +26,6 @@ public class Proveedor {
     public String getProveedor() { return Proveedor; }
 
     public void setProveedor(String proveedor) { Proveedor = proveedor; }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getTelefono() {
         return telefono;
@@ -52,11 +44,11 @@ public class Proveedor {
     }
 
     public String getRut() {
-        return rut_proveedor;
+        return rut;
     }
 
     public void setRut(String rut) {
-        this.rut_proveedor = rut;
+        this.rut = rut;
     }
 
     public String getEmail() {
@@ -67,7 +59,7 @@ public class Proveedor {
         this.email = email;
     }
 
-    public boolean isEstado() { return estado; }
+    public String isEstado() { return estado; }
 
-    public void setEstado(boolean estado) { this.estado = estado; }
+    public void setEstado(String estado) { this.estado = estado; }
 }

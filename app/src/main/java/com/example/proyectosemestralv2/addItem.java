@@ -26,8 +26,8 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    EditText codigoEspecie, ingCodigoItem2, numFactura, desItem, rutProv, precioTotal, codigoProd;
-    EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso,ingcodigoprod;
+    EditText codigoEspecie, numFactura, desItem, rutProv, precioTotal, codigoProd;
+    EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso,ingcodigoprod,codigoBarra;
     Button btnGuardar, btnCancelar,ingScanerCam;
     daoEspecie dao;
 
@@ -50,11 +50,11 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         rutProv = (EditText) findViewById(R.id.ingRutProveedor);
         fRecepcion = (EditText) findViewById(R.id.ingFechaRecepcion);
         precioItem = (EditText) findViewById(R.id.ingPrecioItem);
-        codigoProd = (EditText) findViewById(R.id.ingCodigoItem2);
         precioTotal = (EditText) findViewById(R.id.ingPrecioItemIVA);
         ubiItem = (EditText) findViewById(R.id.ingUbicacionItem);
         obsIngreso = (EditText) findViewById(R.id.ingObservacionIngreso);
         recurso = (EditText) findViewById(R.id.ingRecurso);
+        codigoBarra = (EditText) findViewById(R.id.ingCodigoBarra);
         btnGuardar = (Button) findViewById(R.id.ingBtnGuardar);
         btnCancelar = (Button) findViewById(R.id.ingBtnCancelar);
         estado_spinner = (Spinner) findViewById(R.id.ingEstadoSpinner);
@@ -131,6 +131,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 String centro_de_costo = recurso.getText().toString();
                 String ubicacion = ubiItem.getText().toString();
                 String observacion = obsIngreso.getText().toString();
+                int codigo_barra = Integer.parseInt(codigoBarra.getText().toString());
 
                 especie.setCodigo_correlativo(codigo_correlativo);
                 especie.setEspecie(descripcion);
@@ -144,6 +145,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 especie.setCentro_de_costo(centro_de_costo);//especie.setCentro_de_costo("TEST");
                 especie.setUbicacion_actual(ubicacion);
                 especie.setObservaciones(observacion);
+                especie.setCodigo_barra(codigo_barra);
                 //if(!especie.isNull()){
                 //    Toast.makeText(this,"Complete todos los campos", Toast.LENGTH_LONG).show();
                 //}else

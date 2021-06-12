@@ -50,11 +50,8 @@ class daoEspecie {
         //Especie especie = mDatabase.child("data").child(codString);
     }
     public boolean creaEspecie(Especie especie , String codString) {
-        //if (search(especie.getCodigo_correlativo()) == 0) {
         mDatabase.child("data").child("especies").child(codString).setValue(especie);
         return true;
-        //}
-        //return false;
     }/*
     public int search(int Codigo_correlativo ){
         int count = 0;

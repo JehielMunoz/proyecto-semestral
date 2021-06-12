@@ -47,27 +47,26 @@ public class daoProveedores {
         };
         //Especie especie = mDatabase.child("data").child(codString);
     }
-    public boolean exist(String rut, DatabaseReference mDatabase) {
-        final boolean[] existCtrl = {false};
+    public int exist(String rut, DatabaseReference mDatabase) {
+        final int[] existCtrl = {0};
         Query query = mDatabase.child("proveedores").child(rut);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.getChildrenCount()!=0){
-                    existCtrl[0] = true;}
-                else {
-                    existCtrl[0] = false;
+                if(dataSnapshot!=null){
+                    existCtrl[0] = 1;
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}});
+        System.out.println(existCtrl);
         return existCtrl[0];
     }
 
-    public boolean creaProveedor(Proveedor proveedor, String rut, DatabaseReference mDatabase) {
-        boolean createControl = false;
+    public int creaProveedor(Proveedor proveedor, String rut, DatabaseReference mDatabase) {
+        int createControl = 0;
         createControl = exist(rut,mDatabase);
-        if(!createControl){mDatabase.child("proveedores").child(rut).setValue(proveedor);}
-        return createControl;
+        if(createControl == 0){mDatabase.child("proveedores").child(rut).setValue(proveedor); return 1;}
+        else {return 0;}
     }
 }

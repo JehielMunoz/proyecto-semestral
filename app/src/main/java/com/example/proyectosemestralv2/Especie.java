@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 public class Especie {
     int Id, Codigo_correlativo, Cantidad, Precio_unitario, Precio_total;
-    int Numero_factura;
+    int Numero_factura, codigo_barra;
     String Especie, Estado, Rut_proveedor, Centro_de_costo, Ubicacion_actual;
     String Observaciones;
     String Fecha_recepcion;
@@ -17,7 +17,7 @@ public class Especie {
             int id, int codigo_correlativo, String especie,
             int cantidad, String estado, int precio_unitario,
             int precio_total, String fecha_recepcion, int numero_factura, String rut_proveedor,
-            String centro_de_costo, String ubicacion_actual, String observaciones){
+            String centro_de_costo, String ubicacion_actual, String observaciones, int codigo_barra){
         Id = id;
         Codigo_correlativo = codigo_correlativo;
         Especie = especie;
@@ -31,6 +31,7 @@ public class Especie {
         Centro_de_costo = centro_de_costo;
         Ubicacion_actual = ubicacion_actual;
         Observaciones = observaciones;
+        codigo_barra = codigo_barra;
     }
     public boolean isNull(){
         if(
@@ -155,5 +156,9 @@ public class Especie {
     public void setFecha_recepcion(String fecha_recepcion) {
         Fecha_recepcion = fecha_recepcion;
     }
+
+    public int getCodigo_barra(){ return codigo_barra;}
+
+    public void setCodigo_barra(int codigo_barra) {codigo_barra = codigo_barra;}
 
 }
