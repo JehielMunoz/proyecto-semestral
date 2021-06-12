@@ -76,7 +76,6 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         switch (v.getId()) {
             case R.id.baBtnBusqueda:
                 ArrayList<String> busquedas = new ArrayList<>();
-                String auxBusquedas;
 
                 String numeroFactura = nroFactura.getText().toString();
                 String rutProv = rutProveedor.getText().toString();
@@ -90,14 +89,13 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 busquedas.add(centCostos); busquedas.add(ubEspecie);
 
                 for (int i = 0; i < busquedas.size(); i++) {
-                    auxBusquedas = busquedas.get(i).toString();
+                    String auxBusquedas = busquedas.get(i);
                     if (auxBusquedas != ""){
-                        Query queryBA = mDatabase.child("data").child("especies").child(auxBusquedas);
-                        // for (int x = 0; x <)
+                        Query queryBA = mDatabase.child("data").child("especies").child(auxBusquedas)/*.limitToFirst(5)*/;
                             queryBA.addValueEventListener(new ValueEventListener() {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot != null) {
-                                    String result = String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(String.class));
+                                    String result = String.valueOf(dataSnapshot.child("especie").getValue(String.class));
                                     resultados.add(result);
                                 }
                             }
@@ -111,9 +109,10 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                     Toast.makeText(this, "No se encontraron coincidencias en sistema", Toast.LENGTH_SHORT).show();
                     resultados.clear();
                 } else {
-                    Toast.makeText(this, "Coincidencias obtenidas ("+ resultados.get(6)+")", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Coincidencias obtenidas ("+ resultados.size()+")", Toast.LENGTH_SHORT).show();
                     // Intent intentLI = new Intent(busquedaAvanzadaItems.this, Lista_items.class);
                     // startActivity(intentLI);
+                    resultados.clear();
                 }
                 break;
         }

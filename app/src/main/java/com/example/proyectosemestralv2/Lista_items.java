@@ -34,6 +34,11 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
         }
     }
 
+    public void onBackPressed(){
+        startActivity(new Intent (Lista_items.this, BusquedaAvanzadaView.class));
+        finish();
+    }
+
 /*public class Adaptador_mensajes_estudiante extends BaseAdapter {
     protected Activity activity;
     protected ArrayList<Datos_mensajes_estudiante> items;
