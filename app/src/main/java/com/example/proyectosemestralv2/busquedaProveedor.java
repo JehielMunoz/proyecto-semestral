@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class busquedaProveedor extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    EditText razonSocial, rutProveedor, telefonoProveedor, emailProveedor, rutBusca;
+    EditText razonSocial, telefonoProveedor, emailProveedor, rutBusca;
+    TextView rutProveedor;
     Button retornoBtn, buscarBtn, guardarCambiosBtn;
     Spinner estado_spinner;
     daoProveedores dao;
@@ -120,7 +122,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     proveedor.setRazonSocial(dbRazonSocial);
                     proveedor.setEmail(dbEmail);
                     proveedor.setTelefono(dbTelefono);
-                    proveedor.setRut(dbRut);
+                    //proveedor.setRut(dbRut);
                     proveedor.setEstado(dbEstado);
                     int creaProveedor = dao.creaProveedor(proveedor, dbRut, mDatabase);
                     if (creaProveedor == 1) {
