@@ -154,11 +154,11 @@
                         android:id="@+id/ingTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Codigo:"
+                        android:text="Codigo Producto:"
                         android:textColor="@color/black"/>
 
                     <EditText
-                        android:id="@+id/ingCodigoItem2"
+                        android:id="@+id/ingCodigoBarra"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="codigo"
