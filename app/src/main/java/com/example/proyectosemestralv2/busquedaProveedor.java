@@ -42,7 +42,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
 
         rutBusca =          (EditText)findViewById(R.id.bpRutBusca);
         razonSocial =       (EditText)findViewById(R.id.bpRazonSocial);
-        rutProveedor =      (EditText)findViewById(R.id.bpRutProveedor);
+        rutProveedor =      (TextView) findViewById(R.id.bpRutProveedor);
         telefonoProveedor = (EditText)findViewById(R.id.bpTelefonoProveedor);
         emailProveedor =    (EditText)findViewById(R.id.bpEmailProveedor);
 
@@ -102,6 +102,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
             case R.id.bpRetornoButton:
                 Intent intentRB = new Intent(busquedaProveedor.this, menuInicio.class);
                 startActivity(intentRB);
+                finish();
                 break;
             case R.id.bpGuardarCambiosButton:
                 Proveedor proveedor = new Proveedor();
