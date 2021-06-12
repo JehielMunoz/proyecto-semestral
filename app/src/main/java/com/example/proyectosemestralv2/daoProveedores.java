@@ -62,7 +62,11 @@ public class daoProveedores {
         System.out.println(existCtrl);
         return existCtrl[0];
     }
-
+    public int update(Proveedor proveedor, String rut, DatabaseReference mDatabase){
+        int createControl = 0;
+        if(createControl == 0){mDatabase.child("proveedores").child(rut).setValue(proveedor); return 1;}
+        else {return 0;}
+    }
     public int creaProveedor(Proveedor proveedor, String rut, DatabaseReference mDatabase) {
         int createControl = 0;
         createControl = exist(rut,mDatabase);

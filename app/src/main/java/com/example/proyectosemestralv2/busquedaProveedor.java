@@ -123,9 +123,9 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     proveedor.setRazonSocial(dbRazonSocial);
                     proveedor.setEmail(dbEmail);
                     proveedor.setTelefono(dbTelefono);
-                    //proveedor.setRut(dbRut);
+                    proveedor.setRut(dbRut);
                     proveedor.setEstado(dbEstado);
-                    int creaProveedor = dao.creaProveedor(proveedor, dbRut, mDatabase);
+                    int creaProveedor = dao.update(proveedor, dbRut, mDatabase);
                     if (creaProveedor == 1) {
                         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
                     } else {
