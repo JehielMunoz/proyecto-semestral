@@ -23,7 +23,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
     Button returnButton, guardarProveedor;
     EditText razonSocialProv, rutProveedor, telefonoProvedor, emailProvedor;
     daoProveedores dao;
-
+    String ctrlExist = "";
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
 
@@ -32,19 +32,92 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
-        returnButton = (Button) findViewById(R.id.rpRetorno);
-        guardarProveedor = (Button) findViewById(R.id.rpGuardarProv);
         razonSocialProv = (EditText) findViewById(R.id.rpRazonSocialIng);
         rutProveedor = (EditText) findViewById(R.id.rpRutIng);
         telefonoProvedor = (EditText) findViewById(R.id.rpNroTelefonicoIng);
         emailProvedor = (EditText) findViewById(R.id.rpCorreoIng);
 
+        returnButton = (Button) findViewById(R.id.rpRetorno);
+        guardarProveedor = (Button) findViewById(R.id.rpGuardarProv);
+
         dao = new daoProveedores(this);
+        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
         returnButton.setOnClickListener(this);
-        guardarProveedor.setOnClickListener(this);
+        guardarProveedor.setOnClickListener(v -> {
+            int telefono; char valDv; String[] charsRut = new String[2]; String[] charsEmail = new String[2];
+            String razonSocial =    String.valueOf(razonSocialProv.getText());
+            String rut =            String.valueOf(rutProveedor.getText());
+            String telefonoCtrl =   String.valueOf(telefonoProvedor.getText());
+            if(telefonoCtrl.equals("")){ telefono = 0;}
+            else{   telefono =      Integer.parseInt(String.valueOf(telefonoProvedor.getText()));}
+            String email =          String.valueOf(emailProvedor.getText());
+            //String dbEstado =       String.valueOf();
+            Query query = mDatabase.child("proveedores");
+            try {
+                if (rut.contains("-")) {
+                    charsRut = rut.split("-", 2);
+                }
+                if (email.contains("@")) {
+                    charsEmail = email.split("@", 2);
+                }
+                if (razonSocial.equals("")) {
+                    Toast.makeText(this, "Debe ingresar razon social.", Toast.LENGTH_LONG).show();
+                } else {
+                    if (rut.equals("")) {
+                        Toast.makeText(this, "Debe ingresar rut del proveedor.", Toast.LENGTH_LONG).show();
+                    } else {
+                        int valRut = Integer.parseInt(charsRut[0]);
+                        if (charsRut[1].length() != 1) {
+                            valDv = "x".charAt(0);
+                        } else {
+                            valDv = charsRut[1].charAt(0);
+                        }
+                        if (!dao.ValidarRut(valRut, valDv)) {
+                            Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
+                        } else {
+                            if (telefono == 0) {
+                                Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
+                            } else {
+                                //|| !email.contains(".cl") || !email.contains(".org") || !email.contains(".net")
+                                //|| !email.contains(".COM") || !email.contains(".CL") || !email.contains(".ORG") || !email.contains(".NET"))
+                                if (email.equals("") || !(email.contains("@") &&
+                                        (charsEmail[1].contains(".com") || charsEmail[1].contains(".cl") || charsEmail[1].contains(".org") || charsEmail[1].contains(".net") ||
+                                                charsEmail[1].contains(".COM") || charsEmail[1].contains(".CL") || charsEmail[1].contains(".ORG") || charsEmail[1].contains(".NET")
+                                        ))) {
+                                    Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Proveedor proveedor = new Proveedor();
+                                    final int[] ctrl = {0};
+                                    Query query2 = mDatabase.child("proveedores").child(rut);
+                                    query2.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            if (dataSnapshot.getValue() == null) {
+                                                ctrl[0] = 1;
+                                                proveedor.setRazonSocial(razonSocial);
+                                                proveedor.setEmail(email);
+                                                proveedor.setTelefono(telefono);
+                                                proveedor.setRut(rut);
+                                                mDatabase.child("proveedores").child(rut).setValue(proveedor);
+                                                Toast.makeText(registroProveedores.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                                            }else {
+                                            Toast.makeText(registroProveedores.this, "Proveedor ya existe.", Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                        @Override public void onCancelled(@NonNull DatabaseError databaseError) {}});
 
-        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
 
     }
 
@@ -56,9 +129,9 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                 startActivity(intent);
                 break;
 
-            case R.id.rpGuardarProv:
+/*            case R.id.rpGuardarProv:
 
-                Integer telefono; char valDv; String[] charsRut = new String[2];
+                Integer telefono; char valDv; String[] charsRut = new String[2]; String[] charsEmail = new String[2];
                 String razonSocial =    String.valueOf(razonSocialProv.getText());
                 String rut =            String.valueOf(rutProveedor.getText());
                 String telefonoCtrl =   String.valueOf(telefonoProvedor.getText());
@@ -66,35 +139,51 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                 else{   telefono =      Integer.parseInt(String.valueOf(telefonoProvedor.getText()));}
                 String email =          String.valueOf(emailProvedor.getText());
                 //String dbEstado =       String.valueOf();
-                try{
-                    if(rut.contains("-")){charsRut = rut.split("-",2);}
-                    //if(!razonSocial.equals("") || !rut.equals("") || telefono != 0 || !email.equals("")){
-                    if(razonSocial.equals("")){Toast.makeText(this, "Debe ingresar razon social.", Toast.LENGTH_LONG).show();}
-                    else{
-                        if(rut.equals("")){Toast.makeText(this, "Debe ingresar rut del proveedor.", Toast.LENGTH_LONG).show();}
-                        else {
-                            int valRut = Integer.parseInt(charsRut[0]);
-                            if(charsRut[1].length()!=1){valDv = "x".charAt(0);}
-                            else{valDv = charsRut[1].charAt(0);}
-                            if (!dao.ValidarRut(valRut, valDv)){Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();}
-                            else{
-                                if (telefono == 0) {
-                                    Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
+                Query query = mDatabase.child("proveedores");
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        ctrlExist = String.valueOf(dataSnapshot.child(rut).child("rut").getValue(String.class));
+                    }@Override public void onCancelled(@NonNull DatabaseError databaseError) {}});
+                if(ctrlExist=="") {
+                    try {
+                        if (rut.contains("-")) {
+                            charsRut = rut.split("-", 2);
+                        }
+                        if (email.contains("@")) {
+                            charsEmail = email.split("@", 2);
+                        }
+                        if (razonSocial.equals("")) {
+                            Toast.makeText(this, "Debe ingresar razon social.", Toast.LENGTH_LONG).show();
+                        } else {
+                            if (rut.equals("")) {
+                                Toast.makeText(this, "Debe ingresar rut del proveedor.", Toast.LENGTH_LONG).show();
+                            } else {
+                                int valRut = Integer.parseInt(charsRut[0]);
+                                if (charsRut[1].length() != 1) {
+                                    valDv = "x".charAt(0);
                                 } else {
-                                    //|| !email.contains(".cl") || !email.contains(".org") || !email.contains(".net")
-                                    //|| !email.contains(".COM") || !email.contains(".CL") || !email.contains(".ORG") || !email.contains(".NET"))
-                                    if (email.equals("") || !(email.contains("@") &&
-                                            (email.contains(".com") || email.contains(".cl") || email.contains(".org") || email.contains(".net") ||
-                                             email.contains(".COM") || email.contains(".CL") || email.contains(".ORG") || email.contains(".NET")
-                                            ))){
-                                            Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
+                                    valDv = charsRut[1].charAt(0);
+                                }
+                                if (!dao.ValidarRut(valRut, valDv)) {
+                                    Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    if (telefono == 0) {
+                                        Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
                                     } else {
-                                        Query query = mDatabase.child("proveedores");
-                                        query.addValueEventListener(new ValueEventListener() {
-                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                if (dataSnapshot != null) {
-                                                    String ctrl = String.valueOf(dataSnapshot.child(rut).child("rut").getValue(String.class));
-                                                    if (ctrl.equals("null") || ctrl.equals("")) {
+                                        //|| !email.contains(".cl") || !email.contains(".org") || !email.contains(".net")
+                                        //|| !email.contains(".COM") || !email.contains(".CL") || !email.contains(".ORG") || !email.contains(".NET"))
+                                        if (email.equals("") || !(email.contains("@") &&
+                                                (charsEmail[1].contains(".com") || charsEmail[1].contains(".cl") || charsEmail[1].contains(".org") || charsEmail[1].contains(".net") ||
+                                                        charsEmail[1].contains(".COM") || charsEmail[1].contains(".CL") || charsEmail[1].contains(".ORG") || charsEmail[1].contains(".NET")
+                                                ))) {
+                                            Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
+                                        } else {
+                                            query.addValueEventListener(new ValueEventListener() {
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    if (dataSnapshot != null) {
+                                                        //String ctrl = String.valueOf(dataSnapshot.child(rut).child("rut").getValue(String.class));
+                                                        //if (ctrl.equals("null")) {
                                                         Proveedor proveedor = new Proveedor();
                                                         proveedor.setRazonSocial(razonSocial);
                                                         proveedor.setEmail(email);
@@ -102,29 +191,31 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                                         proveedor.setRut(rut);
 
                                                         mDatabase.child("proveedores").child(rut).setValue(proveedor);
-
                                                         Toast.makeText(registroProveedores.this, "Registro exitoso", Toast.LENGTH_LONG).show();
-
+                                                        //}
                                                     } else {
-                                                        Toast.makeText(registroProveedores.this, "Proveedor ya existe.", Toast.LENGTH_LONG).show();
+                                                        System.out.println("Error en datasnapshot.");
                                                     }
-                                                } else {
-                                                    System.out.println("Error en datasnapshot.");
                                                 }
-                                            }
 
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                                            }
-                                        });
-                                        break;
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                                }
+                                            });
+                                        }
                                     }
                                 }
                             }
                         }
+                    } catch (Exception e) {
+                        Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
+                    } finally {
+                        break;
                     }
-                }catch(Exception e){Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();}
-            break;
+                }else{
+                    Toast.makeText(registroProveedores.this, "Proveedor ya existe.", Toast.LENGTH_LONG).show();
+                    break;
+                }*/
         }
     }
 
