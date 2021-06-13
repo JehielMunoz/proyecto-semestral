@@ -88,11 +88,12 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 busquedas.add(rutProv); busquedas.add(fecRecepcion);
                 busquedas.add(centCostos); busquedas.add(ubEspecie);
 
+
                 for (int i = 0; i < busquedas.size(); i++) {
                     String auxBusquedas = busquedas.get(i);
                     if (auxBusquedas != ""){
                         Query queryBA = mDatabase.child("data").child("especies").child(auxBusquedas)/*.limitToFirst(5)*/;
-                            queryBA.addValueEventListener(new ValueEventListener() {
+                        queryBA.addValueEventListener(new ValueEventListener() {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot != null) {
                                     String result = String.valueOf(dataSnapshot.child("especie").getValue(String.class));
@@ -125,6 +126,10 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public void onBackPressed(){
 
     }
 
