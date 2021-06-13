@@ -23,7 +23,6 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
     Button returnButton, guardarProveedor;
     EditText razonSocialProv, rutProveedor, telefonoProvedor, emailProvedor;
     daoProveedores dao;
-    String ctrlExist = "";
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
 
@@ -45,7 +44,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
 
         returnButton.setOnClickListener(this);
         guardarProveedor.setOnClickListener(v -> {
-            int telefono; char valDv; String[] charsRut = new String[2]; String[] charsEmail = new String[2];
+            int telefono; String valDv; String[] charsRut = new String[2]; String[] charsEmail = new String[2];
             String razonSocial =    String.valueOf(razonSocialProv.getText());
             String rut =            String.valueOf(rutProveedor.getText());
             String telefonoCtrl =   String.valueOf(telefonoProvedor.getText());
@@ -57,6 +56,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
             try {
                 if (rut.contains("-")) {
                     charsRut = rut.split("-", 2);
+
                 }
                 if (email.contains("@")) {
                     charsEmail = email.split("@", 2);
@@ -69,11 +69,16 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                     } else {
                         int valRut = Integer.parseInt(charsRut[0]);
                         if (charsRut[1].length() != 1) {
-                            valDv = "x".charAt(0);
+                            valDv = "x";
                         } else {
-                            valDv = charsRut[1].charAt(0);
+                            //if(charsRut[1].equals("k") || charsRut[1].equals("K")){
+                            //    valDv = "0";
+                            //} else {
+
+                            valDv = (charsRut[1]).toLowerCase();//}
                         }
-                        if (!dao.ValidarRut(valRut, valDv)) {
+                        String dv = String.valueOf(dao.ValidarRut(valRut));
+                        if (!dv.equals(valDv)) {
                             Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
                         } else {
                             if (telefono == 0) {

@@ -68,12 +68,12 @@ public class daoProveedores {
         else {return 0;}
     }
     //Codigo obtenido de https://es.wikipedia.org/wiki/Anexo:Implementaciones_para_algoritmo_de_rut#Java
-    public static boolean ValidarRut(int rut, char dv) {
+    public static String ValidarRut(int rut) {
         int m = 0, s = 1;
         for (; rut != 0; rut /= 10) {
             s = (s + rut % 10 * (9 - m++ % 6)) % 11;
         }
-        return dv == (char) (s != 0 ? s + 47 : 75);
+        return (s > 0 ? String.valueOf(s-1):"k");
     }
 
 }

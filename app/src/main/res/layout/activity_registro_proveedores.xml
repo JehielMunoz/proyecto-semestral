@@ -73,7 +73,7 @@
                 android:id="@+id/rpRutIng"
                 android:hint="Rut sin punto con guion"
                 android:inputType="number"
-                android:digits="0123456789-"
+                android:digits="0123456789-kK"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
