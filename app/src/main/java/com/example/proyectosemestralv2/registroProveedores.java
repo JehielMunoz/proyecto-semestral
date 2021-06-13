@@ -81,8 +81,13 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                 if (telefono == 0) {
                                     Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
                                 } else {
-                                    if (email.equals("") || !email.contains("@") || !email.contains(".")) {
-                                        Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
+                                    //|| !email.contains(".cl") || !email.contains(".org") || !email.contains(".net")
+                                    //|| !email.contains(".COM") || !email.contains(".CL") || !email.contains(".ORG") || !email.contains(".NET"))
+                                    if (email.equals("") || !(email.contains("@") &&
+                                            (email.contains(".com") || email.contains(".cl") || email.contains(".org") || email.contains(".net") ||
+                                             email.contains(".COM") || email.contains(".CL") || email.contains(".ORG") || email.contains(".NET")
+                                            ))){
+                                            Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
                                     } else {
                                         Query query = mDatabase.child("proveedores");
                                         query.addValueEventListener(new ValueEventListener() {
@@ -112,6 +117,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                             }
                                         });
+                                        break;
                                     }
                                 }
                             }
