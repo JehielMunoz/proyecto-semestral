@@ -32,8 +32,6 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_proveedores);
 
-        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
-
         returnButton = (Button) findViewById(R.id.rpRetorno);
         guardarProveedor = (Button) findViewById(R.id.rpGuardarProv);
         razonSocialProv = (EditText) findViewById(R.id.rpRazonSocialIng);
@@ -46,14 +44,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
         returnButton.setOnClickListener(this);
         guardarProveedor.setOnClickListener(this);
 
-        Query query = mDatabase.child("proveedores");
-//        query.addValueEventListener(new ValueEventListener(){
-//            public void onDataChange(DataSnapshot dataSnapshot){
-//                if(dataSnapshot!=null){
-//                    String cont = String.valueOf(dataSnapshot.getChildrenCount()+2);
-//                    rutProveedor.setText(cont);
-//                }else{ System.out.println("Error en datasnapshot.");}
-//            }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
+        mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
     }
 
@@ -64,10 +55,10 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                 Intent intent= new Intent (registroProveedores.this, menuInicio.class);
                 startActivity(intent);
                 break;
-            case R.id.rpGuardarProv:
-                Proveedor proveedor = new Proveedor();
-                Integer telefono;
 
+            case R.id.rpGuardarProv:
+
+                Integer telefono; char valDv; String[] charsRut = new String[2];
                 String razonSocial =    String.valueOf(razonSocialProv.getText());
                 String rut =            String.valueOf(rutProveedor.getText());
                 String telefonoCtrl =   String.valueOf(telefonoProvedor.getText());
@@ -75,22 +66,59 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                 else{   telefono =      Integer.parseInt(String.valueOf(telefonoProvedor.getText()));}
                 String email =          String.valueOf(emailProvedor.getText());
                 //String dbEstado =       String.valueOf();
-                if(!razonSocial.equals("") || !rut.equals("") || telefono != 0 || !email.equals("")) {
-                    proveedor.setRazonSocial(razonSocial);
-                    proveedor.setEmail(email);
-                    proveedor.setTelefono(telefono);
-                    proveedor.setRut(rut);
-                    //proveedor.setEstado(String);
-                    int creaProveedor = dao.creaProveedor(proveedor, rut, mDatabase);
-                    if (creaProveedor == 1) {
-                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(this, "Proveedor ya esta registrado", Toast.LENGTH_LONG).show();
+                try{
+                    if(rut.contains("-")){charsRut = rut.split("-",2);}
+                    //if(!razonSocial.equals("") || !rut.equals("") || telefono != 0 || !email.equals("")){
+                    if(razonSocial.equals("")){Toast.makeText(this, "Debe ingresar razon social.", Toast.LENGTH_LONG).show();}
+                    else{
+                        if(rut.equals("")){Toast.makeText(this, "Debe ingresar rut del proveedor.", Toast.LENGTH_LONG).show();}
+                        else {
+                            int valRut = Integer.parseInt(charsRut[0]);
+                            if(charsRut[1].length()!=1){valDv = "x".charAt(0);}
+                            else{valDv = charsRut[1].charAt(0);}
+                            if (!dao.ValidarRut(valRut, valDv)){Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();}
+                            else{
+                                if (telefono == 0) {
+                                    Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    if (email.equals("")) {
+                                        Toast.makeText(this, "Debe ingresar correo de contacto.", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Query query = mDatabase.child("proveedores");
+                                        query.addValueEventListener(new ValueEventListener() {
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot != null) {
+                                                    String ctrl = String.valueOf(dataSnapshot.child(rut).child("rut").getValue(String.class));
+                                                    if (ctrl.equals("null") || ctrl.equals("")) {
+                                                        Proveedor proveedor = new Proveedor();
+                                                        proveedor.setRazonSocial(razonSocial);
+                                                        proveedor.setEmail(email);
+                                                        proveedor.setTelefono(telefono);
+                                                        proveedor.setRut(rut);
+
+                                                        mDatabase.child("proveedores").child(rut).setValue(proveedor);
+
+                                                        Toast.makeText(registroProveedores.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+
+                                                    } else {
+                                                        Toast.makeText(registroProveedores.this, "Proveedor ya existe.", Toast.LENGTH_LONG).show();
+                                                    }
+                                                } else {
+                                                    System.out.println("Error en datasnapshot.");
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }
                     }
-                }else{
-                    Toast.makeText(this, "Debe ingresar todos los campos", Toast.LENGTH_LONG).show();
-                }
-                break;
+                }catch(Exception e){Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();}
+            break;
         }
     }
 

@@ -149,7 +149,7 @@
                         android:id="@+id/biTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Codigo:"
+                        android:text="Codigo Barras:"
                         android:textColor="@color/black"/>
 
                     <EditText

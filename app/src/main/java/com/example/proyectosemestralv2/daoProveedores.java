@@ -67,10 +67,13 @@ public class daoProveedores {
         if(createControl == 0){mDatabase.child("proveedores").child(rut).setValue(proveedor); return 1;}
         else {return 0;}
     }
-    public int creaProveedor(Proveedor proveedor, String rut, DatabaseReference mDatabase) {
-        int createControl = 0;
-        createControl = exist(rut,mDatabase);
-        if(createControl == 0){mDatabase.child("proveedores").child(rut).setValue(proveedor); return 1;}
-        else {return 0;}
+    //Codigo obtenido de https://es.wikipedia.org/wiki/Anexo:Implementaciones_para_algoritmo_de_rut#Java
+    public static boolean ValidarRut(int rut, char dv) {
+        int m = 0, s = 1;
+        for (; rut != 0; rut /= 10) {
+            s = (s + rut % 10 * (9 - m++ % 6)) % 11;
+        }
+        return dv == (char) (s != 0 ? s + 47 : 75);
     }
+
 }

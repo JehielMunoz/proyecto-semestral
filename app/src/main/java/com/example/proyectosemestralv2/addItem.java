@@ -26,8 +26,9 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    EditText codigoEspecie, numFactura, desItem, rutProv, precioTotal, codigoProd;
+    EditText numFactura, desItem, rutProv, precioTotal, codigoProd;
     EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso,ingcodigoprod,codigoBarra;
+    TextView codigoEspecie;
     Button btnGuardar, btnCancelar,ingScanerCam;
     daoEspecie dao;
 
@@ -43,8 +44,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
         mDatabase = FirebaseDatabase.getInstance(urlDb).getReference();
 
-
-        codigoEspecie = (EditText) findViewById(R.id.ingCodigoEspecie);
+        codigoEspecie = (TextView) findViewById(R.id.ingCodigoEspecie);
         numFactura = (EditText) findViewById(R.id.ingNumFactura);
         desItem = (EditText) findViewById(R.id.ingDescripItem);
         rutProv = (EditText) findViewById(R.id.ingRutProveedor);
@@ -90,7 +90,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         query.addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot != null) {
-                    String cont = String.valueOf(dataSnapshot.getChildrenCount() + 2);
+                    String cont = String.valueOf(dataSnapshot.getChildrenCount() + 1);
                     codigoEspecie.setText(cont);
                 } else {
                     System.out.println("Error en datasnapshot.");

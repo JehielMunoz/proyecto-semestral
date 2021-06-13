@@ -32,8 +32,6 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
     daoProveedores dao;
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
-    ArrayList<Proveedor> lista;
-    private Object AdapterView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

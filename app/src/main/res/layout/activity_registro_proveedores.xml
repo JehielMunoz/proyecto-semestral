@@ -52,7 +52,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@color/btnColor"
                 android:padding="5dp"
-                android:textColor="#000" />
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -71,6 +71,8 @@
             <EditText
                 android:id="@+id/rpRutIng"
                 android:hint="Rut sin punto con guion"
+                android:inputType="number"
+                android:digits="0123456789-"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -78,7 +80,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@color/btnColor"
                 android:padding="5dp"
-                android:textColor="#000" />
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -96,6 +98,7 @@
 
             <EditText
                 android:id="@+id/rpNroTelefonicoIng"
+                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="10dp"
@@ -104,7 +107,7 @@
                 android:background="@color/btnColor"
                 android:hint="Solo numeros"
                 android:padding="5dp"
-                android:textColor="#000" />
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -130,7 +133,7 @@
                 android:background="@color/btnColor"
                 android:hint=""
                 android:padding="5dp"
-                android:textColor="#000" />
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow android:layout_marginBottom="15px"
