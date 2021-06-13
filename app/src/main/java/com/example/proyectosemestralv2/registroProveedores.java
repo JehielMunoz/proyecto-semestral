@@ -81,8 +81,8 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                 if (telefono == 0) {
                                     Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
                                 } else {
-                                    if (email.equals("")) {
-                                        Toast.makeText(this, "Debe ingresar correo de contacto.", Toast.LENGTH_LONG).show();
+                                    if (email.equals("") || !email.contains("@") || !email.contains(".")) {
+                                        Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
                                     } else {
                                         Query query = mDatabase.child("proveedores");
                                         query.addValueEventListener(new ValueEventListener() {
