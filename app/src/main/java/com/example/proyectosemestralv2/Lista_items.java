@@ -69,7 +69,7 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
                 especiesEncontradas);
         itemsListados.setAdapter(arrayAdapter);
 
-
+        // aqui se selecciona directo de la lista la opcion para buscar info detallada
         itemsListados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
