@@ -22,7 +22,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -31,14 +30,12 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
     Spinner estadoSpinner;
     EditText nroFactura, rutProveedor, fechaRecepcion, centroCostos, ubicacionEspecie;
 
-    public ArrayList<String> resultados = new ArrayList<>();
+    ArrayList<String> resultados = new ArrayList<>();
 
     CharSequence text = "Sin coincidencias";
     daoEspecie dao;
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
-
-    public Especie auxEspecie = new Especie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +102,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             String contBA;
-                            for(int i = 1; i<dataSnapshot.getChildrenCount() + 1;i++){
+                            for(int i = 1; i < dataSnapshot.getChildrenCount() + 1; i++){
                                 contBA = String.valueOf(i);
                                 String codCor =     String.valueOf(dataSnapshot.child(contBA).child("codigo_correlativo").getValue(long.class));
                                 String auxOne =     String.valueOf(dataSnapshot.child(contBA).child("rut_proveedor").getValue(String.class));
@@ -122,7 +119,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                                 if(busquedas.get(3)!=""){if(auxFour.equals(busquedas.get(3))){bdAuxListFour.add(codCor);}}
                                 if(busquedas.get(4)!=""){if(auxFive.equals(busquedas.get(4))){bdAuxListFive.add(codCor);}}
                                 if(busquedas.get(5)!=""){if(auxSix.equals(busquedas.get(5))){bdAuxListSix.add(codCor);}}
-                                }
+                            }
                             if(bdAuxListOne.size()!=0 && bdAuxListTwo.size()!=0){bdAuxListOne.retainAll(bdAuxListTwo);bdAuxListTwo.clear();}
                             if(bdAuxListOne.size()!=0 && bdAuxListThree.size()!=0){bdAuxListOne.retainAll(bdAuxListThree);bdAuxListThree.clear();}
                             if(bdAuxListOne.size()!=0 && bdAuxListFour.size()!=0){bdAuxListOne.retainAll(bdAuxListFour);bdAuxListFour.clear();}
@@ -150,12 +147,12 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                             if(bdAuxListFive.size()!=0){resultados.addAll(bdAuxListFive);}
                             if(bdAuxListSix.size()!=0){resultados.addAll(bdAuxListSix);}
 
-                                //}
+                            //}
+
                         }@Override public void onCancelled(@NonNull DatabaseError databaseError) {}
                     });
                 }
-                String tamRestulados = String.valueOf(resultados.size());
-                resultados.size();
+
                 for(String log : resultados)
                 {
                     Log.v("Tag",log);
@@ -180,14 +177,11 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                     }
                 }*/
 
-                if (resultados.size() == 0){
-                    Toast.makeText(this, "No se encontraron coincidencias en sistema", Toast.LENGTH_SHORT).show();
-                    resultados.clear();
-                } else {
-                    //Toast.makeText(this, "Coincidencias obtenidas ("+ resultados.get(1)+")", Toast.LENGTH_SHORT).show();
+                if (resultados.size() != 0){
                     Toast.makeText(this, "Coincidencias obtenidas ("+ resultados.size()+")", Toast.LENGTH_SHORT).show();
-                    // Intent intentLI = new Intent(busquedaAvanzadaItems.this, Lista_items.class);
-                    // startActivity(intentLI);
+                    Intent intentLI = new Intent(busquedaAvanzadaItems.this, Lista_items.class);
+                    intentLI.putExtra("resultados", resultados);
+                    startActivity(intentLI);
                     resultados.clear();
                 }
                 break;

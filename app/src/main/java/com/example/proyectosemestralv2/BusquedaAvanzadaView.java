@@ -39,9 +39,6 @@ public class BusquedaAvanzadaView extends AppCompatActivity {
 
         mBBDD = FirebaseDatabase.getInstance(urlDb).getReference("proveedores");
 
-
-
-
     }
 
 
