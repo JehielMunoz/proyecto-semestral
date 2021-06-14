@@ -52,10 +52,12 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String auxCont;
-                for (int i = 0; i < itemsBusqueda.size(); i++) {
-                    auxCont = String.valueOf(itemsBusqueda.get(i));
-                    String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("especie").getValue(String.class));
-                    especiesEncontradas.add(auxEspecie);
+                if(dataSnapshot != null){
+                    for (int i = 0; i < itemsBusqueda.size(); i++) {
+                        auxCont = String.valueOf(itemsBusqueda.get(i));
+                        String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("especie").getValue(String.class));
+                        especiesEncontradas.add(auxEspecie);
+                    }
                 }
             }
             @Override
