@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class BusquedaAvanzadaView extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class BusquedaAvanzadaView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busqueda_avanzada_view);
+        String eleccion = (String) getIntent().getSerializableExtra("eleccion");
 
         numFactura = (TextView) findViewById(R.id.viewNumFactura);
         rutProveedor = (TextView) findViewById(R.id.viewRutProveedor);
@@ -38,6 +40,14 @@ public class BusquedaAvanzadaView extends AppCompatActivity {
         btnGuardar = (Button)findViewById(R.id.viewBtnGuardar);
 
         mBBDD = FirebaseDatabase.getInstance(urlDb).getReference("proveedores");
+
+
+        Query queryAV = mBBDD.child("data").child("especies");
+
+
+
+
+
 
     }
 

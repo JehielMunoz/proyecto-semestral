@@ -25,6 +25,7 @@
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="20dp"
                 android:text="VER BUSQUEDA AVANZADA"
                 android:textColor="@color/black"
                 android:textSize="25dp"></TextView>

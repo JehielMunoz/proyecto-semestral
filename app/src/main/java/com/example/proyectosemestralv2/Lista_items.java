@@ -3,8 +3,10 @@ package com.example.proyectosemestralv2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -29,6 +31,8 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
 
+    String eleccion = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +53,8 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String auxCont;
                 for (int i = 0; i < itemsBusqueda.size(); i++) {
-                    auxCont = String.valueOf(i);
-                    String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("ubicacion_actual").getValue(String.class));
+                    auxCont = String.valueOf(itemsBusqueda.get(i));
+                    String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("especie").getValue(String.class));
                     especiesEncontradas.add(auxEspecie);
                 }
             }
@@ -62,6 +66,32 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
                 android.R.layout.simple_expandable_list_item_1,
                 especiesEncontradas);
         itemsListados.setAdapter(arrayAdapter);
+
+
+        itemsListados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                for (int l = 0; l < especiesEncontradas.size(); l++) {
+                    if(l == position){
+                        eleccion = String.valueOf(especiesEncontradas.get(l));
+                    }
+                }
+                Query queryLIDOS = mDatabase.child("data").child("especies");
+                queryLIDOS.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot != null){
+                            String auxCodigo = String.valueOf(dataSnapshot.child(eleccion).child("codigo_correlativo").getValue(long.class));
+                            EditText et = (EditText) findViewById(R.id.biCodigoBusca);
+                            et.setText(auxCodigo);
+                            startActivity(new Intent(Lista_items.this, BuscarItems.class));
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) { }});
+
+            }
+        });
 
     }
     @Override
