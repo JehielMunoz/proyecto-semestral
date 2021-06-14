@@ -16,6 +16,7 @@
         <activity android:name=".busquedaAvanzadaItems"></activity>
         <activity android:name=".daoExportExcel"     />
         <activity android:name=".BuscarItems" />
+        <activity android:name=".Lista_items"/>
         <!--
         >
         <activity android:name=".Especie"></activity>
