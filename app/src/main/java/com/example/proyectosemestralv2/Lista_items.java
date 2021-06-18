@@ -38,7 +38,7 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_items);
 
-        ArrayList<String> itemsBusqueda = (ArrayList<String>) getIntent().getSerializableExtra("resultados");
+        ArrayList<String> itemsBusqueda = (ArrayList<String>) getIntent().getStringArrayListExtra("resultados");
 
         retornoBTN    =    (Button) findViewById(R.id.liBtnVolver);
         itemsListados =    (ListView) findViewById(R.id.liListaItemsEncontrados);
@@ -93,6 +93,7 @@ public class Lista_items extends AppCompatActivity implements View.OnClickListen
                     public void onCancelled(@NonNull DatabaseError databaseError) { }});
 
             }
+
         });
 
     }
