@@ -2,12 +2,12 @@ package com.example.proyectosemestralv2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,11 +26,14 @@ import java.util.ArrayList;
 
 public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    Button btnBusquedaAvan, btnRetorno;
+    Button btnBusquedaAvan, btnRetorno, btnReiniciarBusq;
     Spinner estadoSpinner;
     EditText nroFactura, rutProveedor, fechaRecepcion, centroCostos, ubicacionEspecie;
+    ListView itemsEncontrados;
 
     ArrayList<String> resultados = new ArrayList<>();
+    ArrayList<String> itemsCoincidentes = new ArrayList<>();
+    ArrayList<String> auxItemsCoincidentes = new ArrayList<>();
 
     CharSequence text = "Sin coincidencias";
     daoEspecie dao;
@@ -44,6 +47,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
 
         btnBusquedaAvan = (Button)findViewById(R.id.baBtnBusqueda);
         btnRetorno = (Button)findViewById(R.id.baBtnCancelar);
+        btnReiniciarBusq = (Button)findViewById(R.id.baBtnReinicioBusq);
 
         nroFactura = (EditText)findViewById(R.id.baNroFactura);
         rutProveedor = (EditText)findViewById(R.id.baRutProveedor);
@@ -51,6 +55,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         centroCostos = (EditText)findViewById(R.id.baCentroCostos);
         ubicacionEspecie = (EditText)findViewById(R.id.baUbicacionEspecie);
         estadoSpinner = (Spinner)findViewById(R.id.baEstadoSpinner);
+        itemsEncontrados = (ListView)findViewById(R.id.baItemsEncontrados);
 
         ArrayAdapter<CharSequence> baAdapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         baAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -58,6 +63,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         estadoSpinner.setOnItemSelectedListener(this);
 
         btnBusquedaAvan.setOnClickListener(v -> {
+
             ArrayList<String> busquedas     = new ArrayList<>();
             //Listas auxiliares
             ArrayList<String> bdAuxListOne    = new ArrayList<>();
@@ -66,7 +72,6 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
             ArrayList<String> bdAuxListFour   = new ArrayList<>();
             ArrayList<String> bdAuxListFive  = new ArrayList<>();
             ArrayList<String> bdAuxListSix   = new ArrayList<>();
-
 
             String rutProv = rutProveedor.getText().toString();
             String fecRecepcion = fechaRecepcion.getText().toString();
@@ -88,12 +93,12 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                         String contBA;
                         for(int i = 1; i < dataSnapshot.getChildrenCount() + 1; i++){
                             contBA = String.valueOf(i);
-                            String codCor =     String.valueOf(dataSnapshot.child(contBA).child("codigo_correlativo").getValue(long.class));
+                            String codCor =     String.valueOf(dataSnapshot.child(contBA).child("codigo_correlativo").getValue());
                             String auxOne =     String.valueOf(dataSnapshot.child(contBA).child("rut_proveedor").getValue(String.class));
                             String auxTwo =     String.valueOf(dataSnapshot.child(contBA).child("fecha_recepcion").getValue(String.class));
                             String auxThree =   String.valueOf(dataSnapshot.child(contBA).child("centro_de_costo").getValue(String.class));
                             String auxFour =    String.valueOf(dataSnapshot.child(contBA).child("ubicacion_actual").getValue(String.class));
-                            String auxFive =    String.valueOf(dataSnapshot.child(contBA).child("numero_factura").getValue(long.class));
+                            String auxFive =    String.valueOf(dataSnapshot.child(contBA).child("numero_factura").getValue());
                             String auxSix =     String.valueOf(dataSnapshot.child(contBA).child("estado").getValue(String.class));
 
 
@@ -138,20 +143,31 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 });
             }
 
-            for(String log : resultados)
-            {
-                Log.v("Tag",log);
-            }
+            Query queryLI = mDatabase.child("data").child("especies");
+            queryLI.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String auxCont;
+                    if(dataSnapshot != null){
+                        for (int i = 0; i < resultados.size(); i++) {
+                            auxCont = String.valueOf(resultados.get(i));
+                            String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("especie").getValue(String.class));
+                            itemsCoincidentes.add(auxEspecie);
+                        }
+                    }
+                }
 
-            if (resultados.size() != 0){
-                Toast.makeText(this, "Coincidencias obtenidas ("+ resultados.size()+")", Toast.LENGTH_SHORT).show();
-                Intent intentLI = new Intent(busquedaAvanzadaItems.this, Lista_items.class);
-                intentLI.putStringArrayListExtra("resultados", resultados);
-                startActivity(intentLI);
-                resultados.clear();
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) { } });
 
+            // resultados.clear();
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                    this,
+                    android.R.layout.simple_expandable_list_item_1,
+                    itemsCoincidentes);
+            itemsEncontrados.setAdapter(arrayAdapter);
+
+    });
         btnRetorno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,10 +175,22 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 startActivity(intent);
             }
         });
+        btnReiniciarBusq.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v) { }
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.baBtnReinicioBusq:
+                nroFactura.setText("");
+                rutProveedor.setText("");
+                fechaRecepcion.setText("");
+                centroCostos.setText("");
+                ubicacionEspecie.setText("");
+                resultados.clear();
+                Toast.makeText(busquedaAvanzadaItems.this, "Busqueda reiniciada", Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
