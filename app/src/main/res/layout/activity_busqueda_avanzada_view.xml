@@ -58,7 +58,7 @@
                         android:id="@+id/viewNumFactura"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="N Factura"
+                        android:hint="N° Factura"
                         android:inputType="number"
                         android:background="@color/teal_700"/>
                 </TableRow>
@@ -79,7 +79,7 @@
                         android:inputType="number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="ej: 11111111-7"
+                        android:hint="Ej.: 11111111-7"
                         android:background="@color/teal_700"/>
 
                 </TableRow>
@@ -90,14 +90,14 @@
                         android:id="@+id/viewTitDescripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Descripcion:"
+                        android:text="Descripción:"
                         android:textColor="@color/black"/>
 
                     <TextView
                         android:id="@+id/viewDescripItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Descripcion"
+                        android:hint="Descripción"
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
@@ -107,14 +107,14 @@
                         android:id="@+id/viewTitCodigo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Codigo:"
+                        android:text="Código:"
                         android:textColor="@color/black"/>
 
                     <TextView
                         android:id="@+id/viewCodigoItem2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="codigo"
+                        android:hint="Código"
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView
@@ -148,13 +148,13 @@
                         android:id="@+id/viewTitFecRecepcion"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="Fecha recepcion:"
+                        android:text="Fecha recepción:"
                         android:textColor="@color/black"/>
                     <TextView
                         android:id="@+id/viewFechaRecepcion"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:hint="Fecha Recepcion"
+                        android:hint="Fecha Recepción"
                         android:inputType="datetime"
                         android:background="@color/teal_700"/>
                 </TableRow>
@@ -189,7 +189,7 @@
                         android:id="@+id/viewTitUbicacionEspecie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ubicacion Especie:"
+                        android:text="Ubicación Especie:"
                         android:textColor="@color/black"
                         />
                     <TextView
@@ -216,7 +216,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/teal_700"
-                        android:hint="observacion"
+                        android:hint="Observación"
                         android:inputType="textPersonName"/>
 
                 </TableRow>
