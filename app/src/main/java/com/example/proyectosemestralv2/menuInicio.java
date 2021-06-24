@@ -1,10 +1,11 @@
 package com.example.proyectosemestralv2;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class menuInicio extends AppCompatActivity implements View.OnClickListener {
 
@@ -89,7 +90,5 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 break;
         }
     }
-//
-  //  public void onBackPressed(){
-    //}
+
 }
