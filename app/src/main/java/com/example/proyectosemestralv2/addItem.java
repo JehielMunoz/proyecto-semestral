@@ -1,10 +1,8 @@
 package com.example.proyectosemestralv2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.content.Intent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,6 +10,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -152,7 +153,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 if (dao.creaEspecie(especie, codString)) {
                     Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(this, "Codigo ya existe", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Código ya existe", Toast.LENGTH_LONG).show();
                 }
                 break;
 

@@ -11,7 +11,7 @@
     <Spinner
         android:id="@+id/bpEstadoSpinner"
         android:layout_width="215dp"
-        android:layout_height="34dp"
+        android:layout_height="35dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
@@ -27,7 +27,7 @@
     <EditText
         android:id="@+id/bpRazonSocial"
         android:layout_width="215dp"
-        android:layout_height="36dp"
+        android:layout_height="35dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
@@ -51,17 +51,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="50dp"
         android:text="Email"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bpRetornoButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        app:layout_constraintVertical_bias="0.303"
+        app:layout_constraintTop_toBottomOf="@+id/bpTitTelefono"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -70,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="40dp"
         android:text="Rut"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
@@ -78,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
+        app:layout_constraintTop_toBottomOf="@+id/bpTitRazonSocial"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -99,8 +97,8 @@
     <EditText
         android:id="@+id/bpEmailProveedor"
         android:layout_width="215dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="224dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:textSize="20dp"
@@ -108,12 +106,10 @@
         android:text=" "
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/bpGuardarCambiosButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        app:layout_constraintVertical_bias="0.018"
+        app:layout_constraintTop_toBottomOf="@+id/bpTelefonoProveedor"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -182,7 +178,7 @@
     <EditText
         android:id="@+id/bpRutBusca"
         android:layout_width="195dp"
-        android:layout_height="36dp"
+        android:layout_height="30dp"
         android:width="170dp"
         android:background="@color/exitColor"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -196,7 +192,7 @@
     <TextView
         android:id="@+id/bpRutProveedor"
         android:layout_width="215dp"
-        android:layout_height="36dp"
+        android:layout_height="35dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
@@ -217,18 +213,17 @@
     <EditText
         android:id="@+id/bpTelefonoProveedor"
         android:layout_width="215dp"
-        android:layout_height="36dp"
+        android:layout_height="35dp"
         android:width="20dp"
+        android:layout_marginTop="35dp"
         android:textSize="20dp"
         android:text=" "
         android:background="@drawable/btnpress_bourder"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/bpEmailProveedor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toEndOf="@+id/bpTitEmail"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        app:layout_constraintVertical_bias="0.806"
+        app:layout_constraintTop_toBottomOf="@+id/bpRutProveedor"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -237,17 +232,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="50dp"
         android:text="Estado"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        app:layout_constraintVertical_bias="0.302"
+        app:layout_constraintTop_toBottomOf="@+id/bpTitEmail"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -256,17 +249,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="40dp"
         android:text="Teléfono"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bpRetornoButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        app:layout_constraintVertical_bias="0.149"
+        app:layout_constraintTop_toBottomOf="@+id/bpTitRutProv"
         tools:ignore="MissingConstraints" />
 
     <Button

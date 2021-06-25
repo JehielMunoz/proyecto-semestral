@@ -1,33 +1,22 @@
 package com.example.proyectosemestralv2;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.content.Intent;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
 
 public class archivoExporExcel extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button btnAtras, export, export_ubicacion;
@@ -120,7 +109,7 @@ public class archivoExporExcel extends AppCompatActivity implements View.OnClick
             case R.id.btnExportGralExcel:
                 try {
                     daoExport.export(archivoExporExcel.this, mDatabase, "");
-                    Toast.makeText(archivoExporExcel.this, "excel creado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(archivoExporExcel.this, "Excel creado", Toast.LENGTH_LONG).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -128,9 +117,9 @@ public class archivoExporExcel extends AppCompatActivity implements View.OnClick
             case R.id.btnExportUbiExcel:
                 try {
                     ubicacion = ubi_spinner.getSelectedItem().toString();
-                    if(!ubicacion.equals("Seleccione Ubicacion")) {
+                    if(!ubicacion.equals("Seleccione ubicación")) {
                         daoExport.export(archivoExporExcel.this, mDatabase, ubicacion);
-                        Toast.makeText(archivoExporExcel.this, "excel creado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(archivoExporExcel.this, "Excel creado", Toast.LENGTH_LONG).show();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

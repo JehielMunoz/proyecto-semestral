@@ -1,9 +1,5 @@
 package com.example.proyectosemestralv2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,14 +11,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class busquedaProveedor extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     EditText razonSocial, telefonoProveedor, emailProveedor, rutBusca;
@@ -88,7 +85,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                                     if(bdEstado.equals("Activo")){estado_spinner.setSelection(0);}
                                     else{estado_spinner.setSelection(1);}
                                 } else {
-                                    Toast.makeText(busquedaProveedor.this, "Rut/Razon social no encontrada.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(busquedaProveedor.this, "Rut/Razón social no encontrada.", Toast.LENGTH_LONG).show();
                                 }
                             }
                         }@Override public void onCancelled(@NonNull DatabaseError databaseError){}});
@@ -127,7 +124,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     if (creaProveedor == 1) {
                         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(this, "Proveedor ya esta registrado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Proveedor ya está registrado", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;

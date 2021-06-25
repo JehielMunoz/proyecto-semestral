@@ -1,8 +1,5 @@
 package com.example.proyectosemestralv2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -79,10 +79,10 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                         }
                         String dv = String.valueOf(dao.ValidarRut(valRut));
                         if (!dv.equals(valDv)) {
-                            Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, "Rut inválido.", Toast.LENGTH_LONG).show();
                         } else {
                             if (telefono == 0) {
-                                Toast.makeText(this, "Debe ingresar telefono de contacto.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(this, "Debe ingresar teléfono de contacto.", Toast.LENGTH_LONG).show();
                             } else {
                                 //|| !email.contains(".cl") || !email.contains(".org") || !email.contains(".net")
                                 //|| !email.contains(".COM") || !email.contains(".CL") || !email.contains(".ORG") || !email.contains(".NET"))
@@ -90,7 +90,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                         (charsEmail[1].contains(".com") || charsEmail[1].contains(".cl") || charsEmail[1].contains(".org") || charsEmail[1].contains(".net") ||
                                                 charsEmail[1].contains(".COM") || charsEmail[1].contains(".CL") || charsEmail[1].contains(".ORG") || charsEmail[1].contains(".NET")
                                         ))) {
-                                    Toast.makeText(this, "Debe ingresar correo de contacto valido.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this, "Debe ingresar correo de contacto válido.", Toast.LENGTH_LONG).show();
                                 } else {
                                     Proveedor proveedor = new Proveedor();
                                     final int[] ctrl = {0};
@@ -105,7 +105,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                                 proveedor.setTelefono(telefono);
                                                 proveedor.setRut(rut);
                                                 mDatabase.child("proveedores").child(rut).setValue(proveedor);
-                                                Toast.makeText(registroProveedores.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(registroProveedores.this, "Registro exitóso", Toast.LENGTH_LONG).show();
                                             }else {
                                             Toast.makeText(registroProveedores.this, "Proveedor ya existe.", Toast.LENGTH_LONG).show();
                                             }

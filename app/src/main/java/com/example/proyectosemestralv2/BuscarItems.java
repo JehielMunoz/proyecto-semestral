@@ -101,7 +101,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
             case R.id.biBuscaEspecie:
 
                 String cod = biCodigoBusca.getText().toString();
-                if(cod.equals("")) {Toast.makeText(BuscarItems.this, "Debe ingresar un codigo (Correlativo o de barras).", Toast.LENGTH_LONG).show();}
+                if(cod.equals("")) {Toast.makeText(BuscarItems.this, "Debe ingresar un código (correlativo o de barras).", Toast.LENGTH_LONG).show();}
                 else{
                     Query query = mDatabase.child("data").child("especies").child(cod);
                     query.addValueEventListener(new ValueEventListener() {
@@ -156,9 +156,9 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                                 } else {
                                     Toast.makeText(BuscarItems.this, "Codigo no existe en la base de datos.", Toast.LENGTH_LONG).show();
                                     AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
-                                    alerta.setMessage("desea agregar items al sistema? ")
+                                    alerta.setMessage("¿Desea agregar items al sistema? ")
                                             .setCancelable(false)
-                                            .setPositiveButton("si", new DialogInterface.OnClickListener() {
+                                            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     Intent intent = new Intent(new Intent(BuscarItems.this, addItem.class));
@@ -215,7 +215,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
         if (result != null) {
             if (result.getContents() == null) {
-                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Lectura cancelada", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 biCodigoBusca.setText(result.getContents());

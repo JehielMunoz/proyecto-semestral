@@ -188,7 +188,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 centroCostos.setText("");
                 ubicacionEspecie.setText("");
                 resultados.clear();
-                Toast.makeText(busquedaAvanzadaItems.this, "Busqueda reiniciada", Toast.LENGTH_LONG).show();
+                Toast.makeText(busquedaAvanzadaItems.this, "Búsqueda reiniciada", Toast.LENGTH_LONG).show();
         }
     }
 
