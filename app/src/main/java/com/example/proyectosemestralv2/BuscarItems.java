@@ -35,6 +35,8 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
     daoEspecie dao;
     String urlDb = "https://proyectoi-invedu-default-rtdb.firebaseio.com/";
     private DatabaseReference mDatabase;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,12 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
         btnBusquedaAvanzada.setOnClickListener(this);
         buscaEspecie.setOnClickListener(this);
+
+        //resultado busqueda
+        String resultado = (String) getIntent().getSerializableExtra("codCorelativo");
+        if(resultado!=null){
+            codBusca.setText(resultado);
+        }
 
         //TESTEO
         biScanerCam = findViewById(R.id.biScanerCam);

@@ -52,7 +52,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="50dp"
-        android:text="Email"
+        android:text="Correo"
         android:textColor="@color/btnColor"
         android:textSize="20dp"
         android:textStyle="bold"

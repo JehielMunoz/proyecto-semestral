@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btnpress_bourder"
-                android:text="  Escanear Codigo  "
+                android:text="  Escanear Código  "
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:backgroundTint="#135"
@@ -76,9 +76,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="47dp"
                         android:background="@drawable/btnpress_bourder"
-
                         android:backgroundTint="@color/teal_700"
                         android:hint=" Buscar Producto   "
+                        android:text=""
                         android:inputType="textPersonName" />
                 </TableRow>
 
@@ -139,7 +139,7 @@
                         android:id="@+id/biDescEspecie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Descripcion"
+                        android:hint="Descripción"
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
@@ -195,7 +195,7 @@
                         android:id="@+id/biFechaRecepcion"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:hint="Fecha Recepción"
+                        android:hint="Fecha recepción"
                         android:inputType="datetime"
                         android:background="@color/teal_700"/>
                 </TableRow>

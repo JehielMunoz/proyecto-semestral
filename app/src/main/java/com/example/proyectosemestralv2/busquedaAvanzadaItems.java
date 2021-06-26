@@ -31,6 +31,8 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
     EditText nroFactura, rutProveedor, fechaRecepcion, centroCostos, ubicacionEspecie;
     ListView itemsEncontrados;
 
+    EditText codigoBusqueda;
+
     ArrayList<String> resultados = new ArrayList<>();
     ArrayList<String> itemsCoincidentes = new ArrayList<>();
     ArrayList<String> auxItemsCoincidentes = new ArrayList<>();
@@ -57,6 +59,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         estadoSpinner = (Spinner)findViewById(R.id.baEstadoSpinner);
         itemsEncontrados = (ListView)findViewById(R.id.baItemsEncontrados);
 
+        codigoBusqueda = (EditText)findViewById(R.id.biCodigoBusca);
         ArrayAdapter<CharSequence> baAdapter = ArrayAdapter.createFromResource(this, R.array.estados, android.R.layout.simple_spinner_item);
         baAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         estadoSpinner.setAdapter(baAdapter);
@@ -85,6 +88,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
             busquedas.add(centCostos);  busquedas.add(ubEspecie);
             busquedas.add(numFactura);  busquedas.add(dbEstado);
 
+            // resultados.clear();
             if(busquedas.size()!=0){
                 Query queryBA = mDatabase.child("data").child("especies");
                 queryBA.addValueEventListener(new ValueEventListener() {
@@ -152,7 +156,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                         for (int i = 0; i < resultados.size(); i++) {
                             auxCont = String.valueOf(resultados.get(i));
                             String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("especie").getValue(String.class));
-                            itemsCoincidentes.add(auxEspecie);
+                            itemsCoincidentes.add(auxCont+". "+auxEspecie);
                         }
                     }
                 }
@@ -160,7 +164,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) { } });
 
-            // resultados.clear();
+            itemsEncontrados.deferNotifyDataSetChanged();
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                     this,
                     android.R.layout.simple_expandable_list_item_1,
@@ -175,21 +179,34 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                 startActivity(intent);
             }
         });
-        btnReiniciarBusq.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.baBtnReinicioBusq:
+        btnReiniciarBusq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 nroFactura.setText("");
                 rutProveedor.setText("");
                 fechaRecepcion.setText("");
                 centroCostos.setText("");
                 ubicacionEspecie.setText("");
                 resultados.clear();
+                itemsEncontrados.setAdapter(null);
                 Toast.makeText(busquedaAvanzadaItems.this, "Búsqueda reiniciada", Toast.LENGTH_LONG).show();
-        }
+            }
+        });
+        itemsEncontrados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String extra = resultados.get(position);
+                Intent itemSelect = new Intent(busquedaAvanzadaItems.this, BuscarItems.class);
+                itemSelect.putExtra("codCorelativo", extra);
+                Toast.makeText(busquedaAvanzadaItems.this, "Ítem seleccionado", Toast.LENGTH_LONG).show();
+                startActivity(itemSelect);
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     @Override

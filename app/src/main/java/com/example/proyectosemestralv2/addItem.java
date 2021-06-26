@@ -28,7 +28,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class addItem extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     EditText numFactura, desItem, rutProv, precioTotal, codigoProd;
-    EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso,ingcodigoprod,codigoBarra;
+    EditText fRecepcion, precioItem, ubiItem, obsIngreso, recurso, ingcodigoprod, codigoBarra;
     TextView codigoEspecie;
     Button btnGuardar, btnCancelar,ingScanerCam;
     daoEspecie dao;

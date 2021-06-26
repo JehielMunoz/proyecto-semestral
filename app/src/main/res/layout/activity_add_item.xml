@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btnpress_bourder"
-                android:text="  Escanear Codigo  "
+                android:text="  Escanear Código  "
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:backgroundTint="#135"
@@ -143,7 +143,7 @@
                         android:id="@+id/ingDescripItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Descripcion"
+                        android:hint="Descripción"
                         android:background="@color/teal_700"/>
                 </TableRow>
 
@@ -199,7 +199,7 @@
                         android:id="@+id/ingTitFecRecepcion"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="Fecha recepcion:"
+                        android:text="Fecha recepción:"
                         android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/ingFechaRecepcion"
