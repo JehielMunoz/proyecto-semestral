@@ -122,7 +122,7 @@ public class busquedaProveedor extends AppCompatActivity implements View.OnClick
                     proveedor.setEstado(dbEstado);
                     int creaProveedor = dao.update(proveedor, dbRut, mDatabase);
                     if (creaProveedor == 1) {
-                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Actualizacion exitosa.", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(this, "Proveedor ya está registrado", Toast.LENGTH_LONG).show();
                     }
