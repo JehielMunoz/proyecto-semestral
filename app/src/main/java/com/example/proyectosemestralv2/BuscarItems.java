@@ -109,25 +109,34 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
             case R.id.biBuscaEspecie:
 
                 String cod = biCodigoBusca.getText().toString();
-                if(cod.equals("")) {Toast.makeText(BuscarItems.this, "Debe ingresar un código (correlativo o de barras).", Toast.LENGTH_LONG).show();}
+                if(cod.equals("")) {Toast.makeText(BuscarItems.this, "Debe ingresar un codigo (Correlativo o de barras).", Toast.LENGTH_LONG).show();}
                 else{
-                    Query query = mDatabase.child("data").child("especies").child(cod);
-                    query.addValueEventListener(new ValueEventListener() {
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (dataSnapshot != null) {
-                                String control = String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
-                                if (!control.equals("null")) {
-                                    String bdNumFactura =   String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class));
-                                    String bdRutProveedor = String.valueOf(dataSnapshot.child("rut_proveedor").getValue(String.class));
-                                    String bdDescEspecie =  String.valueOf(dataSnapshot.child("especie").getValue(String.class));
-                                    //String bdCodEspecie =   String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
-                                    String bdFRecep =       String.valueOf(dataSnapshot.child("fecha_recepcion").getValue(String.class));
-                                    String bdPrecioUni =    String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class));
-                                    String bdPrecioTot =    String.valueOf(dataSnapshot.child("precio_total").getValue(long.class));
-                                    String bdCentroCosto =  String.valueOf(dataSnapshot.child("centro_de_costo").getValue(String.class));
-                                    String bdUbiEspecie =   String.valueOf(dataSnapshot.child("ubicacion_actual").getValue(String.class));
-                                    String bdObsEspecie =   String.valueOf(dataSnapshot.child("observaciones").getValue(String.class));
-                                    String bdCodBarra   =   String.valueOf(dataSnapshot.child("codigo_barra").getValue(Long.class));
+                    if(cod.length()>10){
+                        Query query = mDatabase.child("data").child("especies");
+                        query.addValueEventListener(new ValueEventListener() {
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot != null) {
+                                    String ctrlSnapshot , control="";
+                                    for(int i=1; i<dataSnapshot.getChildrenCount()+1;i++){
+                                        ctrlSnapshot = String.valueOf(dataSnapshot.child(String.valueOf(i)).child("codigo_barra").getValue(long.class));
+                                        if(!ctrlSnapshot.equals("null")){
+                                            if (cod.equals(ctrlSnapshot)) {
+                                                control = String.valueOf(dataSnapshot.child(String.valueOf(i)).child("codigo_correlativo").getValue(long.class));
+                                            }
+                                        }
+                                    }
+                                    if (!control.equals("null")) {
+                                        String bdNumFactura = String.valueOf(dataSnapshot.child(control).child("numero_factura").getValue(long.class));
+                                        String bdRutProveedor = String.valueOf(dataSnapshot.child(control).child("rut_proveedor").getValue(String.class));
+                                        String bdDescEspecie = String.valueOf(dataSnapshot.child(control).child("especie").getValue(String.class));
+                                        String bdCodEspecie =   String.valueOf(dataSnapshot.child(control).child("codigo_correlativo").getValue(long.class));
+                                        String bdFRecep = String.valueOf(dataSnapshot.child(control).child("fecha_recepcion").getValue(String.class));
+                                        String bdPrecioUni = String.valueOf(dataSnapshot.child(control).child("precio_unitario").getValue(long.class));
+                                        String bdPrecioTot = String.valueOf(dataSnapshot.child(control).child("precio_total").getValue(long.class));
+                                        String bdCentroCosto = String.valueOf(dataSnapshot.child(control).child("centro_de_costo").getValue(String.class));
+                                        String bdUbiEspecie = String.valueOf(dataSnapshot.child(control).child("ubicacion_actual").getValue(String.class));
+                                        String bdObsEspecie = String.valueOf(dataSnapshot.child(control).child("observaciones").getValue(String.class));
+                                        String bdCodBarra = String.valueOf(dataSnapshot.child(control).child("codigo_barra").getValue(long.class));
 /*
                                     if(bdNumFactura.equals("null"))     { bdNumFactura = "";}
                                     if(bdRutProveedor.equals("null"))   { bdRutProveedor = "";}
@@ -140,57 +149,177 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                                     if(bdObsEspecie.equals("null"))     { bdObsEspecie = "";}
                                     if(bdCodBarra.equals("null"))       { bdCodBarra = "";}
 */
-                                    if(bdNumFactura.equals("null"))     { bdNumFactura = "--SIN DATOS--";}
-                                    if(bdRutProveedor.equals("null"))   { bdRutProveedor = "--SIN DATOS--";}
-                                    if(bdDescEspecie.equals("null"))    { bdDescEspecie = "--SIN DATOS--";}
-                                    if(bdFRecep.equals("null"))         { bdFRecep = "--SIN DATOS--";}
-                                    if(bdPrecioUni.equals("null"))      { bdPrecioUni = "--SIN DATOS--";}
-                                    if(bdPrecioTot.equals("null"))      { bdPrecioTot = "--SIN DATOS--";}
-                                    if(bdCentroCosto.equals("null"))    { bdCentroCosto = "--SIN DATOS--";}
-                                    if(bdUbiEspecie.equals("null"))     { bdUbiEspecie = "--SIN DATOS--";}
-                                    if(bdObsEspecie.equals("null"))     { bdObsEspecie = "--SIN DATOS--";}
-                                    if(bdCodBarra.equals("null"))       { bdCodBarra = "--SIN DATOS--";}
+                                        if (bdNumFactura.equals("null")) {
+                                            bdNumFactura = "--SIN DATOS--";
+                                        }
+                                        if (bdRutProveedor.equals("null")) {
+                                            bdRutProveedor = "--SIN DATOS--";
+                                        }
+                                        if (bdDescEspecie.equals("null")) {
+                                            bdDescEspecie = "--SIN DATOS--";
+                                        }
+                                        if (bdFRecep.equals("null")) {
+                                            bdFRecep = "--SIN DATOS--";
+                                        }
+                                        if (bdPrecioUni.equals("null")) {
+                                            bdPrecioUni = "--SIN DATOS--";
+                                        }
+                                        if (bdPrecioTot.equals("null")) {
+                                            bdPrecioTot = "--SIN DATOS--";
+                                        }
+                                        if (bdCentroCosto.equals("null")) {
+                                            bdCentroCosto = "--SIN DATOS--";
+                                        }
+                                        if (bdUbiEspecie.equals("null")) {
+                                            bdUbiEspecie = "--SIN DATOS--";
+                                        }if (bdCodEspecie.equals("null")) {
+                                            bdCodEspecie = "--SIN DATOS--";
+                                        }
+                                        if (bdObsEspecie.equals("null")) {
+                                            bdObsEspecie = "--SIN DATOS--";
+                                        }
+                                        if (bdCodBarra.equals("null")) {
+                                            bdCodBarra = "--SIN DATOS--";
+                                        }
+                                        biCodigoBusca.setText(bdCodEspecie);
+                                        numFactura.setText(bdNumFactura);
+                                        rutProveedor.setText(bdRutProveedor);
+                                        descEspecie.setText(bdDescEspecie);
+                                        codEspecie.setText(bdCodBarra);
+                                        fechaRecepcion.setText(bdFRecep);
+                                        precioUni.setText(bdPrecioUni);
+                                        precioTot.setText(bdPrecioTot);
+                                        centroCosto.setText(bdCentroCosto);
+                                        ubiEspecie.setText(bdUbiEspecie);
+                                        obsEspecie.setText(bdObsEspecie);
+                                    } else {
+                                        Toast.makeText(BuscarItems.this, "Codigo no existe en la base de datos.", Toast.LENGTH_LONG).show();
+                                        AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
+                                        alerta.setMessage("desea agregar items al sistema? ")
+                                                .setCancelable(false)
+                                                .setPositiveButton("si", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        Intent intent = new Intent(new Intent(BuscarItems.this, addItem.class));
+                                                        startActivity(intent);
+                                                        finish();
+                                                    }
+                                                })
+                                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        dialog.cancel();
+                                                    }
+                                                });
+                                        AlertDialog titulo = alerta.create();
+                                        titulo.setTitle("Salida");
+                                        titulo.show();
+                                    }
+                                }
+                            } @Override public void onCancelled(@NonNull DatabaseError databaseError) {}});
+                    }
+                    else {
+                        Query query = mDatabase.child("data").child("especies").child(cod);
+                        query.addValueEventListener(new ValueEventListener() {
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot != null) {
+                                    String control = String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
+                                    if (!control.equals("null")) {
+                                        String bdNumFactura = String.valueOf(dataSnapshot.child("numero_factura").getValue(long.class));
+                                        String bdRutProveedor = String.valueOf(dataSnapshot.child("rut_proveedor").getValue(String.class));
+                                        String bdDescEspecie = String.valueOf(dataSnapshot.child("especie").getValue(String.class));
+                                        //String bdCodEspecie =   String.valueOf(dataSnapshot.child("codigo_correlativo").getValue(long.class));
+                                        String bdFRecep = String.valueOf(dataSnapshot.child("fecha_recepcion").getValue(String.class));
+                                        String bdPrecioUni = String.valueOf(dataSnapshot.child("precio_unitario").getValue(long.class));
+                                        String bdPrecioTot = String.valueOf(dataSnapshot.child("precio_total").getValue(long.class));
+                                        String bdCentroCosto = String.valueOf(dataSnapshot.child("centro_de_costo").getValue(String.class));
+                                        String bdUbiEspecie = String.valueOf(dataSnapshot.child("ubicacion_actual").getValue(String.class));
+                                        String bdObsEspecie = String.valueOf(dataSnapshot.child("observaciones").getValue(String.class));
+                                        String bdCodBarra = String.valueOf(dataSnapshot.child("codigo_barra").getValue(Long.class));
+/*
+                                    if(bdNumFactura.equals("null"))     { bdNumFactura = "";}
+                                    if(bdRutProveedor.equals("null"))   { bdRutProveedor = "";}
+                                    if(bdDescEspecie.equals("null"))    { bdDescEspecie = "";}
+                                    if(bdFRecep.equals("null"))         { bdFRecep = "";}
+                                    if(bdPrecioUni.equals("null"))      { bdPrecioUni = "";}
+                                    if(bdPrecioTot.equals("null"))      { bdPrecioTot = "";}
+                                    if(bdCentroCosto.equals("null"))    { bdCentroCosto = "";}
+                                    if(bdUbiEspecie.equals("null"))     { bdUbiEspecie = "";}
+                                    if(bdObsEspecie.equals("null"))     { bdObsEspecie = "";}
+                                    if(bdCodBarra.equals("null"))       { bdCodBarra = "";}
+*/
+                                        if (bdNumFactura.equals("null")) {
+                                            bdNumFactura = "--SIN DATOS--";
+                                        }
+                                        if (bdRutProveedor.equals("null")) {
+                                            bdRutProveedor = "--SIN DATOS--";
+                                        }
+                                        if (bdDescEspecie.equals("null")) {
+                                            bdDescEspecie = "--SIN DATOS--";
+                                        }
+                                        if (bdFRecep.equals("null")) {
+                                            bdFRecep = "--SIN DATOS--";
+                                        }
+                                        if (bdPrecioUni.equals("null")) {
+                                            bdPrecioUni = "--SIN DATOS--";
+                                        }
+                                        if (bdPrecioTot.equals("null")) {
+                                            bdPrecioTot = "--SIN DATOS--";
+                                        }
+                                        if (bdCentroCosto.equals("null")) {
+                                            bdCentroCosto = "--SIN DATOS--";
+                                        }
+                                        if (bdUbiEspecie.equals("null")) {
+                                            bdUbiEspecie = "--SIN DATOS--";
+                                        }
+                                        if (bdObsEspecie.equals("null")) {
+                                            bdObsEspecie = "--SIN DATOS--";
+                                        }
+                                        if (bdCodBarra.equals("null")) {
+                                            bdCodBarra = "--SIN DATOS--";
+                                        }
 
-                                    numFactura.setText(bdNumFactura);
-                                    rutProveedor.setText(bdRutProveedor);
-                                    descEspecie.setText(bdDescEspecie);
-                                    codEspecie.setText(bdCodBarra);
-                                    fechaRecepcion.setText(bdFRecep);
-                                    precioUni.setText(bdPrecioUni);
-                                    precioTot.setText(bdPrecioTot);
-                                    centroCosto.setText(bdCentroCosto);
-                                    ubiEspecie.setText(bdUbiEspecie);
-                                    obsEspecie.setText(bdObsEspecie);
-                                } else {
-                                    Toast.makeText(BuscarItems.this, "Codigo no existe en la base de datos.", Toast.LENGTH_LONG).show();
-                                    AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
-                                    alerta.setMessage("¿Desea agregar items al sistema? ")
-                                            .setCancelable(false)
-                                            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    Intent intent = new Intent(new Intent(BuscarItems.this, addItem.class));
-                                                    startActivity(intent);
-                                                    finish();
-                                                }
-                                            })
-                                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    dialog.cancel();
-                                                }
-                                            });
-                                    AlertDialog titulo = alerta.create();
-                                    titulo.setTitle("Salida");
-                                    titulo.show();
+                                        numFactura.setText(bdNumFactura);
+                                        rutProveedor.setText(bdRutProveedor);
+                                        descEspecie.setText(bdDescEspecie);
+                                        codEspecie.setText(bdCodBarra);
+                                        fechaRecepcion.setText(bdFRecep);
+                                        precioUni.setText(bdPrecioUni);
+                                        precioTot.setText(bdPrecioTot);
+                                        centroCosto.setText(bdCentroCosto);
+                                        ubiEspecie.setText(bdUbiEspecie);
+                                        obsEspecie.setText(bdObsEspecie);
+                                    } else {
+                                        Toast.makeText(BuscarItems.this, "Codigo no existe en la base de datos.", Toast.LENGTH_LONG).show();
+                                        AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
+                                        alerta.setMessage("desea agregar items al sistema? ")
+                                                .setCancelable(false)
+                                                .setPositiveButton("si", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        Intent intent = new Intent(new Intent(BuscarItems.this, addItem.class));
+                                                        startActivity(intent);
+                                                        finish();
+                                                    }
+                                                })
+                                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        dialog.cancel();
+                                                    }
+                                                });
+                                        AlertDialog titulo = alerta.create();
+                                        titulo.setTitle("Salida");
+                                        titulo.show();
+                                    }
                                 }
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                        }
-                    });
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                            }
+                        });
+                    }
                     break;
                 }
                 break;
@@ -223,7 +352,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
         if (result != null) {
             if (result.getContents() == null) {
-                Toast.makeText(this, "Lectura cancelada", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 biCodigoBusca.setText(result.getContents());

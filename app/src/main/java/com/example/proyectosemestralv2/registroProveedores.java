@@ -51,7 +51,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
             if(telefonoCtrl.equals("")){ telefono = 0;}
             else{   telefono =      Integer.parseInt(String.valueOf(telefonoProvedor.getText()));}
             String email =          String.valueOf(emailProvedor.getText());
-            //String dbEstado =       String.valueOf();
+            String dbEstado =       "Activo";
             Query query = mDatabase.child("proveedores");
             try {
                 if (rut.contains("-")) {
@@ -104,6 +104,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                                 proveedor.setEmail(email);
                                                 proveedor.setTelefono(telefono);
                                                 proveedor.setRut(rut);
+                                                proveedor.setEstado(dbEstado);
                                                 mDatabase.child("proveedores").child(rut).setValue(proveedor);
                                                 Toast.makeText(registroProveedores.this, "Registro exitóso", Toast.LENGTH_LONG).show();
                                             }else {
