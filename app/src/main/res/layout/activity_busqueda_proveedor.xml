@@ -1,302 +1,249 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".busquedaProveedor">
-
-    <Spinner
-        android:id="@+id/bpEstadoSpinner"
-        android:layout_width="215dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:textSize="20dp"
-        android:background="@drawable/btnpress"
-        android:textColor="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/bpGuardarCambiosButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpEmailProveedor"
-        app:layout_constraintVertical_bias="0.134"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/bpRazonSocial"
-        android:layout_width="215dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="40dp"
-        android:width="200dp"
-        android:textSize="20dp"
-        android:text=" "
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/bpTelefonoProveedor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTitEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        android:text="Email"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTitTelefono"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTitRutProv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Rut"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTitRazonSocial"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/bpBuscarButton"
-        android:layout_width="105dp"
-        android:layout_height="36dp"
-        android:width="9dp"
-        android:background="#3B7A20"
-        android:text="BUSCAR"
-        app:layout_constraintBottom_toTopOf="@+id/bpSeparador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTituloBienvenida"
-        app:layout_constraintVertical_bias="0.302"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/bpEmailProveedor"
-        android:layout_width="215dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:textSize="20dp"
-        android:width="200dp"
-        android:text=" "
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTelefonoProveedor"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/bpSeparador"
-        android:layout_width="350dp"
-        android:layout_height="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpRutBusca"
-        app:layout_constraintVertical_bias="0.05"
-        app:srcCompat="@drawable/barra_separadora"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTitRutBusqueda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="Rut"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bpTitRazonSocial"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTituloBienvenida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BUSCADOR PROVEEDORES"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTitRazonSocial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Razón Social"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpSeparador"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/bpRutBusca"
-        android:layout_width="195dp"
-        android:layout_height="30dp"
-        android:width="170dp"
-        android:background="@color/exitColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.337"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTituloBienvenida"
-        app:layout_constraintVertical_bias="0.021"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpRutProveedor"
-        android:layout_width="215dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="30dp"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:width="200dp"
-        android:text=" "
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/bpTelefonoProveedor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.981"
-        app:layout_constraintStart_toEndOf="@+id/bpTitEmail"
-        app:layout_constraintTop_toBottomOf="@+id/bpRazonSocial"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/bpTelefonoProveedor"
-        android:layout_width="215dp"
-        android:layout_height="35dp"
-        android:width="20dp"
-        android:layout_marginTop="35dp"
-        android:textSize="20dp"
-        android:text=" "
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
-        app:layout_constraintStart_toEndOf="@+id/bpTitEmail"
-        app:layout_constraintTop_toBottomOf="@+id/bpRutProveedor"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTitEtadoProveedor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        android:text="Estado"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTitEmail"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bpTitTelefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Teléfono"
-        android:textColor="@color/btnColor"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTitRutProv"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/bpGuardarCambiosButton"
-        android:layout_width="150dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:width="9dp"
-        android:background="#3B7A20"
-        android:text="Guardar cambios"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.959"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTitEtadoProveedor"
-        app:layout_constraintVertical_bias="0.009"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/bpRetornoButton"
-        android:layout_width="150dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="92dp"
-        android:width="9dp"
-        android:background="@color/red"
-        android:text="Volver"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpTitEtadoProveedor"
-        app:layout_constraintVertical_bias="0.008"
-        tools:ignore="MissingConstraints" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="#AAA0A0"
+        android:backgroundTint="#D1C7C7"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#ff3b3f"
+            android:backgroundTint="#A9A9A9"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+
+            <TextView
+                android:id="@+id/bpTituloBienvenida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="BUSQUEDA DE PROVEEDORES"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+            <TextView
+                android:id="@+id/bpTitRutBusqueda"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center|center"
+                android:gravity="center"
+                android:text="Rut"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+
+            <EditText
+                android:id="@+id/bpRutBusca"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+
+                android:layout_gravity="center"
+                android:background="@color/teal_700"
+                android:backgroundTint="#FF3B3F"
+                android:ems="10"
+                android:gravity="center"
+
+                android:hint="ejemplo 11.111.111-7"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/bpBuscarButton"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#757776"
+                android:gravity="center"
+                android:text="Buscar" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+
+        <TextView
+            android:id="@+id/bpTitRazonSocial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:text="RAZON SOCIAL" />
+
+
+
+        <EditText
+            android:id="@+id/bpRazonSocial"
+            android:layout_width="330dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@color/teal_700"
+            android:backgroundTint="#FF3B3F"
+
+            android:text=" "
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+        <TextView
+            android:id="@+id/bpTitRutProv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="RUT" />
+
+
+        <EditText
+            android:id="@+id/bpRutProveedor"
+            android:layout_width="330dp"
+            android:backgroundTint="#FF3B3F"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@color/teal_700"
+            android:text=""/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+        <TextView
+            android:id="@+id/bpTitTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="TELEFONO" />
+
+
+        <EditText
+            android:id="@+id/bpTelefonoProveedor"
+            android:layout_width="330dp"
+            android:backgroundTint="#FF3B3F"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@color/teal_700"
+            android:hint="9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+        <TextView
+            android:id="@+id/bpTitEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=" EMAIL " />
+
+
+        <EditText
+            android:id="@+id/bpEmailProveedor"
+            android:layout_width="330dp"
+            android:backgroundTint="#FF3B3F"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@color/teal_700"
+            android:hint="codigo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+        <TextView
+            android:id="@+id/bpTitEtadoProveedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=" ESTADO " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+        <Spinner
+            android:id="@+id/bpEstadoSpinner"
+            android:layout_width="330dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="#000FF3"
+            android:backgroundTint="#FF3B3F"></Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+
+        <Button
+            android:id="@+id/bpRetornoButton"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+
+            android:backgroundTint="#E80A0A"
+            android:gravity="center"
+            android:text="volver" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="@dimen/cardview_default_radius"></TextView>
+
+        <Button
+            android:id="@+id/bpGuardarCambiosButton"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#4CAF50"
+            android:gravity="center"
+            android:text="guardar cambios" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
