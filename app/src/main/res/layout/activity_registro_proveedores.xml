@@ -128,7 +128,7 @@
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Email"
+                android:text="Correo"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="#009688"/>
