@@ -1,57 +1,74 @@
 package com.example.proyectosemestralv2;
-
+import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-public class menuInicio extends AppCompatActivity implements View.OnClickListener {
+public class menuInicio extends AppCompatActivity {
 
-    Button  ingresoItemsBtn, buscarItemsBtn, registroProvedorBtn, buscarProvedorBtn,
+
+    CardView ingresoItemsBtn, buscarItemsBtn, registroProvedorBtn, buscarProvedorBtn,
             exportarDatosBtn, generarActasBtn, solicitudAdminBtn, cerrarSesionBtn,
-            registroUsuariosBtn, buscarUserBtn, infoItems;
+            registroUsuariosBtn, buscarUserBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicio);
 
-        ingresoItemsBtn =       (Button)findViewById(R.id.IngresoItemsBtn);
-        registroProvedorBtn =   (Button)findViewById(R.id.RegistroProvedorBtn);
-        registroUsuariosBtn =   (Button)findViewById(R.id.RegistroUsuariosBtn);
-        buscarProvedorBtn =     (Button)findViewById(R.id.BuscarProvedorBtn);
-        buscarItemsBtn =        (Button)findViewById(R.id.BuscarItemsBtn);
-        cerrarSesionBtn=        (Button)findViewById(R.id.CerrarSesionBtn);
-        exportarDatosBtn=       (Button)findViewById(R.id.ExportarDatosBtn);
-        buscarUserBtn=          (Button)findViewById(R.id.BuscarUsuarioBtn);
-        infoItems = (Button)findViewById(R.id.BuscarItemsBtn);
+        ingresoItemsBtn =      findViewById(R.id.IngresoItemsBtn);
+        registroProvedorBtn =   findViewById(R.id.RegistroProvedorBtn);
+        registroUsuariosBtn =  findViewById(R.id.RegistroUsuariosBtn);
+        buscarProvedorBtn =     findViewById(R.id.BuscarProvedorBtn);
+        buscarItemsBtn =       findViewById(R.id.BuscarItemsBtn);
+        cerrarSesionBtn=        findViewById(R.id.CerrarSesionBtn);
+        exportarDatosBtn=      findViewById(R.id.ExportarDatosBtn);
+        buscarUserBtn=      findViewById(R.id.BuscarUsuarioBtn);
+        generarActasBtn = findViewById(R.id.GenerarActasBtn);
         //este boton tienen que mostrar el items cargado
 
-
-        ingresoItemsBtn.setOnClickListener(this);
-        registroProvedorBtn.setOnClickListener(this);
-        registroUsuariosBtn.setOnClickListener(this);
-        buscarProvedorBtn.setOnClickListener(this);
-        buscarItemsBtn.setOnClickListener(this);
-
-
-        //se va a informacion de items
-        infoItems.setOnClickListener(new View.OnClickListener() {
+        ingresoItemsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this, addItem.class));
+                startActivity(intent);
+                finish();
+            }
+        });
+        registroProvedorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this, registroProveedores.class));
+                startActivity(intent);
+                finish();
+            }
+        });
+        registroUsuariosBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this, registroUsuarios.class));
+                startActivity(intent);
+                finish();
+            }
+        });
+        buscarProvedorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this,busquedaProveedor.class));
+                startActivity(intent);
+                finish();
+            }
+        });
+        buscarItemsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(new Intent(menuInicio.this, BuscarItems.class));
                 startActivity(intent);
-            }
-        });
-
-
-        buscarUserBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(new Intent(menuInicio.this,BuscarUsuario.class));
-                startActivity(intent);
+                finish();
             }
         });
 
@@ -60,35 +77,38 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
             public void onClick(View v) {
                 Intent intent= new Intent(new Intent(menuInicio.this,MainActivity.class));
                 startActivity(intent);
+                finish();
             }
         });
+
+
         exportarDatosBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(new Intent(menuInicio.this,archivoExporExcel.class));
                 startActivity(intent);
+                finish();
             }
         });
 
-    }
+        buscarUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this,BuscarUsuario.class));
+                startActivity(intent);
+                finish();
+            }
+        });
+        generarActasBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(new Intent(menuInicio.this,BuscarUsuario.class));
+                startActivity(intent);
+                finish();
+            }
+        });
 
-    public void onClick(View v){
-        switch (v.getId()){
-            //case R.id.BuscarItemsBtn:
-                //startActivity(new Intent(menuInicio.this, BuscarItemsBtn.class));
-            case R.id.IngresoItemsBtn:
-                startActivity(new Intent(menuInicio.this, addItem.class));
-                finish(); break;
-            case R.id.RegistroProvedorBtn:
-                startActivity(new Intent(menuInicio.this, registroProveedores.class));
-                finish(); break;
-            case R.id.RegistroUsuariosBtn:
-                startActivity(new Intent(menuInicio.this, registroUsuarios.class));
-                finish(); break;
-            case R.id.BuscarProvedorBtn:
-                startActivity(new Intent(menuInicio.this, busquedaProveedor.class));
-                break;
-        }
+
     }
 
 }
