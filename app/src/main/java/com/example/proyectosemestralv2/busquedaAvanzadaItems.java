@@ -156,7 +156,9 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
                         for (int i = 0; i < resultados.size(); i++) {
                             auxCont = String.valueOf(resultados.get(i));
                             String auxEspecie = String.valueOf(dataSnapshot.child(auxCont).child("especie").getValue(String.class));
-                            itemsCoincidentes.add(auxCont+". "+auxEspecie);
+                            if(!itemsCoincidentes.contains(auxCont+". "+auxEspecie)){
+                                itemsCoincidentes.add(auxCont+". "+auxEspecie);
+                            }
                         }
                     }
                 }

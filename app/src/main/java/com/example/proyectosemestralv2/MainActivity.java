@@ -1,13 +1,12 @@
 package com.example.proyectosemestralv2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -24,11 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//se le asigna la variable a un boton y lo busca por la id de la pantalla
+        //se le asigna la variable a un boton y lo busca por la id de la pantalla
         login_btn = (Button) findViewById(R.id.login_btn);
         Register_btn = (Button) findViewById(R.id.SignButton);
 
-//aqui lo hace un escucha al presionar el boton al llamado de onclick
+        //aqui lo hace un escucha al presionar el boton al llamado de onclick
         login_btn.setOnClickListener((View.OnClickListener) this);
         Register_btn.setOnClickListener((View.OnClickListener) this);
 
@@ -60,8 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_btn:
-                Intent intent = new Intent(MainActivity.this, menuInicio.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, menuInicio.class));
                 break;
 
     /*

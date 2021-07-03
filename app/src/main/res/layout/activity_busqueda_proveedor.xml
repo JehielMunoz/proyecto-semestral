@@ -97,7 +97,7 @@
             android:layout_gravity="center"
             android:gravity="center"
 
-            android:text="RAZON SOCIAL" />
+            android:text="RAZÓN SOCIAL" />
 
 
 
@@ -181,7 +181,7 @@
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:background="@color/teal_700"
-            android:hint="codigo" />
+            android:hint="código" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -159,7 +159,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintTop_toBottomOf="@+id/baMargenDos"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />
@@ -201,13 +201,13 @@
         android:id="@+id/baTitUbicacionEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ubicación Especie"
+        android:text="Ubicación"
         android:textColor="@color/btnColor"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintTop_toBottomOf="@+id/baCentroCostos"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />
@@ -216,7 +216,7 @@
         android:id="@+id/baUbicacionEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="210dp"
+        android:width="250dp"
         android:text=""
         android:singleLine="true"
         android:lines="1"
@@ -227,7 +227,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/baCentroCostos"
         android:layout_marginTop="20dp"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias="0.75"
         tools:ignore="MissingConstraints" />
 
     <Button
