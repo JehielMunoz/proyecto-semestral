@@ -2,13 +2,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/pantallaazul"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_marginTop="10dp"
         >
 
@@ -16,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical"
             >
 
@@ -47,6 +49,7 @@
 
                 <TableRow/>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
 
 
@@ -69,6 +72,7 @@
 
 
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
@@ -88,6 +92,7 @@
 
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
@@ -105,6 +110,7 @@
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
@@ -123,6 +129,7 @@
                 </TableRow>
                 <TextView
                     android:layout_width="wrap_content"
+                    android:background="#E60F207C"
                     android:layout_height="wrap_content"
                     android:hint="           ">
 
@@ -143,6 +150,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="#E60F207C"
                     android:hint="           "></TextView>
 
                 <TableRow>
@@ -162,6 +170,7 @@
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
 
                 <TableRow>
@@ -181,6 +190,7 @@
                         android:background="@color/teal_700"/>
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
 
                 <TableRow>
@@ -200,6 +210,7 @@
                         android:inputType="numberDecimal"/>
                 </TableRow>
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
 
                 <TableRow>
@@ -222,6 +233,7 @@
                 </TableRow>
 
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
                 <TableRow>
                     <TextView
@@ -241,6 +253,7 @@
                 </TableRow>
 
                 <TextView android:layout_margin="@dimen/cardview_default_radius"
+                    android:background="#E60F207C"
                     android:layout_height="20dp"></TextView>
                 <TableRow>
 
@@ -262,13 +275,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="#E60F207C"
                     android:hint="           "></TextView>
-
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="#E60F207C"
                     android:hint="           "></TextView>
             </TableLayout>
 

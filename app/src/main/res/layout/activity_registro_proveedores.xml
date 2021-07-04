@@ -1,21 +1,21 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="#040E49"
+    android:orientation="vertical">
 
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:stretchColumns="1"
-        android:layout_marginTop="30dp"
-        android:background="@color/white"
+        android:layout_height="670dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/pantallaazul"
+
+        android:orientation="vertical"
+        android:stretchColumns="1">
 
         <TableRow android:padding="5dip">
 
@@ -26,9 +26,9 @@
                 android:layout_span="2"
                 android:gravity="center_horizontal"
                 android:text="Registro Proveedores"
+                android:textColor="#009688"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#009688"/>
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow>
@@ -39,23 +39,25 @@
                 android:layout_column="0"
                 android:layout_marginLeft="10dp"
                 android:text="Razón Social"
-                android:textStyle="bold"
+                android:textColor="#009688"
                 android:textSize="16sp"
-                android:textColor="#009688"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/rpRazonSocialIng"
-                android:hint="Nombre de la empresa."
-                android:layout_height="wrap_content"
                 android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:singleLine="true"
-                android:lines="1"
-                android:maxLines="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+                android:background="#423F3F"
+                android:backgroundTint="#FF423F3F"
+                android:textColorHint="@color/white"
+                android:hint="Nombre de la empresa."
+                android:lines="1"
+                android:maxLines="1"
                 android:padding="5dp"
+                android:singleLine="true"
                 android:textColor="@color/white" />
         </TableRow>
 
@@ -68,25 +70,28 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Rut"
-                android:textStyle="bold"
+                android:textColor="#009688"
                 android:textSize="16sp"
-                android:textColor="#009688" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/rpRutIng"
-                android:hint="Ej.: 11111111-1"
-                android:inputType="number"
-                android:digits="0123456789-kK"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:singleLine="true"
-                android:lines="1"
-                android:maxLines="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+
+                android:digits="0123456789-kK"
+                android:hint="Ej.: 11111111-1"
+                android:background="#423F3F"
+                android:backgroundTint="#FF423F3F"
+                android:textColorHint="@color/white"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLines="1"
                 android:padding="5dp"
+                android:singleLine="true"
                 android:textColor="@color/white" />
         </TableRow>
 
@@ -99,24 +104,27 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Teléfono"
-                android:textStyle="bold"
+                android:textColor="#009688"
                 android:textSize="16sp"
-                android:textColor="#009688" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/rpNroTelefonicoIng"
-                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:singleLine="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="#423F3F"
+                android:backgroundTint="#FF423F3F"
+                android:textColorHint="@color/white"
+
+                android:hint="Ej.: 56912345678"
+                android:inputType="number"
                 android:lines="1"
                 android:maxLines="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/btnColor"
-                android:hint="Ej.: 56912345678"
                 android:padding="5dp"
+                android:singleLine="true"
                 android:textColor="@color/white" />
         </TableRow>
 
@@ -129,41 +137,45 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:text="Correo"
-                android:textStyle="bold"
+                android:textColor="#009688"
                 android:textSize="16sp"
-                android:textColor="#009688"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/rpCorreoIng"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:singleLine="true"
-                android:lines="1"
-                android:maxLines="1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/btnColor"
+
                 android:hint="correo@ejemplo.cl"
+                android:background="#423F3F"
+                android:backgroundTint="#FF423F3F"
+                android:textColorHint="@color/white"
+                android:lines="1"
+                android:maxLines="1"
                 android:padding="5dp"
+                android:singleLine="true"
                 android:textColor="@color/white" />
         </TableRow>
 
-        <TableRow android:layout_marginBottom="15px"
-            android:layout_marginTop="20dp">
+        <TableRow
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15px">
 
             <Button
                 android:id="@+id/rpRetorno"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="35dp"
                 android:background="@color/black"
                 android:text="Volver"
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:backgroundTint="#B66B3A"
-                android:layout_marginLeft="35dp"/>
+                app:backgroundTint="#B66B3A" />
 
 
             <Button

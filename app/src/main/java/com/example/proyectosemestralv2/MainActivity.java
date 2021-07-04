@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pass = findViewById(R.id.contrasena_login);
 
 
+
+
+
     }
 
     /*
@@ -55,11 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     //PRUEBA DE LOGIN VERIFICACION
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_btn:
-                startActivity(new Intent(MainActivity.this, menuInicio.class));
+                    startActivity(new Intent(MainActivity.this, menuInicio.class));
                 break;
 
     /*
@@ -94,7 +98,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
         }
+
     }
+
     //FINAL DE PRUEBA
 
     @Override

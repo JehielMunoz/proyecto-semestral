@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+android:background="@drawable/pantallaazul"
     android:orientation="vertical"
     tools:context=".BuscarUsuario">
 
@@ -105,8 +105,9 @@
         android:maxLines="1"
         android:text=""
         android:textColor="@color/white"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/btnColor"
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaBarraSeparadora"
@@ -135,11 +136,12 @@
         android:layout_height="25dp"
         android:textSize="15dp"
         android:text=""
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
         android:lines="1"
         android:maxLines="1"
         android:textColor="@color/white"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/btnColor"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaBusqNombreProyecto"
@@ -172,9 +174,10 @@
         android:maxLines="1"
         android:text=""
         android:textColor="@color/btnColor"
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
         android:textStyle="bold"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/btnColor"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaBusqCentroCostos"
@@ -207,8 +210,9 @@
         android:maxLines="1"
         android:text=""
         android:textColor="@color/white"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/btnColor"
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaTitEncInventario"
@@ -241,9 +245,10 @@
         android:maxLines="1"
         android:text=""
         android:textColor="@color/white"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/btnColor"
+
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaResponsableMaterial"
         android:layout_marginTop="20dp"
@@ -276,9 +281,10 @@
         android:text=""
         android:inputType="datetime"
         android:textColor="@color/white"
-        android:background="@drawable/btnpress_bourder"
-        android:backgroundTint="@color/btnColor"
+
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaUbEspecies"
         android:layout_marginTop="20dp"
@@ -305,13 +311,15 @@
         android:id="@+id/aaItemsEncontrados"
         android:layout_width="350dp"
         android:layout_height="180dp"
-        android:background="@color/btnColor"
+
         android:textColor="@color/white"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaTitItemsAsociados"
         android:layout_marginTop="15dp"
+        android:background="#423F3F"
+        android:backgroundTint="#FF423F3F"
         android:layout_marginBottom="80dp"/>
 
     <Button

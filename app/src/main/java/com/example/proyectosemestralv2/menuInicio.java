@@ -22,11 +22,11 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         registroProvedorBtn =   (CardView)findViewById(R.id.RegistroProvedorBtn);
         registroUsuariosBtn =   (CardView)findViewById(R.id.RegistroUsuariosBtn);
         buscarProvedorBtn =     (CardView)findViewById(R.id.BuscarProvedorBtn);
-        buscarItemsBtn =        (CardView)findViewById(R.id.BuscarItemsBtn);
+     //   buscarItemsBtn =        (CardView)findViewById(R.id.BuscarItemsBtn);
         cerrarSesionBtn=        (CardView)findViewById(R.id.CerrarSesionBtn);
         exportarDatosBtn=       (CardView)findViewById(R.id.ExportarDatosBtn);
         buscarUserBtn=          (CardView)findViewById(R.id.BuscarUsuarioBtn);
-        infoItems =             (CardView)findViewById(R.id.BuscarItemsBtn);
+
         generarActasBtn =       (CardView)findViewById(R.id.GenerarActasBtn);
         //este boton tienen que mostrar el items cargado
 

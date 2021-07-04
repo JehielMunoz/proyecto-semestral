@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp">
 
@@ -63,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:rowCount="5"
+                android:rowCount="6"
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false">
 
@@ -84,10 +85,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/instagram_2"/>
+                            android:src="@drawable/ingresoitems"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -96,44 +97,7 @@
                             android:textStyle="bold"
 
                             android:textAlignment="center"
-                            android:text="Ingreso Ítems"
-                            />
-
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/BuscarItemsBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="5dp"
-                    app:cardCornerRadius="5dp"
-                    android:layout_margin="25dp">
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="180dp"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/instagram"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:text="Buscar Ítems"
+                            android:text="Ingreso Items"
                             />
 
 
@@ -160,10 +124,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/facebook"/>
+                            android:src="@drawable/registroproveedor"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -171,7 +135,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Registro Proveedor"
+                            android:text="Registro Provedor"
                             />
 
 
@@ -188,7 +152,7 @@
                     android:layout_rowWeight="1"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="5dp"
-                    android:layout_margin="25dp">
+                    android:layout_margin="30dp">
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="180dp"
@@ -197,10 +161,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/twitter"/>
+                            android:src="@drawable/busquedaproveedor"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -208,7 +172,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Buscar Proveedor"
+                            android:text="Buscar Provedor"
                             />
 
 
@@ -236,10 +200,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/tik_tok"/>
+                            android:src="@drawable/newuser"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -265,7 +229,7 @@
                     android:layout_rowWeight="1"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="5dp"
-                    android:layout_margin="25dp">
+                    android:layout_margin="30dp">
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="180dp"
@@ -274,10 +238,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/whatsapp"/>
+                            android:src="@drawable/busquedausuario"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -311,10 +275,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/twitter"/>
+                            android:src="@drawable/eortardatos"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -339,7 +303,7 @@
                     android:layout_rowWeight="1"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="5dp"
-                    android:layout_margin="25dp">
+                    android:layout_margin="30dp">
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="180dp"
@@ -348,10 +312,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/facebook"/>
+                            android:src="@drawable/generaracta"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -385,10 +349,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/tik_tok"/>
+                            android:src="@drawable/cerrarsesion"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -396,7 +360,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Cerrar Sesión"
+                            android:text="Cerrar Sesion"
                             />
 
 
@@ -413,7 +377,7 @@
                     android:layout_rowWeight="1"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="5dp"
-                    android:layout_margin="25dp">
+                    android:layout_margin="30dp">
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="180dp"
@@ -422,10 +386,10 @@
                         android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/twitter"/>
+                            android:src="@drawable/busquedaproveedor"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -433,14 +397,13 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Buscar Proveedor"
+                            android:text="Buscar Provedor"
                             />
 
                     </LinearLayout>
 
 
                 </androidx.cardview.widget.CardView>
-
 
             </GridLayout>
 

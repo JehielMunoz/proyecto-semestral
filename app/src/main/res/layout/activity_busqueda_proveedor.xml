@@ -2,6 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/pantallaazul"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -9,8 +10,7 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:background="#AAA0A0"
-        android:backgroundTint="#D1C7C7"
+        android:background="@drawable/pantallaazul"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
@@ -19,8 +19,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="#ff3b3f"
-            android:backgroundTint="#A9A9A9"
+            android:background="@drawable/pantallaazul"
+
             android:orientation="vertical">
 
             <TextView
@@ -64,8 +64,9 @@
                 android:layout_height="35dp"
 
                 android:layout_gravity="center"
-                android:background="@color/teal_700"
-                android:backgroundTint="#FF3B3F"
+                android:background="#423F3F"
+                android:backgroundTint="#FF423F3F"
+                android:textColorHint="@color/white"
                 android:ems="10"
                 android:gravity="center"
 
@@ -105,9 +106,11 @@
             android:id="@+id/bpRazonSocial"
             android:layout_width="330dp"
             android:layout_height="35dp"
+            android:background="#423F3F"
+            android:backgroundTint="#FF423F3F"
+            android:textColorHint="@color/white"
             android:layout_gravity="center"
-            android:background="@color/teal_700"
-            android:backgroundTint="#FF3B3F"
+
 
             android:text=" "
             android:inputType="number" />
@@ -130,10 +133,13 @@
         <EditText
             android:id="@+id/bpRutProveedor"
             android:layout_width="330dp"
-            android:backgroundTint="#FF3B3F"
+
             android:layout_height="35dp"
             android:layout_gravity="center"
-            android:background="@color/teal_700"
+            android:background="#423F3F"
+            android:backgroundTint="#FF423F3F"
+            android:textColorHint="@color/white"
+
             android:text=""/>
 
 
@@ -154,10 +160,12 @@
         <EditText
             android:id="@+id/bpTelefonoProveedor"
             android:layout_width="330dp"
-            android:backgroundTint="#FF3B3F"
+
             android:layout_height="35dp"
             android:layout_gravity="center"
-            android:background="@color/teal_700"
+            android:background="#423F3F"
+            android:backgroundTint="#FF423F3F"
+            android:textColorHint="@color/white"
             android:hint="9" />
 
         <TextView
@@ -177,10 +185,11 @@
         <EditText
             android:id="@+id/bpEmailProveedor"
             android:layout_width="330dp"
-            android:backgroundTint="#FF3B3F"
             android:layout_height="35dp"
             android:layout_gravity="center"
-            android:background="@color/teal_700"
+            android:background="#423F3F"
+            android:backgroundTint="#FF423F3F"
+            android:textColorHint="@color/white"
             android:hint="código" />
 
         <TextView
@@ -206,8 +215,10 @@
             android:layout_width="330dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
-            android:background="#000FF3"
-            android:backgroundTint="#FF3B3F"></Spinner>
+            android:background="#423F3F"
+            android:backgroundTint="#FF423F3F"
+            android:textColorHint="@color/white"
+           ></Spinner>
 
         <TextView
             android:layout_width="wrap_content"
