@@ -195,7 +195,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                                     } else {
                                         Toast.makeText(BuscarItems.this, "Código no se encuentra registrado", Toast.LENGTH_LONG).show();
                                         AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
-                                        alerta.setMessage("Desea agregar items al sistema? ")
+                                        alerta.setMessage("Desea agregar ítems al sistema? ")
                                                 .setCancelable(false)
                                                 .setPositiveButton("si", new DialogInterface.OnClickListener() {
                                                     @Override
@@ -292,7 +292,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                                     } else {
                                         Toast.makeText(BuscarItems.this, "Código no se encuentra registrado", Toast.LENGTH_LONG).show();
                                         AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
-                                        alerta.setMessage("Desea agregar items al sistema? ")
+                                        alerta.setMessage("Desea agregar ítems al sistema? ")
                                                 .setCancelable(false)
                                                 .setPositiveButton("si", new DialogInterface.OnClickListener() {
                                                     @Override

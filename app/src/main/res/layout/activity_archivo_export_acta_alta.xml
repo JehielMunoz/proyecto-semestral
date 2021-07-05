@@ -323,6 +323,7 @@
         android:backgroundTint="#FF423F3F"
         android:layout_marginBottom="80dp"/>
 
+
     <Button
         android:id="@+id/aaBtnGenerarActa"
         android:layout_width="120dp"

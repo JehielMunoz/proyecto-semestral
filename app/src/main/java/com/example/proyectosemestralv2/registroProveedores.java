@@ -106,7 +106,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                                 proveedor.setRut(rut);
                                                 proveedor.setEstado(dbEstado);
                                                 mDatabase.child("proveedores").child(rut).setValue(proveedor);
-                                                Toast.makeText(registroProveedores.this, "Registro exitóso", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(registroProveedores.this, "Registro exitoso", Toast.LENGTH_LONG).show();
                                             }else {
                                             Toast.makeText(registroProveedores.this, "Proveedor ya exíste.", Toast.LENGTH_LONG).show();
                                             }

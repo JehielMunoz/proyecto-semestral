@@ -179,7 +179,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
     public void validarbtn(View v) {
         if (validar()) {
-            Toast.makeText(this, "La información ingresada es valida", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "La información ingresada es válida", Toast.LENGTH_LONG).show();
         }
     }
 
