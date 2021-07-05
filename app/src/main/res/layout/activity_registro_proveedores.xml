@@ -119,7 +119,7 @@
                 android:backgroundTint="#FF423F3F"
                 android:textColorHint="@color/white"
 
-                android:hint="Ej.: 56912345678"
+                android:hint="Ej.: 912345678"
                 android:inputType="number"
                 android:lines="1"
                 android:maxLines="1"

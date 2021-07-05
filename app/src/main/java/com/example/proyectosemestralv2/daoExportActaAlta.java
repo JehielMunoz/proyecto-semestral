@@ -39,6 +39,19 @@ class daoExportActaAlta extends AppCompatActivity {
         AssetManager assetManager = context.getAssets();
         InputStream in = null;
         OutputStream out = null;
+
+        final String[] actaCodigos = {"",""};
+        Query queryCodigos = mDatabase.child("data").child("actas");
+        queryCodigos.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                actaCodigos[0] = String.valueOf(dataSnapshot.child("codigo_actas").getValue(long.class)+1);
+                actaCodigos[1] = String.valueOf(dataSnapshot.child("correlativo_actas").getValue(long.class)+1);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
+        });
+
         //get time
         Calendar calendar = Calendar.getInstance();
         String year =   String.valueOf(calendar.get(Calendar.YEAR));
@@ -61,7 +74,7 @@ class daoExportActaAlta extends AppCompatActivity {
 
         //create file from template
         try {
-            in = assetManager.open("excel-base-acta-altaTest.xls");
+            in = assetManager.open("excel-base-acta-alta.xls");
             File outFileAa = new File (dirPath, nFile);
             out = new FileOutputStream(outFileAa,false);
             copyFile(in, out);
@@ -197,6 +210,10 @@ class daoExportActaAlta extends AppCompatActivity {
                             sheetActa.addCell(new Label(3, 17, nomResponsableMaterial));
                             sheetActa.addCell(new Label(5, 12, ubicacion));
                             sheetActa.addCell(new Label(6, 7, fechaRecepcion));
+                            sheetActa.addCell(new Label(3,4, actaCodigos[0]));
+                            sheetActa.addCell(new Label(6,3, actaCodigos[1]));
+                            mDatabase.child("data").child("actas").child("codigo_actas").setValue(Integer.parseInt(actaCodigos[0]));
+                            mDatabase.child("data").child("actas").child("correlativo_actas").setValue(Integer.parseInt(actaCodigos[1]));
                         } catch (WriteException e) {
                             e.printStackTrace();
                         }
@@ -239,6 +256,7 @@ class daoExportActaAlta extends AppCompatActivity {
                         } catch (WriteException e) {
                             e.printStackTrace();
                         }
+
                     }
                 }public void onCancelled(DatabaseError databaseError) {}});
 

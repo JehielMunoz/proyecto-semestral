@@ -66,7 +66,6 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         estadoSpinner.setOnItemSelectedListener(this);
 
         btnBusquedaAvan.setOnClickListener(v -> {
-
             ArrayList<String> busquedas     = new ArrayList<>();
             //Listas auxiliares
             ArrayList<String> bdAuxListOne    = new ArrayList<>();
@@ -184,14 +183,7 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
         btnReiniciarBusq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nroFactura.setText("");
-                rutProveedor.setText("");
-                fechaRecepcion.setText("");
-                centroCostos.setText("");
-                ubicacionEspecie.setText("");
-                resultados.clear();
-                itemsEncontrados.setAdapter(null);
-                Toast.makeText(busquedaAvanzadaItems.this, "Búsqueda reiniciada", Toast.LENGTH_LONG).show();
+                clearInfo();
             }
         });
         itemsEncontrados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -210,7 +202,17 @@ public class busquedaAvanzadaItems extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
 
     }
-
+    public void clearInfo(){
+        nroFactura.setText("");
+        rutProveedor.setText("");
+        fechaRecepcion.setText("");
+        centroCostos.setText("");
+        ubicacionEspecie.setText("");
+        resultados.clear();
+        itemsCoincidentes.clear();
+        itemsEncontrados.setAdapter(null);
+        Toast.makeText(busquedaAvanzadaItems.this, "Búsqueda reiniciada", Toast.LENGTH_LONG).show();
+    }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();

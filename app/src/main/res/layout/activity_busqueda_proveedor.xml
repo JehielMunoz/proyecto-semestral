@@ -70,7 +70,7 @@
                 android:ems="10"
                 android:gravity="center"
 
-                android:hint="ejemplo 11.111.111-7"
+                android:hint="ejemplo 11.111.111-1"
                 android:inputType="textPersonName" />
 
             <Button
@@ -165,8 +165,7 @@
             android:layout_gravity="center"
             android:background="#423F3F"
             android:backgroundTint="#FF423F3F"
-            android:textColorHint="@color/white"
-            android:hint="Ej.: 912345678" />
+            android:textColorHint="@color/white"  />
 
         <TextView
             android:layout_width="wrap_content"
@@ -231,7 +230,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
 
-            android:backgroundTint="#E80A0A"
+            android:backgroundTint="#e82f0a"
             android:gravity="center"
             android:text="volver" />
 

@@ -63,8 +63,8 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="6"
+                android:columnCount="1"
+                android:rowCount="9"
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false">
 
@@ -107,6 +107,42 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/BuscarEspecieBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_margin="30dp">
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/busquedaproveedor"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:text="Buscar Especies"
+                            />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:id="@+id/RegistroProvedorBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -135,7 +171,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Registro Provedor"
+                            android:text="Registro Proveedor"
                             />
 
 
@@ -172,7 +208,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Buscar Provedor"
+                            android:text="Buscar Proveedor"
                             />
 
 
@@ -369,41 +405,6 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/BuscarEspecieBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="5dp"
-                    app:cardCornerRadius="5dp"
-                    android:layout_margin="30dp">
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="180dp"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/busquedaproveedor"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:text="Buscar Especies"
-                            />
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
 
             </GridLayout>
 

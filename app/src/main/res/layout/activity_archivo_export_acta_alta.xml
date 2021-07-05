@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@drawable/pantallaazul"
+    android:background="@drawable/pantallaazul"
     android:orientation="vertical"
     tools:context=".BuscarUsuario">
 
@@ -79,6 +79,7 @@ android:background="@drawable/pantallaazul"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaNroFacturaBusq"
         tools:ignore="MissingConstraints"/>
+
 
     <TextView
         android:id="@+id/aaTitNombreProyecto"
@@ -349,6 +350,5 @@ android:background="@drawable/pantallaazul"
         app:layout_constraintHorizontal_bias="0.25"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
