@@ -22,7 +22,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         registroProvedorBtn =   (CardView)findViewById(R.id.RegistroProvedorBtn);
         registroUsuariosBtn =   (CardView)findViewById(R.id.RegistroUsuariosBtn);
         buscarProvedorBtn =     (CardView)findViewById(R.id.BuscarProvedorBtn);
-     //   buscarItemsBtn =        (CardView)findViewById(R.id.BuscarItemsBtn);
+        //buscarItemsBtn =        (CardView)findViewById(R.id.BuscarItemsBtn);
         cerrarSesionBtn=        (CardView)findViewById(R.id.CerrarSesionBtn);
         exportarDatosBtn=       (CardView)findViewById(R.id.ExportarDatosBtn);
         buscarUserBtn=          (CardView)findViewById(R.id.BuscarUsuarioBtn);
@@ -35,10 +35,11 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
         registroProvedorBtn.setOnClickListener(this);
         registroUsuariosBtn.setOnClickListener(this);
         buscarProvedorBtn.setOnClickListener(this);
-        buscarItemsBtn.setOnClickListener(this);
+        //buscarItemsBtn.setOnClickListener(this);
 
 
         //se va a informacion de items
+        /*
         infoItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,7 @@ public class menuInicio extends AppCompatActivity implements View.OnClickListene
                 startActivity(intent);
             }
         });
-
+        */
 
         buscarUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".archivo_export_acta_alta"></activity>
+        <activity android:name=".daoExportActaAlta"></activity>
+        <activity android:name=".archivo_export_acta_alta" />
         <activity android:name=".busquedaAvanzadaItems" />
         <activity android:name=".daoExportExcel" />
         <activity android:name=".BuscarItems" />

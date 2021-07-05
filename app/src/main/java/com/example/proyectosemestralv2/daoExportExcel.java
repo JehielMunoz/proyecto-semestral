@@ -69,7 +69,7 @@ class daoExportExcel extends AppCompatActivity {
 
         //create file from template
         try {
-            in = assetManager.open("excel-base.xls");
+            in = assetManager.open("excel-base-exportInventario.xls");
             File outFilez = new File (dirPath, nFile);
             out = new FileOutputStream(outFilez,false);
             copyFile(in, out);
