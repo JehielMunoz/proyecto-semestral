@@ -109,7 +109,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
             case R.id.biBuscaEspecie:
 
                 String cod = biCodigoBusca.getText().toString();
-                if(cod.equals("")) {Toast.makeText(BuscarItems.this, "Debe ingresar un codigo (Correlativo o de barras).", Toast.LENGTH_LONG).show();}
+                if(cod.equals("")) {Toast.makeText(BuscarItems.this, "Debe ingresar un código (Correlativo o de barras).", Toast.LENGTH_LONG).show();}
                 else{
                     if(cod.length()>10){
                         Query query = mDatabase.child("data").child("especies");
@@ -193,9 +193,9 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                                         ubiEspecie.setText(bdUbiEspecie);
                                         obsEspecie.setText(bdObsEspecie);
                                     } else {
-                                        Toast.makeText(BuscarItems.this, "Codigo no existe en la base de datos.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(BuscarItems.this, "Código no se encuentra registrado", Toast.LENGTH_LONG).show();
                                         AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
-                                        alerta.setMessage("desea agregar items al sistema? ")
+                                        alerta.setMessage("Desea agregar items al sistema? ")
                                                 .setCancelable(false)
                                                 .setPositiveButton("si", new DialogInterface.OnClickListener() {
                                                     @Override
@@ -290,9 +290,9 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
                                         ubiEspecie.setText(bdUbiEspecie);
                                         obsEspecie.setText(bdObsEspecie);
                                     } else {
-                                        Toast.makeText(BuscarItems.this, "Codigo no existe en la base de datos.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(BuscarItems.this, "Código no se encuentra registrado", Toast.LENGTH_LONG).show();
                                         AlertDialog.Builder alerta = new AlertDialog.Builder(BuscarItems.this);
-                                        alerta.setMessage("desea agregar items al sistema? ")
+                                        alerta.setMessage("Desea agregar items al sistema? ")
                                                 .setCancelable(false)
                                                 .setPositiveButton("si", new DialogInterface.OnClickListener() {
                                                     @Override
@@ -352,7 +352,7 @@ public class BuscarItems extends AppCompatActivity implements View.OnClickListen
 
         if (result != null) {
             if (result.getContents() == null) {
-                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Lectura cancelada", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 biCodigoBusca.setText(result.getContents());

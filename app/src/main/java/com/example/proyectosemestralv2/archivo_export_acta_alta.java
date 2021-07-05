@@ -155,7 +155,7 @@ public class archivo_export_acta_alta extends AppCompatActivity implements View.
                     }
                 }
                 else{
-                    Toast.makeText(this, "Ingrese todos los campos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_LONG).show();
                 }
                 break;
             }

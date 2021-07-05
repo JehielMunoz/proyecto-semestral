@@ -154,7 +154,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="TELEFONO" />
+            android:text="TELÉFONO" />
 
 
         <EditText
@@ -166,7 +166,7 @@
             android:background="#423F3F"
             android:backgroundTint="#FF423F3F"
             android:textColorHint="@color/white"
-            android:hint="9" />
+            android:hint="Ej.: 912345678" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text=" EMAIL " />
+            android:text=" CORREO ELECTRÓNICO " />
 
 
         <EditText
@@ -189,8 +189,7 @@
             android:layout_gravity="center"
             android:background="#423F3F"
             android:backgroundTint="#FF423F3F"
-            android:textColorHint="@color/white"
-            android:hint="código" />
+            android:textColorHint="@color/white" />
 
         <TextView
             android:layout_width="wrap_content"

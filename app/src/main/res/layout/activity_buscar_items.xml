@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
         >
 
@@ -26,7 +26,8 @@
                 android:gravity="center"
                 android:textSize="25dp"
                 android:text=" BUSCAR ESPECIES"
-                android:textColor="@color/black" />
+                android:textStyle="bold"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_margin="@dimen/cardview_default_radius"

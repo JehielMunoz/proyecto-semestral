@@ -267,7 +267,7 @@ android:background="@drawable/pantallaazul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aaTitUbEspecie"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintHorizontal_bias="0.1"
         />
 

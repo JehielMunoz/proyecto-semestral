@@ -139,7 +139,7 @@
                         android:id="@+id/ingTitEstadoSpinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Estado"
+                        android:text="Estado:"
                         android:textColor="@color/black"/>
                     <Spinner
                         android:id="@+id/ingEstadoSpinner"

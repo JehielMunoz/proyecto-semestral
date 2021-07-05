@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/pantallaazul"
         >
 
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:text="INGRESO DE ESPECIES" />
             <TextView
                 android:layout_margin="@dimen/cardview_default_radius"
@@ -74,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Código Correlativo:   "
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/ingCodigoEspecie"
@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:text="N° Factura:"
 
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/ingNumFactura"
@@ -132,7 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rut Proveedor:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/ingRutProveedor"
@@ -154,7 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Descripción:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/ingDescripItem"
@@ -174,7 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Código Producto:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/ingCodigoBarra"
@@ -197,7 +197,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estado"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <Spinner
                         android:id="@+id/ingEstadoSpinner"
@@ -219,7 +219,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="Fecha recepción:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
                     <EditText
                         android:id="@+id/ingFechaRecepcion"
                         android:layout_width="match_parent"
@@ -241,7 +241,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Recursos:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/ingRecurso"
@@ -262,7 +262,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Precio Neto:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
 
                     <EditText
                         android:id="@+id/ingPrecioItem"
@@ -282,7 +282,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Precio:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
                     <EditText
                         android:id="@+id/ingPrecioItemIVA"
                         android:layout_width="match_parent"
@@ -304,7 +304,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ubicación Especie:"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         />
                     <EditText
                         android:id="@+id/ingUbicacionItem"
@@ -325,7 +325,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Observación:"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
                     <EditText
                         android:id="@+id/ingObservacionIngreso"
                         android:layout_width="match_parent"

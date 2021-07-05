@@ -151,7 +151,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
                 //    Toast.makeText(this,"Complete todos los campos", Toast.LENGTH_LONG).show();
                 //}else
                 if (dao.creaEspecie(especie, codString)) {
-                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Registro exitóso", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Código ya existe", Toast.LENGTH_LONG).show();
                 }
@@ -179,7 +179,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
     public void validarbtn(View v) {
         if (validar()) {
-            Toast.makeText(this, "Valido correctamente ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "La información ingresada es valida", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -199,47 +199,47 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
         String c10 = ubiItem.getText().toString();
         String c11 = obsIngreso.getText().toString();
         if (c1.isEmpty()) {
-            numFactura.setError("este campo no puede quedar vacio");
+            numFactura.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c2.isEmpty()) {
-            rutProv.setError("este campo no puede quedar vacio");
+            rutProv.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c3.isEmpty()) {
-            desItem.setError("este campo no puede quedar vacio");
+            desItem.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c4.isEmpty()) {
-            codigoEspecie.setError("este campo no puede quedar vacio");
+            codigoEspecie.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c5.isEmpty()) {
-            codigoProd.setError("este campo no puede quedar vacio");
+            codigoProd.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c6.isEmpty()) {
-            fRecepcion.setError("este campo no puede quedar vacio");
+            fRecepcion.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c7.isEmpty()) {
-            recurso.setError("este campo no puede quedar vacio");
+            recurso.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c8.isEmpty()) {
-            precioItem.setError("este campo no puede quedar vacio");
+            precioItem.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c9.isEmpty()) {
-            precioTotal.setError("este campo no puede quedar vacio");
+            precioTotal.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c10.isEmpty()) {
-            ubiItem.setError("este campo no puede quedar vacio");
+            ubiItem.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         if (c11.isEmpty()) {
-            obsIngreso.setError("este campo no puede quedar vacio");
+            obsIngreso.setError("Este campo no puede quedar vacio");
             retorno = false;
         }
         return retorno;
@@ -254,7 +254,7 @@ public class addItem extends AppCompatActivity implements View.OnClickListener, 
 
         if (result != null) {
             if (result.getContents() == null) {
-                Toast.makeText(this, "Lectura Cancelada", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Lectura cancelada", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 codigoProd.setText(result.getContents());

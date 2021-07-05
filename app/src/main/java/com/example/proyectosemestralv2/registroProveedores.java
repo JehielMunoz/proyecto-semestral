@@ -62,7 +62,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                     charsEmail = email.split("@", 2);
                 }
                 if (razonSocial.equals("")) {
-                    Toast.makeText(this, "Debe ingresar razon social.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Debe ingresar razón social.", Toast.LENGTH_LONG).show();
                 } else {
                     if (rut.equals("")) {
                         Toast.makeText(this, "Debe ingresar rut del proveedor.", Toast.LENGTH_LONG).show();
@@ -82,7 +82,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                             Toast.makeText(this, "Rut inválido.", Toast.LENGTH_LONG).show();
                         } else {
                             if (telefono == 0) {
-                                Toast.makeText(this, "Debe ingresar teléfono de contacto.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(this, "Debe ingresar un teléfono de contacto.", Toast.LENGTH_LONG).show();
                             } else {
                                 //|| !email.contains(".cl") || !email.contains(".org") || !email.contains(".net")
                                 //|| !email.contains(".COM") || !email.contains(".CL") || !email.contains(".ORG") || !email.contains(".NET"))
@@ -90,7 +90,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                         (charsEmail[1].contains(".com") || charsEmail[1].contains(".cl") || charsEmail[1].contains(".org") || charsEmail[1].contains(".net") ||
                                                 charsEmail[1].contains(".COM") || charsEmail[1].contains(".CL") || charsEmail[1].contains(".ORG") || charsEmail[1].contains(".NET")
                                         ))) {
-                                    Toast.makeText(this, "Debe ingresar correo de contacto válido.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this, "Debe ingresar un correo de contacto válido.", Toast.LENGTH_LONG).show();
                                 } else {
                                     Proveedor proveedor = new Proveedor();
                                     final int[] ctrl = {0};
@@ -108,7 +108,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                                                 mDatabase.child("proveedores").child(rut).setValue(proveedor);
                                                 Toast.makeText(registroProveedores.this, "Registro exitóso", Toast.LENGTH_LONG).show();
                                             }else {
-                                            Toast.makeText(registroProveedores.this, "Proveedor ya existe.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(registroProveedores.this, "Proveedor ya exíste.", Toast.LENGTH_LONG).show();
                                             }
                                         }
                                         @Override public void onCancelled(@NonNull DatabaseError databaseError) {}});
@@ -119,7 +119,7 @@ public class registroProveedores extends AppCompatActivity implements View.OnCli
                     }
                 }
             } catch (Exception e) {
-                Toast.makeText(this, "Rut Invalido.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Rut Inválido.", Toast.LENGTH_LONG).show();
             }
         });
 
