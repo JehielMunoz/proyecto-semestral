@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="BUSQUEDA DE PROVEEDORES"
+                android:text="BÚSQUEDA DE PROVEEDORES"
                 android:textSize="20dp" />
 
             <TextView

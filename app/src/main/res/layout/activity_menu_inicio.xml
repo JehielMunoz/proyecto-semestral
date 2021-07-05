@@ -39,7 +39,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:text="MENU PRINCIPAL"
+                android:text="MENÚ PRINCIPAL"
 
                 />
 
@@ -97,7 +97,7 @@
                             android:textStyle="bold"
 
                             android:textAlignment="center"
-                            android:text="Ingreso Items"
+                            android:text="Ingreso Ítems"
                             />
 
 
@@ -360,7 +360,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Cerrar Sesion"
+                            android:text="Cerrar Sesión"
                             />
 
 
@@ -370,7 +370,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/BuscarProvedorBtn1"
+                    android:id="@+id/BuscarEspecieBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -397,7 +397,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Buscar Provedor"
+                            android:text="Buscar Especies"
                             />
 
                     </LinearLayout>
